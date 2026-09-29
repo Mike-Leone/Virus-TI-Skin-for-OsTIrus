@@ -113,3 +113,14 @@ provided the same license is preserved and attribution is given.
 ---
 
 *If you have any questions or suggestions — open an Issue in this repository.*
+
+## 📬 Contact
+
+- **YouTube:** [Mike Sunrise](https://www.youtube.com/@MikeSunrise)
+- **Discord:** [The Usual Suspects DSP56300](https://discord.gg/AaGHXSWM)
+
+## 💝 Support the author
+
+- **Donation:** [Support Mike Leone](https://www.donationalerts.com/r/mikesunrise)
+
+ <img width="281" height="281" alt="QR 11" src="https://github.com/user-attachments/assets/3e4e6d49-9b45-4fd5-9f76-35030d04e269" />
