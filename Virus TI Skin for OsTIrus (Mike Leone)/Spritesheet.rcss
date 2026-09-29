@@ -1,0 +1,1676 @@
+/* Spritesheet: left; top; width; height */
+
+/*noinspection ALL*/
+
+/* == KNOBS == */
+
+@spritesheet Knob-Mini {
+    knob-mini_000: 0dp 0dp 48dp 48dp;
+    knob-mini_001: 48dp 0dp 48dp 48dp;
+    knob-mini_002: 96dp 0dp 48dp 48dp;
+    knob-mini_003: 144dp 0dp 48dp 48dp;
+    knob-mini_004: 192dp 0dp 48dp 48dp;
+    knob-mini_005: 240dp 0dp 48dp 48dp;
+    knob-mini_006: 288dp 0dp 48dp 48dp;
+    knob-mini_007: 336dp 0dp 48dp 48dp;
+    knob-mini_008: 384dp 0dp 48dp 48dp;
+    knob-mini_009: 432dp 0dp 48dp 48dp;
+    knob-mini_010: 480dp 0dp 48dp 48dp;
+    knob-mini_011: 528dp 0dp 48dp 48dp;
+    knob-mini_012: 576dp 0dp 48dp 48dp;
+    knob-mini_013: 624dp 0dp 48dp 48dp;
+    knob-mini_014: 672dp 0dp 48dp 48dp;
+    knob-mini_015: 720dp 0dp 48dp 48dp;
+    knob-mini_016: 768dp 0dp 48dp 48dp;
+    knob-mini_017: 816dp 0dp 48dp 48dp;
+    knob-mini_018: 864dp 0dp 48dp 48dp;
+    knob-mini_019: 912dp 0dp 48dp 48dp;
+    knob-mini_020: 960dp 0dp 48dp 48dp;
+    knob-mini_021: 1008dp 0dp 48dp 48dp;
+    knob-mini_022: 1056dp 0dp 48dp 48dp;
+    knob-mini_023: 1104dp 0dp 48dp 48dp;
+    knob-mini_024: 1152dp 0dp 48dp 48dp;
+    knob-mini_025: 1200dp 0dp 48dp 48dp;
+    knob-mini_026: 1248dp 0dp 48dp 48dp;
+    knob-mini_027: 1296dp 0dp 48dp 48dp;
+    knob-mini_028: 1344dp 0dp 48dp 48dp;
+    knob-mini_029: 1392dp 0dp 48dp 48dp;
+    knob-mini_030: 1440dp 0dp 48dp 48dp;
+    knob-mini_031: 1488dp 0dp 48dp 48dp;
+    knob-mini_032: 1536dp 0dp 48dp 48dp;
+    knob-mini_033: 1584dp 0dp 48dp 48dp;
+    knob-mini_034: 1632dp 0dp 48dp 48dp;
+    knob-mini_035: 1680dp 0dp 48dp 48dp;
+    knob-mini_036: 1728dp 0dp 48dp 48dp;
+    knob-mini_037: 1776dp 0dp 48dp 48dp;
+    knob-mini_038: 1824dp 0dp 48dp 48dp;
+    knob-mini_039: 1872dp 0dp 48dp 48dp;
+    knob-mini_040: 1920dp 0dp 48dp 48dp;
+    knob-mini_041: 1968dp 0dp 48dp 48dp;
+    knob-mini_042: 0dp 48dp 48dp 48dp;
+    knob-mini_043: 48dp 48dp 48dp 48dp;
+    knob-mini_044: 96dp 48dp 48dp 48dp;
+    knob-mini_045: 144dp 48dp 48dp 48dp;
+    knob-mini_046: 192dp 48dp 48dp 48dp;
+    knob-mini_047: 240dp 48dp 48dp 48dp;
+    knob-mini_048: 288dp 48dp 48dp 48dp;
+    knob-mini_049: 336dp 48dp 48dp 48dp;
+    knob-mini_050: 384dp 48dp 48dp 48dp;
+    knob-mini_051: 432dp 48dp 48dp 48dp;
+    knob-mini_052: 480dp 48dp 48dp 48dp;
+    knob-mini_053: 528dp 48dp 48dp 48dp;
+    knob-mini_054: 576dp 48dp 48dp 48dp;
+    knob-mini_055: 624dp 48dp 48dp 48dp;
+    knob-mini_056: 672dp 48dp 48dp 48dp;
+    knob-mini_057: 720dp 48dp 48dp 48dp;
+    knob-mini_058: 768dp 48dp 48dp 48dp;
+    knob-mini_059: 816dp 48dp 48dp 48dp;
+    knob-mini_060: 864dp 48dp 48dp 48dp;
+    knob-mini_061: 912dp 48dp 48dp 48dp;
+    knob-mini_062: 960dp 48dp 48dp 48dp;
+    knob-mini_063: 1008dp 48dp 48dp 48dp;
+    knob-mini_064: 1056dp 48dp 48dp 48dp;
+    knob-mini_065: 1104dp 48dp 48dp 48dp;
+    knob-mini_066: 1152dp 48dp 48dp 48dp;
+    knob-mini_067: 1200dp 48dp 48dp 48dp;
+    knob-mini_068: 1248dp 48dp 48dp 48dp;
+    knob-mini_069: 1296dp 48dp 48dp 48dp;
+    knob-mini_070: 1344dp 48dp 48dp 48dp;
+    knob-mini_071: 1392dp 48dp 48dp 48dp;
+    knob-mini_072: 1440dp 48dp 48dp 48dp;
+    knob-mini_073: 1488dp 48dp 48dp 48dp;
+    knob-mini_074: 1536dp 48dp 48dp 48dp;
+    knob-mini_075: 1584dp 48dp 48dp 48dp;
+    knob-mini_076: 1632dp 48dp 48dp 48dp;
+    knob-mini_077: 1680dp 48dp 48dp 48dp;
+    knob-mini_078: 1728dp 48dp 48dp 48dp;
+    knob-mini_079: 1776dp 48dp 48dp 48dp;
+    knob-mini_080: 1824dp 48dp 48dp 48dp;
+    knob-mini_081: 1872dp 48dp 48dp 48dp;
+    knob-mini_082: 1920dp 48dp 48dp 48dp;
+    knob-mini_083: 1968dp 48dp 48dp 48dp;
+    knob-mini_084: 0dp 96dp 48dp 48dp;
+    knob-mini_085: 48dp 96dp 48dp 48dp;
+    knob-mini_086: 96dp 96dp 48dp 48dp;
+    knob-mini_087: 144dp 96dp 48dp 48dp;
+    knob-mini_088: 192dp 96dp 48dp 48dp;
+    knob-mini_089: 240dp 96dp 48dp 48dp;
+    knob-mini_090: 288dp 96dp 48dp 48dp;
+    knob-mini_091: 336dp 96dp 48dp 48dp;
+    knob-mini_092: 384dp 96dp 48dp 48dp;
+    knob-mini_093: 432dp 96dp 48dp 48dp;
+    knob-mini_094: 480dp 96dp 48dp 48dp;
+    knob-mini_095: 528dp 96dp 48dp 48dp;
+    knob-mini_096: 576dp 96dp 48dp 48dp;
+    knob-mini_097: 624dp 96dp 48dp 48dp;
+    knob-mini_098: 672dp 96dp 48dp 48dp;
+    knob-mini_099: 720dp 96dp 48dp 48dp;
+    knob-mini_100: 768dp 96dp 48dp 48dp;
+    knob-mini_101: 816dp 96dp 48dp 48dp;
+    knob-mini_102: 864dp 96dp 48dp 48dp;
+    knob-mini_103: 912dp 96dp 48dp 48dp;
+    knob-mini_104: 960dp 96dp 48dp 48dp;
+    knob-mini_105: 1008dp 96dp 48dp 48dp;
+    knob-mini_106: 1056dp 96dp 48dp 48dp;
+    knob-mini_107: 1104dp 96dp 48dp 48dp;
+    knob-mini_108: 1152dp 96dp 48dp 48dp;
+    knob-mini_109: 1200dp 96dp 48dp 48dp;
+    knob-mini_110: 1248dp 96dp 48dp 48dp;
+    knob-mini_111: 1296dp 96dp 48dp 48dp;
+    knob-mini_112: 1344dp 96dp 48dp 48dp;
+    knob-mini_113: 1392dp 96dp 48dp 48dp;
+    knob-mini_114: 1440dp 96dp 48dp 48dp;
+    knob-mini_115: 1488dp 96dp 48dp 48dp;
+    knob-mini_116: 1536dp 96dp 48dp 48dp;
+    knob-mini_117: 1584dp 96dp 48dp 48dp;
+    knob-mini_118: 1632dp 96dp 48dp 48dp;
+    knob-mini_119: 1680dp 96dp 48dp 48dp;
+    knob-mini_120: 1728dp 96dp 48dp 48dp;
+    knob-mini_121: 1776dp 96dp 48dp 48dp;
+    knob-mini_122: 1824dp 96dp 48dp 48dp;
+    knob-mini_123: 1872dp 96dp 48dp 48dp;
+    knob-mini_124: 1920dp 96dp 48dp 48dp;
+    knob-mini_125: 1968dp 96dp 48dp 48dp;
+    knob-mini_126: 0dp 144dp 48dp 48dp;
+    knob-mini_127: 48dp 144dp 48dp 48dp;
+    src: Knob-Mini.png;
+}
+
+@spritesheet Knob-Middle {
+    knob-middle_000: 0dp 0dp 86dp 86dp;
+    knob-middle_001: 86dp 0dp 86dp 86dp;
+    knob-middle_002: 172dp 0dp 86dp 86dp;
+    knob-middle_003: 258dp 0dp 86dp 86dp;
+    knob-middle_004: 344dp 0dp 86dp 86dp;
+    knob-middle_005: 430dp 0dp 86dp 86dp;
+    knob-middle_006: 516dp 0dp 86dp 86dp;
+    knob-middle_007: 602dp 0dp 86dp 86dp;
+    knob-middle_008: 688dp 0dp 86dp 86dp;
+    knob-middle_009: 774dp 0dp 86dp 86dp;
+    knob-middle_010: 860dp 0dp 86dp 86dp;
+    knob-middle_011: 946dp 0dp 86dp 86dp;
+    knob-middle_012: 1032dp 0dp 86dp 86dp;
+    knob-middle_013: 1118dp 0dp 86dp 86dp;
+    knob-middle_014: 1204dp 0dp 86dp 86dp;
+    knob-middle_015: 1290dp 0dp 86dp 86dp;
+    knob-middle_016: 1376dp 0dp 86dp 86dp;
+    knob-middle_017: 1462dp 0dp 86dp 86dp;
+    knob-middle_018: 1548dp 0dp 86dp 86dp;
+    knob-middle_019: 1634dp 0dp 86dp 86dp;
+    knob-middle_020: 1720dp 0dp 86dp 86dp;
+    knob-middle_021: 1806dp 0dp 86dp 86dp;
+    knob-middle_022: 1892dp 0dp 86dp 86dp;
+    knob-middle_023: 0dp 86dp 86dp 86dp;
+    knob-middle_024: 86dp 86dp 86dp 86dp;
+    knob-middle_025: 172dp 86dp 86dp 86dp;
+    knob-middle_026: 258dp 86dp 86dp 86dp;
+    knob-middle_027: 344dp 86dp 86dp 86dp;
+    knob-middle_028: 430dp 86dp 86dp 86dp;
+    knob-middle_029: 516dp 86dp 86dp 86dp;
+    knob-middle_030: 602dp 86dp 86dp 86dp;
+    knob-middle_031: 688dp 86dp 86dp 86dp;
+    knob-middle_032: 774dp 86dp 86dp 86dp;
+    knob-middle_033: 860dp 86dp 86dp 86dp;
+    knob-middle_034: 946dp 86dp 86dp 86dp;
+    knob-middle_035: 1032dp 86dp 86dp 86dp;
+    knob-middle_036: 1118dp 86dp 86dp 86dp;
+    knob-middle_037: 1204dp 86dp 86dp 86dp;
+    knob-middle_038: 1290dp 86dp 86dp 86dp;
+    knob-middle_039: 1376dp 86dp 86dp 86dp;
+    knob-middle_040: 1462dp 86dp 86dp 86dp;
+    knob-middle_041: 1548dp 86dp 86dp 86dp;
+    knob-middle_042: 1634dp 86dp 86dp 86dp;
+    knob-middle_043: 1720dp 86dp 86dp 86dp;
+    knob-middle_044: 1806dp 86dp 86dp 86dp;
+    knob-middle_045: 1892dp 86dp 86dp 86dp;
+    knob-middle_046: 0dp 172dp 86dp 86dp;
+    knob-middle_047: 86dp 172dp 86dp 86dp;
+    knob-middle_048: 172dp 172dp 86dp 86dp;
+    knob-middle_049: 258dp 172dp 86dp 86dp;
+    knob-middle_050: 344dp 172dp 86dp 86dp;
+    knob-middle_051: 430dp 172dp 86dp 86dp;
+    knob-middle_052: 516dp 172dp 86dp 86dp;
+    knob-middle_053: 602dp 172dp 86dp 86dp;
+    knob-middle_054: 688dp 172dp 86dp 86dp;
+    knob-middle_055: 774dp 172dp 86dp 86dp;
+    knob-middle_056: 860dp 172dp 86dp 86dp;
+    knob-middle_057: 946dp 172dp 86dp 86dp;
+    knob-middle_058: 1032dp 172dp 86dp 86dp;
+    knob-middle_059: 1118dp 172dp 86dp 86dp;
+    knob-middle_060: 1204dp 172dp 86dp 86dp;
+    knob-middle_061: 1290dp 172dp 86dp 86dp;
+    knob-middle_062: 1376dp 172dp 86dp 86dp;
+    knob-middle_063: 1462dp 172dp 86dp 86dp;
+    knob-middle_064: 1548dp 172dp 86dp 86dp;
+    knob-middle_065: 1634dp 172dp 86dp 86dp;
+    knob-middle_066: 1720dp 172dp 86dp 86dp;
+    knob-middle_067: 1806dp 172dp 86dp 86dp;
+    knob-middle_068: 1892dp 172dp 86dp 86dp;
+    knob-middle_069: 0dp 258dp 86dp 86dp;
+    knob-middle_070: 86dp 258dp 86dp 86dp;
+    knob-middle_071: 172dp 258dp 86dp 86dp;
+    knob-middle_072: 258dp 258dp 86dp 86dp;
+    knob-middle_073: 344dp 258dp 86dp 86dp;
+    knob-middle_074: 430dp 258dp 86dp 86dp;
+    knob-middle_075: 516dp 258dp 86dp 86dp;
+    knob-middle_076: 602dp 258dp 86dp 86dp;
+    knob-middle_077: 688dp 258dp 86dp 86dp;
+    knob-middle_078: 774dp 258dp 86dp 86dp;
+    knob-middle_079: 860dp 258dp 86dp 86dp;
+    knob-middle_080: 946dp 258dp 86dp 86dp;
+    knob-middle_081: 1032dp 258dp 86dp 86dp;
+    knob-middle_082: 1118dp 258dp 86dp 86dp;
+    knob-middle_083: 1204dp 258dp 86dp 86dp;
+    knob-middle_084: 1290dp 258dp 86dp 86dp;
+    knob-middle_085: 1376dp 258dp 86dp 86dp;
+    knob-middle_086: 1462dp 258dp 86dp 86dp;
+    knob-middle_087: 1548dp 258dp 86dp 86dp;
+    knob-middle_088: 1634dp 258dp 86dp 86dp;
+    knob-middle_089: 1720dp 258dp 86dp 86dp;
+    knob-middle_090: 1806dp 258dp 86dp 86dp;
+    knob-middle_091: 1892dp 258dp 86dp 86dp;
+    knob-middle_092: 0dp 344dp 86dp 86dp;
+    knob-middle_093: 86dp 344dp 86dp 86dp;
+    knob-middle_094: 172dp 344dp 86dp 86dp;
+    knob-middle_095: 258dp 344dp 86dp 86dp;
+    knob-middle_096: 344dp 344dp 86dp 86dp;
+    knob-middle_097: 430dp 344dp 86dp 86dp;
+    knob-middle_098: 516dp 344dp 86dp 86dp;
+    knob-middle_099: 602dp 344dp 86dp 86dp;
+    knob-middle_100: 688dp 344dp 86dp 86dp;
+    knob-middle_101: 774dp 344dp 86dp 86dp;
+    knob-middle_102: 860dp 344dp 86dp 86dp;
+    knob-middle_103: 946dp 344dp 86dp 86dp;
+    knob-middle_104: 1032dp 344dp 86dp 86dp;
+    knob-middle_105: 1118dp 344dp 86dp 86dp;
+    knob-middle_106: 1204dp 344dp 86dp 86dp;
+    knob-middle_107: 1290dp 344dp 86dp 86dp;
+    knob-middle_108: 1376dp 344dp 86dp 86dp;
+    knob-middle_109: 1462dp 344dp 86dp 86dp;
+    knob-middle_110: 1548dp 344dp 86dp 86dp;
+    knob-middle_111: 1634dp 344dp 86dp 86dp;
+    knob-middle_112: 1720dp 344dp 86dp 86dp;
+    knob-middle_113: 1806dp 344dp 86dp 86dp;
+    knob-middle_114: 1892dp 344dp 86dp 86dp;
+    knob-middle_115: 0dp 430dp 86dp 86dp;
+    knob-middle_116: 86dp 430dp 86dp 86dp;
+    knob-middle_117: 172dp 430dp 86dp 86dp;
+    knob-middle_118: 258dp 430dp 86dp 86dp;
+    knob-middle_119: 344dp 430dp 86dp 86dp;
+    knob-middle_120: 430dp 430dp 86dp 86dp;
+    knob-middle_121: 516dp 430dp 86dp 86dp;
+    knob-middle_122: 602dp 430dp 86dp 86dp;
+    knob-middle_123: 688dp 430dp 86dp 86dp;
+    knob-middle_124: 774dp 430dp 86dp 86dp;
+    knob-middle_125: 860dp 430dp 86dp 86dp;
+    knob-middle_126: 946dp 430dp 86dp 86dp;
+    knob-middle_127: 1032dp 430dp 86dp 86dp;
+    src: Knob-Middle.png;
+}
+
+@spritesheet Knob-Middle-Led {
+    knob-middle-led_000: 0dp 0dp 90dp 90dp;
+    knob-middle-led_001: 90dp 0dp 90dp 90dp;
+    knob-middle-led_002: 180dp 0dp 90dp 90dp;
+    knob-middle-led_003: 270dp 0dp 90dp 90dp;
+    knob-middle-led_004: 360dp 0dp 90dp 90dp;
+    knob-middle-led_005: 450dp 0dp 90dp 90dp;
+    knob-middle-led_006: 540dp 0dp 90dp 90dp;
+    knob-middle-led_007: 630dp 0dp 90dp 90dp;
+    knob-middle-led_008: 720dp 0dp 90dp 90dp;
+    knob-middle-led_009: 810dp 0dp 90dp 90dp;
+    knob-middle-led_010: 900dp 0dp 90dp 90dp;
+    knob-middle-led_011: 990dp 0dp 90dp 90dp;
+    knob-middle-led_012: 1080dp 0dp 90dp 90dp;
+    knob-middle-led_013: 1170dp 0dp 90dp 90dp;
+    knob-middle-led_014: 1260dp 0dp 90dp 90dp;
+    knob-middle-led_015: 1350dp 0dp 90dp 90dp;
+    knob-middle-led_016: 1440dp 0dp 90dp 90dp;
+    knob-middle-led_017: 1530dp 0dp 90dp 90dp;
+    knob-middle-led_018: 1620dp 0dp 90dp 90dp;
+    knob-middle-led_019: 1710dp 0dp 90dp 90dp;
+    knob-middle-led_020: 1800dp 0dp 90dp 90dp;
+    knob-middle-led_021: 1890dp 0dp 90dp 90dp;
+    knob-middle-led_022: 0dp 90dp 90dp 90dp;
+    knob-middle-led_023: 90dp 90dp 90dp 90dp;
+    knob-middle-led_024: 180dp 90dp 90dp 90dp;
+    knob-middle-led_025: 270dp 90dp 90dp 90dp;
+    knob-middle-led_026: 360dp 90dp 90dp 90dp;
+    knob-middle-led_027: 450dp 90dp 90dp 90dp;
+    knob-middle-led_028: 540dp 90dp 90dp 90dp;
+    knob-middle-led_029: 630dp 90dp 90dp 90dp;
+    knob-middle-led_030: 720dp 90dp 90dp 90dp;
+    knob-middle-led_031: 810dp 90dp 90dp 90dp;
+    knob-middle-led_032: 900dp 90dp 90dp 90dp;
+    knob-middle-led_033: 990dp 90dp 90dp 90dp;
+    knob-middle-led_034: 1080dp 90dp 90dp 90dp;
+    knob-middle-led_035: 1170dp 90dp 90dp 90dp;
+    knob-middle-led_036: 1260dp 90dp 90dp 90dp;
+    knob-middle-led_037: 1350dp 90dp 90dp 90dp;
+    knob-middle-led_038: 1440dp 90dp 90dp 90dp;
+    knob-middle-led_039: 1530dp 90dp 90dp 90dp;
+    knob-middle-led_040: 1620dp 90dp 90dp 90dp;
+    knob-middle-led_041: 1710dp 90dp 90dp 90dp;
+    knob-middle-led_042: 1800dp 90dp 90dp 90dp;
+    knob-middle-led_043: 1890dp 90dp 90dp 90dp;
+    knob-middle-led_044: 0dp 180dp 90dp 90dp;
+    knob-middle-led_045: 90dp 180dp 90dp 90dp;
+    knob-middle-led_046: 180dp 180dp 90dp 90dp;
+    knob-middle-led_047: 270dp 180dp 90dp 90dp;
+    knob-middle-led_048: 360dp 180dp 90dp 90dp;
+    knob-middle-led_049: 450dp 180dp 90dp 90dp;
+    knob-middle-led_050: 540dp 180dp 90dp 90dp;
+    knob-middle-led_051: 630dp 180dp 90dp 90dp;
+    knob-middle-led_052: 720dp 180dp 90dp 90dp;
+    knob-middle-led_053: 810dp 180dp 90dp 90dp;
+    knob-middle-led_054: 900dp 180dp 90dp 90dp;
+    knob-middle-led_055: 990dp 180dp 90dp 90dp;
+    knob-middle-led_056: 1080dp 180dp 90dp 90dp;
+    knob-middle-led_057: 1170dp 180dp 90dp 90dp;
+    knob-middle-led_058: 1260dp 180dp 90dp 90dp;
+    knob-middle-led_059: 1350dp 180dp 90dp 90dp;
+    knob-middle-led_060: 1440dp 180dp 90dp 90dp;
+    knob-middle-led_061: 1530dp 180dp 90dp 90dp;
+    knob-middle-led_062: 1620dp 180dp 90dp 90dp;
+    knob-middle-led_063: 1710dp 180dp 90dp 90dp;
+    knob-middle-led_064: 1800dp 180dp 90dp 90dp;
+    knob-middle-led_065: 1890dp 180dp 90dp 90dp;
+    knob-middle-led_066: 0dp 270dp 90dp 90dp;
+    knob-middle-led_067: 90dp 270dp 90dp 90dp;
+    knob-middle-led_068: 180dp 270dp 90dp 90dp;
+    knob-middle-led_069: 270dp 270dp 90dp 90dp;
+    knob-middle-led_070: 360dp 270dp 90dp 90dp;
+    knob-middle-led_071: 450dp 270dp 90dp 90dp;
+    knob-middle-led_072: 540dp 270dp 90dp 90dp;
+    knob-middle-led_073: 630dp 270dp 90dp 90dp;
+    knob-middle-led_074: 720dp 270dp 90dp 90dp;
+    knob-middle-led_075: 810dp 270dp 90dp 90dp;
+    knob-middle-led_076: 900dp 270dp 90dp 90dp;
+    knob-middle-led_077: 990dp 270dp 90dp 90dp;
+    knob-middle-led_078: 1080dp 270dp 90dp 90dp;
+    knob-middle-led_079: 1170dp 270dp 90dp 90dp;
+    knob-middle-led_080: 1260dp 270dp 90dp 90dp;
+    knob-middle-led_081: 1350dp 270dp 90dp 90dp;
+    knob-middle-led_082: 1440dp 270dp 90dp 90dp;
+    knob-middle-led_083: 1530dp 270dp 90dp 90dp;
+    knob-middle-led_084: 1620dp 270dp 90dp 90dp;
+    knob-middle-led_085: 1710dp 270dp 90dp 90dp;
+    knob-middle-led_086: 1800dp 270dp 90dp 90dp;
+    knob-middle-led_087: 1890dp 270dp 90dp 90dp;
+    knob-middle-led_088: 0dp 360dp 90dp 90dp;
+    knob-middle-led_089: 90dp 360dp 90dp 90dp;
+    knob-middle-led_090: 180dp 360dp 90dp 90dp;
+    knob-middle-led_091: 270dp 360dp 90dp 90dp;
+    knob-middle-led_092: 360dp 360dp 90dp 90dp;
+    knob-middle-led_093: 450dp 360dp 90dp 90dp;
+    knob-middle-led_094: 540dp 360dp 90dp 90dp;
+    knob-middle-led_095: 630dp 360dp 90dp 90dp;
+    knob-middle-led_096: 720dp 360dp 90dp 90dp;
+    knob-middle-led_097: 810dp 360dp 90dp 90dp;
+    knob-middle-led_098: 900dp 360dp 90dp 90dp;
+    knob-middle-led_099: 990dp 360dp 90dp 90dp;
+    knob-middle-led_100: 1080dp 360dp 90dp 90dp;
+    knob-middle-led_101: 1170dp 360dp 90dp 90dp;
+    knob-middle-led_102: 1260dp 360dp 90dp 90dp;
+    knob-middle-led_103: 1350dp 360dp 90dp 90dp;
+    knob-middle-led_104: 1440dp 360dp 90dp 90dp;
+    knob-middle-led_105: 1530dp 360dp 90dp 90dp;
+    knob-middle-led_106: 1620dp 360dp 90dp 90dp;
+    knob-middle-led_107: 1710dp 360dp 90dp 90dp;
+    knob-middle-led_108: 1800dp 360dp 90dp 90dp;
+    knob-middle-led_109: 1890dp 360dp 90dp 90dp;
+    knob-middle-led_110: 0dp 450dp 90dp 90dp;
+    knob-middle-led_111: 90dp 450dp 90dp 90dp;
+    knob-middle-led_112: 180dp 450dp 90dp 90dp;
+    knob-middle-led_113: 270dp 450dp 90dp 90dp;
+    knob-middle-led_114: 360dp 450dp 90dp 90dp;
+    knob-middle-led_115: 450dp 450dp 90dp 90dp;
+    knob-middle-led_116: 540dp 450dp 90dp 90dp;
+    knob-middle-led_117: 630dp 450dp 90dp 90dp;
+    knob-middle-led_118: 720dp 450dp 90dp 90dp;
+    knob-middle-led_119: 810dp 450dp 90dp 90dp;
+    knob-middle-led_120: 900dp 450dp 90dp 90dp;
+    knob-middle-led_121: 990dp 450dp 90dp 90dp;
+    knob-middle-led_122: 1080dp 450dp 90dp 90dp;
+    knob-middle-led_123: 1170dp 450dp 90dp 90dp;
+    knob-middle-led_124: 1260dp 450dp 90dp 90dp;
+    knob-middle-led_125: 1350dp 450dp 90dp 90dp;
+    knob-middle-led_126: 1440dp 450dp 90dp 90dp;
+    knob-middle-led_127: 1530dp 450dp 90dp 90dp;
+    src: Knob-Middle-Led.png;
+}
+
+@spritesheet Knob-Middle-Led-Bipolar {
+    knob-middle-led-bipolar_000: 0dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_001: 90dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_002: 180dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_003: 270dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_004: 360dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_005: 450dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_006: 540dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_007: 630dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_008: 720dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_009: 810dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_010: 900dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_011: 990dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_012: 1080dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_013: 1170dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_014: 1260dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_015: 1350dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_016: 1440dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_017: 1530dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_018: 1620dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_019: 1710dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_020: 1800dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_021: 1890dp 0dp 90dp 90dp;
+    knob-middle-led-bipolar_022: 0dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_023: 90dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_024: 180dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_025: 270dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_026: 360dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_027: 450dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_028: 540dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_029: 630dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_030: 720dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_031: 810dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_032: 900dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_033: 990dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_034: 1080dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_035: 1170dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_036: 1260dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_037: 1350dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_038: 1440dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_039: 1530dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_040: 1620dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_041: 1710dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_042: 1800dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_043: 1890dp 90dp 90dp 90dp;
+    knob-middle-led-bipolar_044: 0dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_045: 90dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_046: 180dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_047: 270dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_048: 360dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_049: 450dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_050: 540dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_051: 630dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_052: 720dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_053: 810dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_054: 900dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_055: 990dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_056: 1080dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_057: 1170dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_058: 1260dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_059: 1350dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_060: 1440dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_061: 1530dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_062: 1620dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_063: 1710dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_064: 1800dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_065: 1890dp 180dp 90dp 90dp;
+    knob-middle-led-bipolar_066: 0dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_067: 90dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_068: 180dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_069: 270dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_070: 360dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_071: 450dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_072: 540dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_073: 630dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_074: 720dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_075: 810dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_076: 900dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_077: 990dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_078: 1080dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_079: 1170dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_080: 1260dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_081: 1350dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_082: 1440dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_083: 1530dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_084: 1620dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_085: 1710dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_086: 1800dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_087: 1890dp 270dp 90dp 90dp;
+    knob-middle-led-bipolar_088: 0dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_089: 90dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_090: 180dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_091: 270dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_092: 360dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_093: 450dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_094: 540dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_095: 630dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_096: 720dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_097: 810dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_098: 900dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_099: 990dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_100: 1080dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_101: 1170dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_102: 1260dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_103: 1350dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_104: 1440dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_105: 1530dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_106: 1620dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_107: 1710dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_108: 1800dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_109: 1890dp 360dp 90dp 90dp;
+    knob-middle-led-bipolar_110: 0dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_111: 90dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_112: 180dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_113: 270dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_114: 360dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_115: 450dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_116: 540dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_117: 630dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_118: 720dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_119: 810dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_120: 900dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_121: 990dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_122: 1080dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_123: 1170dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_124: 1260dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_125: 1350dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_126: 1440dp 450dp 90dp 90dp;
+    knob-middle-led-bipolar_127: 1530dp 450dp 90dp 90dp;
+    src: Knob-Middle-Led-Bipolar.png;
+}
+
+@spritesheet Knob-Big_0 {
+    knob-big_000: 0dp 0dp 258dp 258dp;
+    knob-big_001: 258dp 0dp 258dp 258dp;
+    knob-big_002: 516dp 0dp 258dp 258dp;
+    knob-big_003: 774dp 0dp 258dp 258dp;
+    knob-big_004: 1032dp 0dp 258dp 258dp;
+    knob-big_005: 1290dp 0dp 258dp 258dp;
+    knob-big_006: 1548dp 0dp 258dp 258dp;
+    knob-big_007: 0dp 258dp 258dp 258dp;
+    knob-big_008: 258dp 258dp 258dp 258dp;
+    knob-big_009: 516dp 258dp 258dp 258dp;
+    knob-big_010: 774dp 258dp 258dp 258dp;
+    knob-big_011: 1032dp 258dp 258dp 258dp;
+    knob-big_012: 1290dp 258dp 258dp 258dp;
+    knob-big_013: 1548dp 258dp 258dp 258dp;
+    knob-big_014: 0dp 516dp 258dp 258dp;
+    knob-big_015: 258dp 516dp 258dp 258dp;
+    knob-big_016: 516dp 516dp 258dp 258dp;
+    knob-big_017: 774dp 516dp 258dp 258dp;
+    knob-big_018: 1032dp 516dp 258dp 258dp;
+    knob-big_019: 1290dp 516dp 258dp 258dp;
+    knob-big_020: 1548dp 516dp 258dp 258dp;
+    knob-big_021: 0dp 774dp 258dp 258dp;
+    knob-big_022: 258dp 774dp 258dp 258dp;
+    knob-big_023: 516dp 774dp 258dp 258dp;
+    knob-big_024: 774dp 774dp 258dp 258dp;
+    knob-big_025: 1032dp 774dp 258dp 258dp;
+    knob-big_026: 1290dp 774dp 258dp 258dp;
+    knob-big_027: 1548dp 774dp 258dp 258dp;
+    knob-big_028: 0dp 1032dp 258dp 258dp;
+    knob-big_029: 258dp 1032dp 258dp 258dp;
+    knob-big_030: 516dp 1032dp 258dp 258dp;
+    knob-big_031: 774dp 1032dp 258dp 258dp;
+    knob-big_032: 1032dp 1032dp 258dp 258dp;
+    knob-big_033: 1290dp 1032dp 258dp 258dp;
+    knob-big_034: 1548dp 1032dp 258dp 258dp;
+    knob-big_035: 0dp 1290dp 258dp 258dp;
+    knob-big_036: 258dp 1290dp 258dp 258dp;
+    knob-big_037: 516dp 1290dp 258dp 258dp;
+    knob-big_038: 774dp 1290dp 258dp 258dp;
+    knob-big_039: 1032dp 1290dp 258dp 258dp;
+    knob-big_040: 1290dp 1290dp 258dp 258dp;
+    knob-big_041: 1548dp 1290dp 258dp 258dp;
+    knob-big_042: 0dp 1548dp 258dp 258dp;
+    knob-big_043: 258dp 1548dp 258dp 258dp;
+    knob-big_044: 516dp 1548dp 258dp 258dp;
+    knob-big_045: 774dp 1548dp 258dp 258dp;
+    knob-big_046: 1032dp 1548dp 258dp 258dp;
+    knob-big_047: 1290dp 1548dp 258dp 258dp;
+    knob-big_048: 1548dp 1548dp 258dp 258dp;
+    src: Knob-Big_0.png;
+}
+
+@spritesheet Knob-Big_1 {
+    knob-big_049: 0dp 0dp 258dp 258dp;
+    knob-big_050: 258dp 0dp 258dp 258dp;
+    knob-big_051: 516dp 0dp 258dp 258dp;
+    knob-big_052: 774dp 0dp 258dp 258dp;
+    knob-big_053: 1032dp 0dp 258dp 258dp;
+    knob-big_054: 1290dp 0dp 258dp 258dp;
+    knob-big_055: 1548dp 0dp 258dp 258dp;
+    knob-big_056: 0dp 258dp 258dp 258dp;
+    knob-big_057: 258dp 258dp 258dp 258dp;
+    knob-big_058: 516dp 258dp 258dp 258dp;
+    knob-big_059: 774dp 258dp 258dp 258dp;
+    knob-big_060: 1032dp 258dp 258dp 258dp;
+    knob-big_061: 1290dp 258dp 258dp 258dp;
+    knob-big_062: 1548dp 258dp 258dp 258dp;
+    knob-big_063: 0dp 516dp 258dp 258dp;
+    knob-big_064: 258dp 516dp 258dp 258dp;
+    knob-big_065: 516dp 516dp 258dp 258dp;
+    knob-big_066: 774dp 516dp 258dp 258dp;
+    knob-big_067: 1032dp 516dp 258dp 258dp;
+    knob-big_068: 1290dp 516dp 258dp 258dp;
+    knob-big_069: 1548dp 516dp 258dp 258dp;
+    knob-big_070: 0dp 774dp 258dp 258dp;
+    knob-big_071: 258dp 774dp 258dp 258dp;
+    knob-big_072: 516dp 774dp 258dp 258dp;
+    knob-big_073: 774dp 774dp 258dp 258dp;
+    knob-big_074: 1032dp 774dp 258dp 258dp;
+    knob-big_075: 1290dp 774dp 258dp 258dp;
+    knob-big_076: 1548dp 774dp 258dp 258dp;
+    knob-big_077: 0dp 1032dp 258dp 258dp;
+    knob-big_078: 258dp 1032dp 258dp 258dp;
+    knob-big_079: 516dp 1032dp 258dp 258dp;
+    knob-big_080: 774dp 1032dp 258dp 258dp;
+    knob-big_081: 1032dp 1032dp 258dp 258dp;
+    knob-big_082: 1290dp 1032dp 258dp 258dp;
+    knob-big_083: 1548dp 1032dp 258dp 258dp;
+    knob-big_084: 0dp 1290dp 258dp 258dp;
+    knob-big_085: 258dp 1290dp 258dp 258dp;
+    knob-big_086: 516dp 1290dp 258dp 258dp;
+    knob-big_087: 774dp 1290dp 258dp 258dp;
+    knob-big_088: 1032dp 1290dp 258dp 258dp;
+    knob-big_089: 1290dp 1290dp 258dp 258dp;
+    knob-big_090: 1548dp 1290dp 258dp 258dp;
+    knob-big_091: 0dp 1548dp 258dp 258dp;
+    knob-big_092: 258dp 1548dp 258dp 258dp;
+    knob-big_093: 516dp 1548dp 258dp 258dp;
+    knob-big_094: 774dp 1548dp 258dp 258dp;
+    knob-big_095: 1032dp 1548dp 258dp 258dp;
+    knob-big_096: 1290dp 1548dp 258dp 258dp;
+    knob-big_097: 1548dp 1548dp 258dp 258dp;
+    src: Knob-Big_1.png;
+}
+
+@spritesheet Knob-Big_2 {
+    knob-big_098: 0dp 0dp 258dp 258dp;
+    knob-big_099: 258dp 0dp 258dp 258dp;
+    knob-big_100: 516dp 0dp 258dp 258dp;
+    knob-big_101: 774dp 0dp 258dp 258dp;
+    knob-big_102: 1032dp 0dp 258dp 258dp;
+    knob-big_103: 1290dp 0dp 258dp 258dp;
+    knob-big_104: 1548dp 0dp 258dp 258dp;
+    knob-big_105: 0dp 258dp 258dp 258dp;
+    knob-big_106: 258dp 258dp 258dp 258dp;
+    knob-big_107: 516dp 258dp 258dp 258dp;
+    knob-big_108: 774dp 258dp 258dp 258dp;
+    knob-big_109: 1032dp 258dp 258dp 258dp;
+    knob-big_110: 1290dp 258dp 258dp 258dp;
+    knob-big_111: 1548dp 258dp 258dp 258dp;
+    knob-big_112: 0dp 516dp 258dp 258dp;
+    knob-big_113: 258dp 516dp 258dp 258dp;
+    knob-big_114: 516dp 516dp 258dp 258dp;
+    knob-big_115: 774dp 516dp 258dp 258dp;
+    knob-big_116: 1032dp 516dp 258dp 258dp;
+    knob-big_117: 1290dp 516dp 258dp 258dp;
+    knob-big_118: 1548dp 516dp 258dp 258dp;
+    knob-big_119: 0dp 774dp 258dp 258dp;
+    knob-big_120: 258dp 774dp 258dp 258dp;
+    knob-big_121: 516dp 774dp 258dp 258dp;
+    knob-big_122: 774dp 774dp 258dp 258dp;
+    knob-big_123: 1032dp 774dp 258dp 258dp;
+    knob-big_124: 1290dp 774dp 258dp 258dp;
+    knob-big_125: 1548dp 774dp 258dp 258dp;
+    knob-big_126: 0dp 1032dp 258dp 258dp;
+    knob-big_127: 258dp 1032dp 258dp 258dp;
+    src: Knob-Big_2.png;
+}
+
+@spritesheet Knob-Big-Mini_0 {
+    knob-big-mini_000: 0dp 0dp 202dp 202dp;
+    knob-big-mini_001: 202dp 0dp 202dp 202dp;
+    knob-big-mini_002: 404dp 0dp 202dp 202dp;
+    knob-big-mini_003: 606dp 0dp 202dp 202dp;
+    knob-big-mini_004: 808dp 0dp 202dp 202dp;
+    knob-big-mini_005: 1010dp 0dp 202dp 202dp;
+    knob-big-mini_006: 1212dp 0dp 202dp 202dp;
+    knob-big-mini_007: 1414dp 0dp 202dp 202dp;
+    knob-big-mini_008: 1616dp 0dp 202dp 202dp;
+    knob-big-mini_009: 1818dp 0dp 202dp 202dp;
+    knob-big-mini_010: 0dp 202dp 202dp 202dp;
+    knob-big-mini_011: 202dp 202dp 202dp 202dp;
+    knob-big-mini_012: 404dp 202dp 202dp 202dp;
+    knob-big-mini_013: 606dp 202dp 202dp 202dp;
+    knob-big-mini_014: 808dp 202dp 202dp 202dp;
+    knob-big-mini_015: 1010dp 202dp 202dp 202dp;
+    knob-big-mini_016: 1212dp 202dp 202dp 202dp;
+    knob-big-mini_017: 1414dp 202dp 202dp 202dp;
+    knob-big-mini_018: 1616dp 202dp 202dp 202dp;
+    knob-big-mini_019: 1818dp 202dp 202dp 202dp;
+    knob-big-mini_020: 0dp 404dp 202dp 202dp;
+    knob-big-mini_021: 202dp 404dp 202dp 202dp;
+    knob-big-mini_022: 404dp 404dp 202dp 202dp;
+    knob-big-mini_023: 606dp 404dp 202dp 202dp;
+    knob-big-mini_024: 808dp 404dp 202dp 202dp;
+    knob-big-mini_025: 1010dp 404dp 202dp 202dp;
+    knob-big-mini_026: 1212dp 404dp 202dp 202dp;
+    knob-big-mini_027: 1414dp 404dp 202dp 202dp;
+    knob-big-mini_028: 1616dp 404dp 202dp 202dp;
+    knob-big-mini_029: 1818dp 404dp 202dp 202dp;
+    knob-big-mini_030: 0dp 606dp 202dp 202dp;
+    knob-big-mini_031: 202dp 606dp 202dp 202dp;
+    knob-big-mini_032: 404dp 606dp 202dp 202dp;
+    knob-big-mini_033: 606dp 606dp 202dp 202dp;
+    knob-big-mini_034: 808dp 606dp 202dp 202dp;
+    knob-big-mini_035: 1010dp 606dp 202dp 202dp;
+    knob-big-mini_036: 1212dp 606dp 202dp 202dp;
+    knob-big-mini_037: 1414dp 606dp 202dp 202dp;
+    knob-big-mini_038: 1616dp 606dp 202dp 202dp;
+    knob-big-mini_039: 1818dp 606dp 202dp 202dp;
+    knob-big-mini_040: 0dp 808dp 202dp 202dp;
+    knob-big-mini_041: 202dp 808dp 202dp 202dp;
+    knob-big-mini_042: 404dp 808dp 202dp 202dp;
+    knob-big-mini_043: 606dp 808dp 202dp 202dp;
+    knob-big-mini_044: 808dp 808dp 202dp 202dp;
+    knob-big-mini_045: 1010dp 808dp 202dp 202dp;
+    knob-big-mini_046: 1212dp 808dp 202dp 202dp;
+    knob-big-mini_047: 1414dp 808dp 202dp 202dp;
+    knob-big-mini_048: 1616dp 808dp 202dp 202dp;
+    knob-big-mini_049: 1818dp 808dp 202dp 202dp;
+    knob-big-mini_050: 0dp 1010dp 202dp 202dp;
+    knob-big-mini_051: 202dp 1010dp 202dp 202dp;
+    knob-big-mini_052: 404dp 1010dp 202dp 202dp;
+    knob-big-mini_053: 606dp 1010dp 202dp 202dp;
+    knob-big-mini_054: 808dp 1010dp 202dp 202dp;
+    knob-big-mini_055: 1010dp 1010dp 202dp 202dp;
+    knob-big-mini_056: 1212dp 1010dp 202dp 202dp;
+    knob-big-mini_057: 1414dp 1010dp 202dp 202dp;
+    knob-big-mini_058: 1616dp 1010dp 202dp 202dp;
+    knob-big-mini_059: 1818dp 1010dp 202dp 202dp;
+    knob-big-mini_060: 0dp 1212dp 202dp 202dp;
+    knob-big-mini_061: 202dp 1212dp 202dp 202dp;
+    knob-big-mini_062: 404dp 1212dp 202dp 202dp;
+    knob-big-mini_063: 606dp 1212dp 202dp 202dp;
+    knob-big-mini_064: 808dp 1212dp 202dp 202dp;
+    knob-big-mini_065: 1010dp 1212dp 202dp 202dp;
+    knob-big-mini_066: 1212dp 1212dp 202dp 202dp;
+    knob-big-mini_067: 1414dp 1212dp 202dp 202dp;
+    knob-big-mini_068: 1616dp 1212dp 202dp 202dp;
+    knob-big-mini_069: 1818dp 1212dp 202dp 202dp;
+    knob-big-mini_070: 0dp 1414dp 202dp 202dp;
+    knob-big-mini_071: 202dp 1414dp 202dp 202dp;
+    knob-big-mini_072: 404dp 1414dp 202dp 202dp;
+    knob-big-mini_073: 606dp 1414dp 202dp 202dp;
+    knob-big-mini_074: 808dp 1414dp 202dp 202dp;
+    knob-big-mini_075: 1010dp 1414dp 202dp 202dp;
+    knob-big-mini_076: 1212dp 1414dp 202dp 202dp;
+    knob-big-mini_077: 1414dp 1414dp 202dp 202dp;
+    knob-big-mini_078: 1616dp 1414dp 202dp 202dp;
+    knob-big-mini_079: 1818dp 1414dp 202dp 202dp;
+    knob-big-mini_080: 0dp 1616dp 202dp 202dp;
+    knob-big-mini_081: 202dp 1616dp 202dp 202dp;
+    knob-big-mini_082: 404dp 1616dp 202dp 202dp;
+    knob-big-mini_083: 606dp 1616dp 202dp 202dp;
+    knob-big-mini_084: 808dp 1616dp 202dp 202dp;
+    knob-big-mini_085: 1010dp 1616dp 202dp 202dp;
+    knob-big-mini_086: 1212dp 1616dp 202dp 202dp;
+    knob-big-mini_087: 1414dp 1616dp 202dp 202dp;
+    knob-big-mini_088: 1616dp 1616dp 202dp 202dp;
+    knob-big-mini_089: 1818dp 1616dp 202dp 202dp;
+    knob-big-mini_090: 0dp 1818dp 202dp 202dp;
+    knob-big-mini_091: 202dp 1818dp 202dp 202dp;
+    knob-big-mini_092: 404dp 1818dp 202dp 202dp;
+    knob-big-mini_093: 606dp 1818dp 202dp 202dp;
+    knob-big-mini_094: 808dp 1818dp 202dp 202dp;
+    knob-big-mini_095: 1010dp 1818dp 202dp 202dp;
+    knob-big-mini_096: 1212dp 1818dp 202dp 202dp;
+    knob-big-mini_097: 1414dp 1818dp 202dp 202dp;
+    knob-big-mini_098: 1616dp 1818dp 202dp 202dp;
+    knob-big-mini_099: 1818dp 1818dp 202dp 202dp;
+    src: Knob-Big-Mini_0.png;
+}
+
+@spritesheet Knob-Big-Mini_1 {
+    knob-big-mini_100: 0dp 0dp 202dp 202dp;
+    knob-big-mini_101: 202dp 0dp 202dp 202dp;
+    knob-big-mini_102: 404dp 0dp 202dp 202dp;
+    knob-big-mini_103: 606dp 0dp 202dp 202dp;
+    knob-big-mini_104: 808dp 0dp 202dp 202dp;
+    knob-big-mini_105: 1010dp 0dp 202dp 202dp;
+    knob-big-mini_106: 1212dp 0dp 202dp 202dp;
+    knob-big-mini_107: 1414dp 0dp 202dp 202dp;
+    knob-big-mini_108: 1616dp 0dp 202dp 202dp;
+    knob-big-mini_109: 1818dp 0dp 202dp 202dp;
+    knob-big-mini_110: 0dp 202dp 202dp 202dp;
+    knob-big-mini_111: 202dp 202dp 202dp 202dp;
+    knob-big-mini_112: 404dp 202dp 202dp 202dp;
+    knob-big-mini_113: 606dp 202dp 202dp 202dp;
+    knob-big-mini_114: 808dp 202dp 202dp 202dp;
+    knob-big-mini_115: 1010dp 202dp 202dp 202dp;
+    knob-big-mini_116: 1212dp 202dp 202dp 202dp;
+    knob-big-mini_117: 1414dp 202dp 202dp 202dp;
+    knob-big-mini_118: 1616dp 202dp 202dp 202dp;
+    knob-big-mini_119: 1818dp 202dp 202dp 202dp;
+    knob-big-mini_120: 0dp 404dp 202dp 202dp;
+    knob-big-mini_121: 202dp 404dp 202dp 202dp;
+    knob-big-mini_122: 404dp 404dp 202dp 202dp;
+    knob-big-mini_123: 606dp 404dp 202dp 202dp;
+    knob-big-mini_124: 808dp 404dp 202dp 202dp;
+    knob-big-mini_125: 1010dp 404dp 202dp 202dp;
+    knob-big-mini_126: 1212dp 404dp 202dp 202dp;
+    knob-big-mini_127: 1414dp 404dp 202dp 202dp;
+    src: Knob-Big-Mini_1.png;
+}
+
+@spritesheet Knob-Pulse-Width {
+    knob-pulse-width_000: 0dp 0dp 254dp 42dp;
+    knob-pulse-width_001: 254dp 0dp 254dp 42dp;
+    knob-pulse-width_002: 508dp 0dp 254dp 42dp;
+    knob-pulse-width_003: 762dp 0dp 254dp 42dp;
+    knob-pulse-width_004: 1016dp 0dp 254dp 42dp;
+    knob-pulse-width_005: 1270dp 0dp 254dp 42dp;
+    knob-pulse-width_006: 1524dp 0dp 254dp 42dp;
+    knob-pulse-width_007: 1778dp 0dp 254dp 42dp;
+    knob-pulse-width_008: 0dp 42dp 254dp 42dp;
+    knob-pulse-width_009: 254dp 42dp 254dp 42dp;
+    knob-pulse-width_010: 508dp 42dp 254dp 42dp;
+    knob-pulse-width_011: 762dp 42dp 254dp 42dp;
+    knob-pulse-width_012: 1016dp 42dp 254dp 42dp;
+    knob-pulse-width_013: 1270dp 42dp 254dp 42dp;
+    knob-pulse-width_014: 1524dp 42dp 254dp 42dp;
+    knob-pulse-width_015: 1778dp 42dp 254dp 42dp;
+    knob-pulse-width_016: 0dp 84dp 254dp 42dp;
+    knob-pulse-width_017: 254dp 84dp 254dp 42dp;
+    knob-pulse-width_018: 508dp 84dp 254dp 42dp;
+    knob-pulse-width_019: 762dp 84dp 254dp 42dp;
+    knob-pulse-width_020: 1016dp 84dp 254dp 42dp;
+    knob-pulse-width_021: 1270dp 84dp 254dp 42dp;
+    knob-pulse-width_022: 1524dp 84dp 254dp 42dp;
+    knob-pulse-width_023: 1778dp 84dp 254dp 42dp;
+    knob-pulse-width_024: 0dp 126dp 254dp 42dp;
+    knob-pulse-width_025: 254dp 126dp 254dp 42dp;
+    knob-pulse-width_026: 508dp 126dp 254dp 42dp;
+    knob-pulse-width_027: 762dp 126dp 254dp 42dp;
+    knob-pulse-width_028: 1016dp 126dp 254dp 42dp;
+    knob-pulse-width_029: 1270dp 126dp 254dp 42dp;
+    knob-pulse-width_030: 1524dp 126dp 254dp 42dp;
+    knob-pulse-width_031: 1778dp 126dp 254dp 42dp;
+    knob-pulse-width_032: 0dp 168dp 254dp 42dp;
+    knob-pulse-width_033: 254dp 168dp 254dp 42dp;
+    knob-pulse-width_034: 508dp 168dp 254dp 42dp;
+    knob-pulse-width_035: 762dp 168dp 254dp 42dp;
+    knob-pulse-width_036: 1016dp 168dp 254dp 42dp;
+    knob-pulse-width_037: 1270dp 168dp 254dp 42dp;
+    knob-pulse-width_038: 1524dp 168dp 254dp 42dp;
+    knob-pulse-width_039: 1778dp 168dp 254dp 42dp;
+    knob-pulse-width_040: 0dp 210dp 254dp 42dp;
+    knob-pulse-width_041: 254dp 210dp 254dp 42dp;
+    knob-pulse-width_042: 508dp 210dp 254dp 42dp;
+    knob-pulse-width_043: 762dp 210dp 254dp 42dp;
+    knob-pulse-width_044: 1016dp 210dp 254dp 42dp;
+    knob-pulse-width_045: 1270dp 210dp 254dp 42dp;
+    knob-pulse-width_046: 1524dp 210dp 254dp 42dp;
+    knob-pulse-width_047: 1778dp 210dp 254dp 42dp;
+    knob-pulse-width_048: 0dp 252dp 254dp 42dp;
+    knob-pulse-width_049: 254dp 252dp 254dp 42dp;
+    knob-pulse-width_050: 508dp 252dp 254dp 42dp;
+    knob-pulse-width_051: 762dp 252dp 254dp 42dp;
+    knob-pulse-width_052: 1016dp 252dp 254dp 42dp;
+    knob-pulse-width_053: 1270dp 252dp 254dp 42dp;
+    knob-pulse-width_054: 1524dp 252dp 254dp 42dp;
+    knob-pulse-width_055: 1778dp 252dp 254dp 42dp;
+    knob-pulse-width_056: 0dp 294dp 254dp 42dp;
+    knob-pulse-width_057: 254dp 294dp 254dp 42dp;
+    knob-pulse-width_058: 508dp 294dp 254dp 42dp;
+    knob-pulse-width_059: 762dp 294dp 254dp 42dp;
+    src: Knob-Pulse-Width.png;
+}
+
+@spritesheet Knob-Filter-Routing {
+    knob-filter-routing_000: 0dp 0dp 254dp 82dp;
+    knob-filter-routing_001: 0dp 82dp 254dp 82dp;
+    knob-filter-routing_002: 0dp 164dp 254dp 82dp;
+    knob-filter-routing_003: 0dp 246dp 254dp 82dp;
+    src: Knob-Filter-Routing.png;
+}
+
+@spritesheet Knob-Keytrack {
+    knob-keytrack_000: 0dp 0dp 250dp 42dp;
+    knob-keytrack_001: 250dp 0dp 250dp 42dp;
+    knob-keytrack_002: 500dp 0dp 250dp 42dp;
+    knob-keytrack_003: 750dp 0dp 250dp 42dp;
+    knob-keytrack_004: 1000dp 0dp 250dp 42dp;
+    knob-keytrack_005: 1250dp 0dp 250dp 42dp;
+    knob-keytrack_006: 1500dp 0dp 250dp 42dp;
+    knob-keytrack_007: 1750dp 0dp 250dp 42dp;
+    knob-keytrack_008: 0dp 42dp 250dp 42dp;
+    knob-keytrack_009: 250dp 42dp 250dp 42dp;
+    knob-keytrack_010: 500dp 42dp 250dp 42dp;
+    knob-keytrack_011: 750dp 42dp 250dp 42dp;
+    knob-keytrack_012: 1000dp 42dp 250dp 42dp;
+    knob-keytrack_013: 1250dp 42dp 250dp 42dp;
+    knob-keytrack_014: 1500dp 42dp 250dp 42dp;
+    knob-keytrack_015: 1750dp 42dp 250dp 42dp;
+    knob-keytrack_016: 0dp 84dp 250dp 42dp;
+    knob-keytrack_017: 250dp 84dp 250dp 42dp;
+    knob-keytrack_018: 500dp 84dp 250dp 42dp;
+    knob-keytrack_019: 750dp 84dp 250dp 42dp;
+    knob-keytrack_020: 1000dp 84dp 250dp 42dp;
+    knob-keytrack_021: 1250dp 84dp 250dp 42dp;
+    knob-keytrack_022: 1500dp 84dp 250dp 42dp;
+    knob-keytrack_023: 1750dp 84dp 250dp 42dp;
+    knob-keytrack_024: 0dp 126dp 250dp 42dp;
+    knob-keytrack_025: 250dp 126dp 250dp 42dp;
+    knob-keytrack_026: 500dp 126dp 250dp 42dp;
+    knob-keytrack_027: 750dp 126dp 250dp 42dp;
+    knob-keytrack_028: 1000dp 126dp 250dp 42dp;
+    knob-keytrack_029: 1250dp 126dp 250dp 42dp;
+    knob-keytrack_030: 1500dp 126dp 250dp 42dp;
+    knob-keytrack_031: 1750dp 126dp 250dp 42dp;
+    knob-keytrack_032: 0dp 168dp 250dp 42dp;
+    knob-keytrack_033: 250dp 168dp 250dp 42dp;
+    knob-keytrack_034: 500dp 168dp 250dp 42dp;
+    knob-keytrack_035: 750dp 168dp 250dp 42dp;
+    knob-keytrack_036: 1000dp 168dp 250dp 42dp;
+    knob-keytrack_037: 1250dp 168dp 250dp 42dp;
+    knob-keytrack_038: 1500dp 168dp 250dp 42dp;
+    knob-keytrack_039: 1750dp 168dp 250dp 42dp;
+    knob-keytrack_040: 0dp 210dp 250dp 42dp;
+    knob-keytrack_041: 250dp 210dp 250dp 42dp;
+    knob-keytrack_042: 500dp 210dp 250dp 42dp;
+    knob-keytrack_043: 750dp 210dp 250dp 42dp;
+    knob-keytrack_044: 1000dp 210dp 250dp 42dp;
+    knob-keytrack_045: 1250dp 210dp 250dp 42dp;
+    knob-keytrack_046: 1500dp 210dp 250dp 42dp;
+    knob-keytrack_047: 1750dp 210dp 250dp 42dp;
+    knob-keytrack_048: 0dp 252dp 250dp 42dp;
+    knob-keytrack_049: 250dp 252dp 250dp 42dp;
+    knob-keytrack_050: 500dp 252dp 250dp 42dp;
+    knob-keytrack_051: 750dp 252dp 250dp 42dp;
+    knob-keytrack_052: 1000dp 252dp 250dp 42dp;
+    knob-keytrack_053: 1250dp 252dp 250dp 42dp;
+    knob-keytrack_054: 1500dp 252dp 250dp 42dp;
+    knob-keytrack_055: 1750dp 252dp 250dp 42dp;
+    knob-keytrack_056: 0dp 294dp 250dp 42dp;
+    knob-keytrack_057: 250dp 294dp 250dp 42dp;
+    knob-keytrack_058: 500dp 294dp 250dp 42dp;
+    knob-keytrack_059: 750dp 294dp 250dp 42dp;
+    knob-keytrack_060: 1000dp 294dp 250dp 42dp;
+    knob-keytrack_061: 1250dp 294dp 250dp 42dp;
+    knob-keytrack_062: 1500dp 294dp 250dp 42dp;
+    knob-keytrack_063: 1750dp 294dp 250dp 42dp;
+    knob-keytrack_064: 0dp 336dp 250dp 42dp;
+    knob-keytrack_065: 250dp 336dp 250dp 42dp;
+    knob-keytrack_066: 500dp 336dp 250dp 42dp;
+    knob-keytrack_067: 750dp 336dp 250dp 42dp;
+    knob-keytrack_068: 1000dp 336dp 250dp 42dp;
+    knob-keytrack_069: 1250dp 336dp 250dp 42dp;
+    knob-keytrack_070: 1500dp 336dp 250dp 42dp;
+    knob-keytrack_071: 1750dp 336dp 250dp 42dp;
+    knob-keytrack_072: 0dp 378dp 250dp 42dp;
+    knob-keytrack_073: 250dp 378dp 250dp 42dp;
+    knob-keytrack_074: 500dp 378dp 250dp 42dp;
+    knob-keytrack_075: 750dp 378dp 250dp 42dp;
+    knob-keytrack_076: 1000dp 378dp 250dp 42dp;
+    knob-keytrack_077: 1250dp 378dp 250dp 42dp;
+    knob-keytrack_078: 1500dp 378dp 250dp 42dp;
+    knob-keytrack_079: 1750dp 378dp 250dp 42dp;
+    knob-keytrack_080: 0dp 420dp 250dp 42dp;
+    knob-keytrack_081: 250dp 420dp 250dp 42dp;
+    knob-keytrack_082: 500dp 420dp 250dp 42dp;
+    knob-keytrack_083: 750dp 420dp 250dp 42dp;
+    knob-keytrack_084: 1000dp 420dp 250dp 42dp;
+    knob-keytrack_085: 1250dp 420dp 250dp 42dp;
+    knob-keytrack_086: 1500dp 420dp 250dp 42dp;
+    knob-keytrack_087: 1750dp 420dp 250dp 42dp;
+    knob-keytrack_088: 0dp 462dp 250dp 42dp;
+    knob-keytrack_089: 250dp 462dp 250dp 42dp;
+    knob-keytrack_090: 500dp 462dp 250dp 42dp;
+    knob-keytrack_091: 750dp 462dp 250dp 42dp;
+    knob-keytrack_092: 1000dp 462dp 250dp 42dp;
+    knob-keytrack_093: 1250dp 462dp 250dp 42dp;
+    knob-keytrack_094: 1500dp 462dp 250dp 42dp;
+    knob-keytrack_095: 1750dp 462dp 250dp 42dp;
+    knob-keytrack_096: 0dp 504dp 250dp 42dp;
+    knob-keytrack_097: 250dp 504dp 250dp 42dp;
+    knob-keytrack_098: 500dp 504dp 250dp 42dp;
+    knob-keytrack_099: 750dp 504dp 250dp 42dp;
+    knob-keytrack_100: 1000dp 504dp 250dp 42dp;
+    knob-keytrack_101: 1250dp 504dp 250dp 42dp;
+    knob-keytrack_102: 1500dp 504dp 250dp 42dp;
+    knob-keytrack_103: 1750dp 504dp 250dp 42dp;
+    knob-keytrack_104: 0dp 546dp 250dp 42dp;
+    knob-keytrack_105: 250dp 546dp 250dp 42dp;
+    knob-keytrack_106: 500dp 546dp 250dp 42dp;
+    knob-keytrack_107: 750dp 546dp 250dp 42dp;
+    knob-keytrack_108: 1000dp 546dp 250dp 42dp;
+    knob-keytrack_109: 1250dp 546dp 250dp 42dp;
+    knob-keytrack_110: 1500dp 546dp 250dp 42dp;
+    knob-keytrack_111: 1750dp 546dp 250dp 42dp;
+    knob-keytrack_112: 0dp 588dp 250dp 42dp;
+    knob-keytrack_113: 250dp 588dp 250dp 42dp;
+    knob-keytrack_114: 500dp 588dp 250dp 42dp;
+    knob-keytrack_115: 750dp 588dp 250dp 42dp;
+    knob-keytrack_116: 1000dp 588dp 250dp 42dp;
+    knob-keytrack_117: 1250dp 588dp 250dp 42dp;
+    knob-keytrack_118: 1500dp 588dp 250dp 42dp;
+    knob-keytrack_119: 1750dp 588dp 250dp 42dp;
+    knob-keytrack_120: 0dp 630dp 250dp 42dp;
+    knob-keytrack_121: 250dp 630dp 250dp 42dp;
+    knob-keytrack_122: 500dp 630dp 250dp 42dp;
+    knob-keytrack_123: 750dp 630dp 250dp 42dp;
+    knob-keytrack_124: 1000dp 630dp 250dp 42dp;
+    knob-keytrack_125: 1250dp 630dp 250dp 42dp;
+    knob-keytrack_126: 1500dp 630dp 250dp 42dp;
+    knob-keytrack_127: 1750dp 630dp 250dp 42dp;
+    src: Knob-Keytrack.png;
+}
+
+@spritesheet Knob-Chorus-Mix {
+    knob-chorus-air: 0dp 0dp 94dp 94dp;
+    knob-chorus-vibrato: 0dp 94dp 94dp 94dp;
+    src: Knob-Chorus-Mix.png;
+}
+
+@spritesheet Knob-Chorus-Rotary {
+    knob-chorus-rotary_000: 0dp 0dp 124dp 62dp;
+    knob-chorus-rotary_001: 0dp 62dp 124dp 62dp;
+    src: Knob-Chorus-Rotary.png;
+}
+
+/* == BUTTONS == */
+
+/* Buttons Page */
+
+@spritesheet Button-Page-Easy {
+    button-page-easy_active: 0dp 114dp 120dp 38dp;
+    button-page-easy_checked: 0dp 38dp 120dp 38dp;
+    button-page-easy_default: 0dp 0dp 120dp 38dp;
+    src: Button-Page-Easy.png;
+}
+
+@spritesheet Button-Page-Browser {
+    button-page-browser_active: 0dp 114dp 120dp 38dp;
+    button-page-browser_checked: 0dp 38dp 120dp 38dp;
+    button-page-browser_default: 0dp 0dp 120dp 38dp;
+    src: Button-Page-Browser.png;
+}
+
+@spritesheet Button-Page-Osc {
+    button-page-osc_active: 0dp 114dp 120dp 38dp;
+    button-page-osc_checked: 0dp 38dp 120dp 38dp;
+    button-page-osc_default: 0dp 0dp 120dp 38dp;
+    src: Button-Page-Osc.png;
+}
+
+@spritesheet Button-Page-Filter {
+    button-page-filter_active: 0dp 114dp 120dp 38dp;
+    button-page-filter_checked: 0dp 38dp 120dp 38dp;
+    button-page-filter_default: 0dp 0dp 120dp 38dp;
+    src: Button-Page-Filter.png;
+}
+
+@spritesheet Button-Page-Lfo {
+    button-page-lfo_active: 0dp 114dp 120dp 38dp;
+    button-page-lfo_checked: 0dp 38dp 120dp 38dp;
+    button-page-lfo_default: 0dp 0dp 120dp 38dp;
+    src: Button-Page-Lfo.png;
+}
+
+@spritesheet Button-Page-Matrix {
+    button-page-matrix_active: 0dp 114dp 120dp 38dp;
+    button-page-matrix_checked: 0dp 38dp 120dp 38dp;
+    button-page-matrix_default: 0dp 0dp 120dp 38dp;
+    src: Button-Page-Matrix.png;
+}
+
+@spritesheet Button-Page-Arp {
+    button-page-arp_active: 0dp 114dp 120dp 38dp;
+    button-page-arp_checked: 0dp 38dp 120dp 38dp;
+    button-page-arp_default: 0dp 0dp 120dp 38dp;
+    src: Button-Page-Arp.png;
+}
+
+@spritesheet Button-Page-FX-1 {
+    button-page-fx-1_active: 0dp 114dp 120dp 38dp;
+    button-page-fx-1_checked: 0dp 38dp 120dp 38dp;
+    button-page-fx-1_default: 0dp 0dp 120dp 38dp;
+    src: Button-Page-FX-1.png;
+}
+
+@spritesheet Button-Page-FX-2 {
+    button-page-fx-2_active: 0dp 114dp 120dp 38dp;
+    button-page-fx-2_checked: 0dp 38dp 120dp 38dp;
+    button-page-fx-2_default: 0dp 0dp 120dp 38dp;
+    src: Button-Page-FX-2.png;
+}
+
+@spritesheet Button-Page-Common {
+    button-page-common_active: 0dp 114dp 120dp 38dp;
+    button-page-common_checked: 0dp 38dp 120dp 38dp;
+    button-page-common_default: 0dp 0dp 120dp 38dp;
+    src: Button-Page-Common.png;
+}
+
+@spritesheet Button-Page-Info {
+    button-page-info_active: 0dp 114dp 70dp 38dp;
+    button-page-info_checked: 0dp 38dp 70dp 38dp;
+    button-page-info_default: 0dp 0dp 70dp 38dp;
+    src: Button-Page-Info.png;
+}
+
+/* Buttons Part-Manager */
+
+@spritesheet Button-Part-1 {
+    button-part-1_default: 0dp 0dp 42dp 42dp;
+    button-part-1_checked: 0dp 42dp 42dp 42dp;
+    button-part-1_active: 0dp 126dp 42dp 42dp;
+    src: Button-Part-1.png;
+}
+
+@spritesheet Button-Part-2 {
+    button-part-2_default: 0dp 0dp 42dp 42dp;
+    button-part-2_checked: 0dp 42dp 42dp 42dp;
+    button-part-2_active: 0dp 126dp 42dp 42dp;
+    src: Button-Part-2.png;
+}
+
+@spritesheet Button-Part-3 {
+    button-part-3_default: 0dp 0dp 42dp 42dp;
+    button-part-3_checked: 0dp 42dp 42dp 42dp;
+    button-part-3_active: 0dp 126dp 42dp 42dp;
+    src: Button-Part-3.png;
+}
+
+@spritesheet Button-Part-4 {
+    button-part-4_default: 0dp 0dp 42dp 42dp;
+    button-part-4_checked: 0dp 42dp 42dp 42dp;
+    button-part-4_active: 0dp 126dp 42dp 42dp;
+    src: Button-Part-4.png;
+}
+
+@spritesheet Button-Part-5 {
+    button-part-5_default: 0dp 0dp 42dp 42dp;
+    button-part-5_checked: 0dp 42dp 42dp 42dp;
+    button-part-5_active: 0dp 126dp 42dp 42dp;
+    src: Button-Part-5.png;
+}
+
+@spritesheet Button-Part-6 {
+    button-part-6_default: 0dp 0dp 42dp 42dp;
+    button-part-6_checked: 0dp 42dp 42dp 42dp;
+    button-part-6_active: 0dp 126dp 42dp 42dp;
+    src: Button-Part-6.png;
+}
+
+@spritesheet Button-Part-7 {
+    button-part-7_default: 0dp 0dp 42dp 42dp;
+    button-part-7_checked: 0dp 42dp 42dp 42dp;
+    button-part-7_active: 0dp 126dp 42dp 42dp;
+    src: Button-Part-7.png;
+}
+
+@spritesheet Button-Part-8 {
+    button-part-8_default: 0dp 0dp 42dp 42dp;
+    button-part-8_checked: 0dp 42dp 42dp 42dp;
+    button-part-8_active: 0dp 126dp 42dp 42dp;
+    src: Button-Part-8.png;
+}
+
+@spritesheet Button-Part-9 {
+    button-part-9_default: 0dp 0dp 42dp 42dp;
+    button-part-9_checked: 0dp 42dp 42dp 42dp;
+    button-part-9_active: 0dp 126dp 42dp 42dp;
+    src: Button-Part-9.png;
+}
+
+@spritesheet Button-Part-10 {
+    button-part-10_default: 0dp 0dp 42dp 42dp;
+    button-part-10_checked: 0dp 42dp 42dp 42dp;
+    button-part-10_active: 0dp 126dp 42dp 42dp;
+    src: Button-Part-10.png;
+}
+
+@spritesheet Button-Part-11 {
+    button-part-11_default: 0dp 0dp 42dp 42dp;
+    button-part-11_checked: 0dp 42dp 42dp 42dp;
+    button-part-11_active: 0dp 126dp 42dp 42dp;
+    src: Button-Part-11.png;
+}
+
+@spritesheet Button-Part-12 {
+    button-part-12_default: 0dp 0dp 42dp 42dp;
+    button-part-12_checked: 0dp 42dp 42dp 42dp;
+    button-part-12_active: 0dp 126dp 42dp 42dp;
+    src: Button-Part-12.png;
+}
+
+@spritesheet Button-Part-13 {
+    button-part-13_default: 0dp 0dp 42dp 42dp;
+    button-part-13_checked: 0dp 42dp 42dp 42dp;
+    button-part-13_active: 0dp 126dp 42dp 42dp;
+    src: Button-Part-13.png;
+}
+
+@spritesheet Button-Part-14 {
+    button-part-14_default: 0dp 0dp 42dp 42dp;
+    button-part-14_checked: 0dp 42dp 42dp 42dp;
+    button-part-14_active: 0dp 126dp 42dp 42dp;
+    src: Button-Part-14.png;
+}
+
+@spritesheet Button-Part-15 {
+    button-part-15_default: 0dp 0dp 42dp 42dp;
+    button-part-15_checked: 0dp 42dp 42dp 42dp;
+    button-part-15_active: 0dp 126dp 42dp 42dp;
+    src: Button-Part-15.png;
+}
+
+@spritesheet Button-Part-16 {
+    button-part-16_default: 0dp 0dp 42dp 42dp;
+    button-part-16_checked: 0dp 42dp 42dp 42dp;
+    button-part-16_active: 0dp 126dp 42dp 42dp;
+    src: Button-Part-16.png;
+}
+
+@spritesheet Button-Preset-Up {
+    button-preset-up_active: 0dp 20dp 34dp 20dp;
+    button-preset-up_default: 0dp 0dp 34dp 20dp;
+    src: Button-Preset-Up.png;
+}
+
+@spritesheet Button-Preset-Down {
+    button-preset-down_active: 0dp 20dp 34dp 20dp;
+    button-preset-down_default: 0dp 0dp 34dp 20dp;
+    src: Button-Preset-Down.png;
+}
+
+@spritesheet Button-Load {
+    button-load_default: 0dp 0dp 46dp 18dp;
+    button-load_active: 0dp 18dp 46dp 18dp;
+    src: Button-Load.png;
+}
+
+@spritesheet Button-Save {
+    button-save_default: 0dp 0dp 46dp 18dp;
+    button-save_active: 0dp 18dp 46dp 18dp;
+    src: Button-Save.png;
+}
+
+@spritesheet Button-Load-Snow {
+    button-load-snow_default: 0px 0px 92px 30px;
+    button-load-snow_active: 0px 30px 92px 30px;
+    src: Button-Load-Snow.png;
+}
+
+@spritesheet Button-Save-Snow {
+    button-save-snow_default: 0px 0px 92px 30px;
+    button-save-snow_active: 0px 30px 92px 30px;
+    src: Button-Save-Snow.png;
+}
+
+/* Buttons Osc */
+
+@spritesheet Button-Sub-Osc-Square {
+    button-sub-osc-square_default: 0dp 0dp 58dp 30dp;
+    button-sub-osc-square_checked: 0dp 30dp 58dp 30dp;
+    button-sub-osc-square_active: 0dp 60dp 58dp 30dp;
+    src: Button-Sub-Osc-Square.png;
+}
+
+@spritesheet Button-Sub-Osc-Triangle {
+    button-sub-osc-triangle_default: 0dp 0dp 58dp 30dp;
+    button-sub-osc-triangle_checked: 0dp 30dp 58dp 30dp;
+    button-sub-osc-triangle_active: 0dp 60dp 58dp 30dp;
+    src: Button-Sub-Osc-Triangle.png;
+}
+
+/* Buttons Filter */
+
+@spritesheet Button-Lowpass {
+    button-lowpass_default: 0dp 0dp 62dp 30dp;
+    button-lowpass_checked: 0dp 30dp 62dp 30dp;
+    button-lowpass_active: 0dp 60dp 62dp 30dp;
+    src: Button-Lowpass.png;
+}
+
+@spritesheet Button-Highpass {
+    button-highpass_default: 0dp 0dp 62dp 30dp;
+    button-highpass_checked: 0dp 30dp 62dp 30dp;
+    button-highpass_active: 0dp 60dp 62dp 30dp;
+    src: Button-Highpass.png;
+}
+
+@spritesheet Button-Bandpass {
+    button-bandpass_default: 0dp 0dp 62dp 30dp;
+    button-bandpass_checked: 0dp 30dp 62dp 30dp;
+    button-bandpass_active: 0dp 60dp 62dp 30dp;
+    src: Button-Bandpass.png;
+}
+
+@spritesheet Button-Bandstop {
+    button-bandstop_default: 0dp 0dp 62dp 30dp;
+    button-bandstop_checked: 0dp 30dp 62dp 30dp;
+    button-bandstop_active: 0dp 60dp 62dp 30dp;
+    src: Button-Bandstop.png;
+}
+
+@spritesheet Button-Lowpass-1 {
+    button-lowpass-1_default: 0dp 0dp 62dp 30dp;
+    button-lowpass-1_checked: 0dp 30dp 62dp 30dp;
+    button-lowpass-1_active: 0dp 60dp 62dp 30dp;
+    src: Button-Lowpass-1.png;
+}
+
+@spritesheet Button-Lowpass-2 {
+    button-lowpass-2_default: 0dp 0dp 62dp 30dp;
+    button-lowpass-2_checked: 0dp 30dp 62dp 30dp;
+    button-lowpass-2_active: 0dp 60dp 62dp 30dp;
+    src: Button-Lowpass-2.png;
+}
+
+@spritesheet Button-Lowpass-3 {
+    button-lowpass-3_default: 0dp 0dp 62dp 30dp;
+    button-lowpass-3_checked: 0dp 30dp 62dp 30dp;
+    button-lowpass-3_active: 0dp 60dp 62dp 30dp;
+    src: Button-Lowpass-3.png;
+}
+
+@spritesheet Button-Lowpass-4 {
+    button-lowpass-4_default: 0dp 0dp 62dp 30dp;
+    button-lowpass-4_checked: 0dp 30dp 62dp 30dp;
+    button-lowpass-4_active: 0dp 60dp 62dp 30dp;
+    src: Button-Lowpass-4.png;
+}
+
+@spritesheet Button-Filter-Routing {
+    button-filter-routing-serial-4_default: 0dp 0dp 62dp 22dp;
+    button-filter-routing-serial-4_checked: 0dp 22dp 62dp 22dp;
+    button-filter-routing-serial-4_active: 0dp 44dp 62dp 22dp;
+
+    button-filter-routing-serial-6_default: 62dp 0dp 62dp 22dp;
+    button-filter-routing-serial-6_checked: 62dp 22dp 62dp 22dp;
+    button-filter-routing-serial-6_active: 62dp 44dp 62dp 22dp;
+
+    button-filter-routing-parallel_default: 124dp 0dp 62dp 22dp;
+    button-filter-routing-parallel_checked: 124dp 22dp 62dp 22dp;
+    button-filter-routing-parallel_active: 124dp 44dp 62dp 22dp;
+
+    button-filter-routing-split_default: 186dp 0dp 62dp 22dp;
+    button-filter-routing-split_checked: 186dp 22dp 62dp 22dp;
+    button-filter-routing-split_active: 186dp 44dp 62dp 22dp;
+    src: Button-Filter-Routing.png;
+}
+
+@spritesheet Button-Cutoff-Link {
+    button-cutoff-link_default: 0dp 0dp 126dp 30dp;
+    button-cutoff-link_checked: 0dp 30dp 126dp 30dp;
+    button-cutoff-link_active: 0dp 60dp 126dp 30dp;
+    src: Button-Cutoff-Link.png;
+}
+
+@spritesheet Button-Filter-Link {
+    button-filter-link_default: 0dp 0dp 126dp 30dp;
+    button-filter-link_checked: 0dp 30dp 126dp 30dp;
+    button-filter-link_active: 0dp 60dp 126dp 30dp;
+    src: Button-Filter-Link.png;
+}
+
+@spritesheet Button-Envelope-Polarity {
+    button-envelope-polarity_default: 0dp 0dp 38dp 38dp;
+    button-envelope-polarity_checked: 0dp 38dp 38dp 38dp;
+    button-envelope-polarity_active: 0dp 114dp 38dp 38dp;
+    button-envelope-polarity_checked-active: 0dp 76dp 38dp 38dp;
+    src: Button-Envelope-Polarity.png;
+}
+
+@spritesheet Button-Filter-Envelope {
+    button-filter-envelope_default: 0dp 0dp 30dp 56dp;
+    button-filter-envelope_checked: 0dp 56dp 30dp 56dp;
+    button-filter-envelope_active: 0dp 112dp 30dp 56dp;
+    src: Button-Filter-Envelope.png;
+}
+
+@spritesheet Button-Envelope-3 {
+    button-envelope-3_default: 0dp 0dp 30dp 56dp;
+    button-envelope-3_checked: 0dp 56dp 30dp 56dp;
+    button-envelope-3_active: 0dp 112dp 30dp 56dp;
+    src: Button-Envelope-3.png;
+}
+
+@spritesheet Button-Envelope-4 {
+    button-envelope-4_default: 0dp 0dp 30dp 56dp;
+    button-envelope-4_checked: 0dp 56dp 30dp 56dp;
+    button-envelope-4_active: 0dp 112dp 30dp 56dp;
+    src: Button-Envelope-4.png;
+}
+
+/* Buttons LFO */
+
+@spritesheet Button-LFO-Clock {
+    button-lfo-clock_default: 0dp 0dp 66dp 60dp;
+    button-lfo-clock_checked: 0dp 60dp 66dp 60dp;
+    button-lfo-clock_active: 0dp 120dp 66dp 60dp;
+    button-lfo-clock_checked-active: 0dp 180dp 66dp 60dp;
+    src: Button-LFO-Clock.png;
+}
+
+@spritesheet Button-LFO {
+    button-lfo-sine_default: 0dp 0dp 62dp 22dp;
+    button-lfo-sine_checked: 0dp 22dp 62dp 22dp;
+    button-lfo-sine_active: 0dp 44dp 62dp 22dp;
+    button-lfo-saw_default: 62dp 0dp 62dp 22dp;
+    button-lfo-saw_checked: 62dp 22dp 62dp 22dp;
+    button-lfo-saw_active: 62dp 44dp 62dp 22dp;
+    button-lfo-sh_default: 124dp 0dp 62dp 22dp;
+    button-lfo-sh_checked: 124dp 22dp 62dp 22dp;
+    button-lfo-sh_active: 124dp 44dp 62dp 22dp;
+    button-lfo-triangle_default: 0dp 66dp 62dp 22dp;
+    button-lfo-triangle_checked: 0dp 88dp 62dp 22dp;
+    button-lfo-triangle_active: 0dp 110dp 62dp 22dp;
+    button-lfo-square_default: 62dp 66dp 62dp 22dp;
+    button-lfo-square_checked: 62dp 88dp 62dp 22dp;
+    button-lfo-square_active: 62dp 110dp 62dp 22dp;
+    button-lfo-sg_default: 124dp 66dp 62dp 22dp;
+    button-lfo-sg_checked: 124dp 88dp 62dp 22dp;
+    button-lfo-sg_active: 124dp 110dp 62dp 22dp;
+    src: Button-LFO.png;
+}
+
+/* Buttons FX-1 */
+
+@spritesheet Button-Chorus-LFO {
+    button-chorus-lfo-sine_default: 0dp 0dp 30dp 22dp;
+    button-chorus-lfo-sine_checked: 0dp 22dp 30dp 22dp;
+    button-chorus-lfo-sine_active: 0dp 44dp 30dp 22dp;
+    button-chorus-lfo-triangle_default: 30dp 0dp 30dp 22dp;
+    button-chorus-lfo-triangle_checked: 30dp 22dp 30dp 22dp;
+    button-chorus-lfo-triangle_active: 30dp 44dp 30dp 22dp;
+    button-chorus-lfo-saw_default: 60dp 0dp 30dp 22dp;
+    button-chorus-lfo-saw_checked: 60dp 22dp 30dp 22dp;
+    button-chorus-lfo-saw_active: 60dp 44dp 30dp 22dp;
+    button-chorus-lfo-square_default: 90dp 0dp 30dp 22dp;
+    button-chorus-lfo-square_checked: 90dp 22dp 30dp 22dp;
+    button-chorus-lfo-square_active: 90dp 44dp 30dp 22dp;
+    button-chorus-lfo-sh_default: 120dp 0dp 30dp 22dp;
+    button-chorus-lfo-sh_checked: 120dp 22dp 30dp 22dp;
+    button-chorus-lfo-sh_active: 120dp 44dp 30dp 22dp;
+    button-chorus-lfo-sg_default: 150dp 0dp 30dp 22dp;
+    button-chorus-lfo-sg_checked: 150dp 22dp 30dp 22dp;
+    button-chorus-lfo-sg_active: 150dp 44dp 30dp 22dp;
+    src: Button-Chorus-LFO.png;
+}
+
+@spritesheet Button-Phaser-Stage {
+    button-phaser-stage-1_default: 0dp 0dp 42dp 22dp;
+    button-phaser-stage-1_checked: 0dp 22dp 42dp 22dp;
+    button-phaser-stage-1_active: 0dp 44dp 42dp 22dp;
+    button-phaser-stage-2_default: 42dp 0dp 42dp 22dp;
+    button-phaser-stage-2_checked: 42dp 22dp 42dp 22dp;
+    button-phaser-stage-2_active: 42dp 44dp 42dp 22dp;
+    button-phaser-stage-3_default: 84dp 0dp 42dp 22dp;
+    button-phaser-stage-3_checked: 84dp 22dp 42dp 22dp;
+    button-phaser-stage-3_active: 84dp 44dp 42dp 22dp;
+    button-phaser-stage-4_default: 0dp 66dp 42dp 22dp;
+    button-phaser-stage-4_checked: 0dp 88dp 42dp 22dp;
+    button-phaser-stage-4_active: 0dp 110dp 42dp 22dp;
+    button-phaser-stage-5_default: 42dp 66dp 42dp 22dp;
+    button-phaser-stage-5_checked: 42dp 88dp 42dp 22dp;
+    button-phaser-stage-5_active: 42dp 110dp 42dp 22dp;
+    button-phaser-stage-6_default: 84dp 66dp 42dp 22dp;
+    button-phaser-stage-6_checked: 84dp 88dp 42dp 22dp;
+    button-phaser-stage-6_active: 84dp 110dp 42dp 22dp;
+    src: Button-Phaser-Stage.png;
+}
+
+/* Buttons Arpeggiator */
+
+@spritesheet Button-Arp-Hold {
+    button-arp-hold_default: 0dp 0dp 62dp 38dp;
+    button-arp-hold_checked: 0dp 38dp 62dp 38dp;
+    button-arp-hold_checked-active: 0dp 76dp 62dp 38dp;
+    button-arp-hold_active: 0dp 114dp 62dp 38dp;
+    src: Button-Arp-Hold.png;
+}
+
+@spritesheet Button-Arp-Left {
+    button-arp-left_default: 0px 0px 62px 30px;
+    button-arp-left_active: 0px 30px 62px 30px;
+    src: Button-Arp-Left.png;
+}
+
+@spritesheet Button-Arp-Right {
+    button-arp-right_default: 0px 0px 62px 30px;
+    button-arp-right_active: 0px 30px 62px 30px;
+    src: Button-Arp-Right.png;
+}
+
+@spritesheet Button-Arp-Fill {
+    button-arp-fill_default: 0px 0px 102px 30px;
+    button-arp-fill_active: 0px 30px 102px 30px;
+    src: Button-Arp-Fill.png;
+}
+
+@spritesheet Button-Arp-Reset {
+    button-arp-reset_default: 0px 0px 102px 30px;
+    button-arp-reset_active: 0px 30px 102px 30px;
+    src: Button-Arp-Reset.png;
+}
+
+@spritesheet Button-Arp-Step {
+    button-arp-step_default: 0px 0px 102px 30px;
+    button-arp-step_active: 0px 30px 102px 30px;
+    src: Button-Arp-Step.png;
+}
+
+@spritesheet Button-Arp-Velocity {
+    button-arp-velocity_default: 0px 0px 102px 30px;
+    button-arp-velocity_active: 0px 30px 102px 30px;
+    src: Button-Arp-Velocity.png;
+}
+
+@spritesheet Button-Arp-Length {
+    button-arp-length_default: 0px 0px 102px 30px;
+    button-arp-length_active: 0px 30px 102px 30px;
+    src: Button-Arp-Length.png;
+}
+
+@spritesheet Button-Arp-Step-All {
+    button-arp-step-1_default: 0px 0px 34px 28px;
+    button-arp-step-1_checked: 0px 28px 34px 28px;
+    button-arp-step-1_active: 0px 56px 34px 28px;
+    button-arp-step-2_default: 34px 0px 34px 28px;
+    button-arp-step-2_checked: 34px 28px 34px 28px;
+    button-arp-step-2_active: 34px 56px 34px 28px;
+    button-arp-step-3_default: 68px 0px 34px 28px;
+    button-arp-step-3_checked: 68px 28px 34px 28px;
+    button-arp-step-3_active: 68px 56px 34px 28px;
+    button-arp-step-4_default: 102px 0px 34px 28px;
+    button-arp-step-4_checked: 102px 28px 34px 28px;
+    button-arp-step-4_active: 102px 56px 34px 28px;
+    button-arp-step-5_default: 136px 0px 34px 28px;
+    button-arp-step-5_checked: 136px 28px 34px 28px;
+    button-arp-step-5_active: 136px 56px 34px 28px;
+    button-arp-step-6_default: 170px 0px 34px 28px;
+    button-arp-step-6_checked: 170px 28px 34px 28px;
+    button-arp-step-6_active: 170px 56px 34px 28px;
+    button-arp-step-7_default: 204px 0px 34px 28px;
+    button-arp-step-7_checked: 204px 28px 34px 28px;
+    button-arp-step-7_active: 204px 56px 34px 28px;
+    button-arp-step-8_default: 238px 0px 34px 28px;
+    button-arp-step-8_checked: 238px 28px 34px 28px;
+    button-arp-step-8_active: 238px 56px 34px 28px;
+    button-arp-step-9_default: 272px 0px 34px 28px;
+    button-arp-step-9_checked: 272px 28px 34px 28px;
+    button-arp-step-9_active: 272px 56px 34px 28px;
+    button-arp-step-10_default: 306px 0px 34px 28px;
+    button-arp-step-10_checked: 306px 28px 34px 28px;
+    button-arp-step-10_active: 306px 56px 34px 28px;
+    button-arp-step-11_default: 340px 0px 34px 28px;
+    button-arp-step-11_checked: 340px 28px 34px 28px;
+    button-arp-step-11_active: 340px 56px 34px 28px;
+    button-arp-step-12_default: 374px 0px 34px 28px;
+    button-arp-step-12_checked: 374px 28px 34px 28px;
+    button-arp-step-12_active: 374px 56px 34px 28px;
+    button-arp-step-13_default: 408px 0px 34px 28px;
+    button-arp-step-13_checked: 408px 28px 34px 28px;
+    button-arp-step-13_active: 408px 56px 34px 28px;
+    button-arp-step-14_default: 442px 0px 34px 28px;
+    button-arp-step-14_checked: 442px 28px 34px 28px;
+    button-arp-step-14_active: 442px 56px 34px 28px;
+    button-arp-step-15_default: 476px 0px 34px 28px;
+    button-arp-step-15_checked: 476px 28px 34px 28px;
+    button-arp-step-15_active: 476px 56px 34px 28px;
+    button-arp-step-16_default: 510px 0px 34px 28px;
+    button-arp-step-16_checked: 510px 28px 34px 28px;
+    button-arp-step-16_active: 510px 56px 34px 28px;
+    button-arp-step-17_default: 544px 0px 34px 28px;
+    button-arp-step-17_checked: 544px 28px 34px 28px;
+    button-arp-step-17_active: 544px 56px 34px 28px;
+    button-arp-step-18_default: 578px 0px 34px 28px;
+    button-arp-step-18_checked: 578px 28px 34px 28px;
+    button-arp-step-18_active: 578px 56px 34px 28px;
+    button-arp-step-19_default: 612px 0px 34px 28px;
+    button-arp-step-19_checked: 612px 28px 34px 28px;
+    button-arp-step-19_active: 612px 56px 34px 28px;
+    button-arp-step-20_default: 646px 0px 34px 28px;
+    button-arp-step-20_checked: 646px 28px 34px 28px;
+    button-arp-step-20_active: 646px 56px 34px 28px;
+    button-arp-step-21_default: 680px 0px 34px 28px;
+    button-arp-step-21_checked: 680px 28px 34px 28px;
+    button-arp-step-21_active: 680px 56px 34px 28px;
+    button-arp-step-22_default: 714px 0px 34px 28px;
+    button-arp-step-22_checked: 714px 28px 34px 28px;
+    button-arp-step-22_active: 714px 56px 34px 28px;
+    button-arp-step-23_default: 748px 0px 34px 28px;
+    button-arp-step-23_checked: 748px 28px 34px 28px;
+    button-arp-step-23_active: 748px 56px 34px 28px;
+    button-arp-step-24_default: 782px 0px 34px 28px;
+    button-arp-step-24_checked: 782px 28px 34px 28px;
+    button-arp-step-24_active: 782px 56px 34px 28px;
+    button-arp-step-25_default: 816px 0px 34px 28px;
+    button-arp-step-25_checked: 816px 28px 34px 28px;
+    button-arp-step-25_active: 816px 56px 34px 28px;
+    button-arp-step-26_default: 850px 0px 34px 28px;
+    button-arp-step-26_checked: 850px 28px 34px 28px;
+    button-arp-step-26_active: 850px 56px 34px 28px;
+    button-arp-step-27_default: 884px 0px 34px 28px;
+    button-arp-step-27_checked: 884px 28px 34px 28px;
+    button-arp-step-27_active: 884px 56px 34px 28px;
+    button-arp-step-28_default: 918px 0px 34px 28px;
+    button-arp-step-28_checked: 918px 28px 34px 28px;
+    button-arp-step-28_active: 918px 56px 34px 28px;
+    button-arp-step-29_default: 952px 0px 34px 28px;
+    button-arp-step-29_checked: 952px 28px 34px 28px;
+    button-arp-step-29_active: 952px 56px 34px 28px;
+    button-arp-step-30_default: 986px 0px 34px 28px;
+    button-arp-step-30_checked: 986px 28px 34px 28px;
+    button-arp-step-30_active: 986px 56px 34px 28px;
+    button-arp-step-31_default: 1020px 0px 34px 28px;
+    button-arp-step-31_checked: 1020px 28px 34px 28px;
+    button-arp-step-31_active: 1020px 56px 34px 28px;
+    button-arp-step-32_default: 1054px 0px 34px 28px;
+    button-arp-step-32_checked: 1054px 28px 34px 28px;
+    button-arp-step-32_active: 1054px 56px 34px 28px;
+    src: Button-Arp-Step-All.png;
+}
+
+/* Other Buttons */
+
+@spritesheet Button-Mode {
+    button-mode_default: 0dp 0dp 90dp 56dp;
+    button-mode_checked: 0dp 56dp 90dp 56dp;
+    button-mode_active: 0dp 112dp 90dp 56dp;
+    button-mode_checked-active: 0dp 168dp 90dp 56dp;
+    src: Button-Mode.png;
+}
+
+@spritesheet Button-Help {
+    button-help_default: 0px 0px 56px 58px;
+    button-help_checked: 0px 58px 56px 58px;
+    button-help_checked-active: 0px 116px 56px 58px;
+    button-help_active: 0px 174px 56px 58px;
+    src: Button-Help.png;
+}
+
+@spritesheet Button-Led {
+    button-led_default: 0dp 0dp 42dp 42dp;
+    button-led_checked: 0dp 42dp 42dp 42dp;
+    button-led_active: 0dp 126dp 42dp 42dp;
+    button-led_checked-active: 0dp 84dp 42dp 42dp;
+    src: Button-Led.png;
+}
+
+@spritesheet Button-Advanced-Options {
+    button-advanced-options_default: 0dp 32dp 48dp 32dp;
+    button-advanced-options_checked: 0dp 0dp 48dp 32dp;
+    src: Button-Advanced-Options.png;
+}
+
+@spritesheet Menu-Settings-Icons {
+    menu-settings-icons_skin: 0dp 0dp 36dp 36dp;
+    menu-settings-icons_gui: 0dp 36dp 36dp 30dp;
+    menu-settings-icons_midi: 0dp 66dp 36dp 36dp;
+    menu-settings-icons_midi-learn: 0dp 102dp 36dp 28dp;
+    menu-settings-icons_dsp-audio: 0dp 130dp 36dp 40dp;
+    menu-settings-icons_dsp-bridge: 0dp 170dp 36dp 20dp;
+    src: Menu-Settings-Icons.png;
+}
+
+@spritesheet Filter-Combobox-Fake {
+    filter-combobox-fake_000: 0px 0px 82px 14px;
+    filter-combobox-fake_001: 0px 14px 82px 14px;
+    filter-combobox-fake_002: 0px 28px 82px 14px;
+    filter-combobox-fake_003: 0px 42px 82px 14px;
+    filter-combobox-fake_004: 0px 56px 82px 14px;
+    filter-combobox-fake_005: 0px 70px 82px 14px;
+    filter-combobox-fake_006: 0px 84px 82px 14px;
+    filter-combobox-fake_007: 0px 98px 82px 14px;
+    src: Filter-Combobox-Fake.png;
+}

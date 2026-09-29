@@ -1,0 +1,37 @@
+/*Patchmanager Font TeX Gyre Heros MS*/
+
+.pm-info-headline,
+.pm-info-text,
+.pm-infotext,
+.pm-info-empty,
+.pm-infopanel,
+.input-placeholder,
+.pm-count,
+.pm-name,
+input.text {
+    font-family: TeX Gyre Heros MS;
+    font-size: 21dp;
+    font-weight: bold;
+    line-height: 21dp;
+}
+
+.pm-info-name {
+    font-family: TeX Gyre Heros MS;
+    font-size: 42dp;
+    font-weight: normal;
+    line-height: 42dp;
+}
+
+.pm-status {
+    font-family: TeX Gyre Heros MS;
+    font-size: 21dp;
+    font-weight: bold;
+    line-height: 32dp;
+}
+
+.listentry,
+.gridentry,
+treenode {
+    height: 21dp;
+    line-height: 21dp;
+}

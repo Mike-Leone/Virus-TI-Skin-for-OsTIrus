@@ -1,0 +1,335 @@
+/* == PATCH-MANAGER == */
+
+.pm-layout-list,
+.pm-vlayout {
+    min-width: 0dp;
+    overflow: hidden;
+    white-space: nowrap;
+    clip: always;
+}
+
+.pm-search {
+    margin-right: 2dp;
+    margin-left: 2dp;
+}
+
+/* Text Colour */
+
+.pm-name {
+    /*color: #888;*/
+    color: #d9d9d9;
+    /*color: #ededed;*/
+}
+
+/* Information about the number of presets */
+
+.pm-count {
+    font-family: Mini 7 Condensed;
+    font-size: 14dp;
+    font-style: normal;
+    /*color: #373737;*/
+    /*color: #5c5c5c;*/
+    color: #888;
+}
+
+.pm-add {
+    font-size: 14dp;
+    padding-left: 0;
+    margin-left: 8dp;
+    margin-top: 2dp;
+    decorator: image(pm-add.png scale-none);
+    transition: all 0.1s sine-in-out;
+}
+
+.pm-add:hover {
+    image-color: #31a8ff;
+    transform-origin: center;
+    transform: scale(1) rotate(90deg);
+    transition: all 0.1s sine-in-out;
+}
+
+#color {
+    font-size: 14dp;
+    margin-left: -28dp;
+    margin-top: 2dp;
+}
+
+/* Column A-B */
+
+/* tree controls */
+
+tree {
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: block;
+    margin: 2dp 0;
+    padding: 2dp 4dp 2dp 2dp;
+    position: relative;
+    box-sizing: border-box;
+    indent-margin-left: 12dp; /* offset for secondary treenode in columns A and B */
+}
+
+treenode {
+    height: 20dp;
+    line-height: 20dp;
+    drag: clone;
+    display: block;
+    padding: 0dp 0dp 0dp 22dp;
+    font-size: 16dp;
+    vertical-align: center;
+    border: 2px #0000; /* required for drag and drop markers, otherwise entries will start moving as soon as the border is added */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+treenode:drag {
+    min-width: 150dp;
+}
+
+treenode:opened {
+    decorator: image(PM-Arrow-Down.png scale-none left);
+}
+
+treenode:closed {
+    decorator: image(PM-Arrow-Right.png scale-none left);
+}
+
+treenode:selected {
+    background-color: #666;
+    /*border-radius: 3dp;*/
+}
+
+#pm-tree-datasources {
+    padding-left: 8dp;
+}
+
+#pm-search-tree-ds {
+    margin-left: 8dp;
+}
+
+/* Column C: patch list */
+
+/* Column */
+
+.list {
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: block;
+    margin: 2dp 0;
+    padding: 2dp 4dp 2dp 2dp;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.listentry {
+    display: block;
+    width: auto;
+    drag: clone;
+    font-size: 16dp;
+    height: 20dp;
+    line-height: 20dp;
+    padding: 0 0 0 34dp;
+    overflow: hidden;
+    /*border-radius: 4dp;*/
+}
+
+.grid {
+    margin: 2dp 0;
+    padding: 2dp;
+}
+
+.gridentry {
+    display: flex;
+    drag: clone;
+    font-size: 16dp;
+    width: 154dp;
+    height: 18dp;
+    line-height: 20dp;
+    padding: 0 0 0 34dp;
+    /*border-radius: 4dp;*/
+}
+
+.listentry:selected,
+.gridentry:selected {
+    background-color: #666;
+}
+
+.listentry:drag,
+.gridentry:drag {
+    max-width: 250dp;
+}
+
+/* Search */
+
+#pm-search-list {
+    margin-right: 4dp;
+}
+
+input.text {
+    height: 16dp;
+    padding: 0;
+    border: 0;
+    color: #ededed;
+    background: #222222;
+}
+
+.list input.text {
+    padding-left: 34dp;
+}
+
+.pm-search.text {
+    height: 16dp;
+    padding: 18dp 8dp 18dp 46dp;
+    border: 0;
+    background-color: #ffffff00;
+    decorator: tiled-horizontal(magnifier-l, magnifier-m, magnifier-r);
+}
+
+@spritesheet magnifier-l {
+    src: Magnifier.png;
+    magnifier-l: 0dp 0dp 46dp 52dp;
+}
+
+@spritesheet magnifier-m {
+    src: Magnifier-2.png;
+    magnifier-m: 0dp 0dp 0dp 52dp;
+}
+
+@spritesheet magnifier-r {
+    src: Magnifier-3.png;
+    magnifier-r: 0dp 0dp 8dp 52dp;
+}
+
+/* Text in the search field */
+
+.input-placeholder {
+    font-style: normal;
+    /*color: #ffffff;*/
+    color: #ededed;
+}
+
+/* Column C: info on the right */
+
+.pm-status {
+    margin-left: 4dp;
+    margin-right: 8dp;
+    margin-top: 16dp;
+    margin-bottom: 10dp;
+    padding: 0dp 8dp 0 8dp;
+    border: 0;
+    height: 30dp;
+    line-height: 32dp;
+    overflow: hidden;
+    /*    decorator: linear-gradient(180deg, #8e9198 53.39%, #787b81 53.4%);
+    border-radius: 3px;*/
+    decorator: tiled-horizontal(pm-status-l, pm-status-m, pm-status-r);
+}
+
+@spritesheet pm-status-l {
+    src: pm-status-l.png;
+    pm-status-l: 0dp 0dp 8dp 30dp;
+}
+
+@spritesheet pm-status-m {
+    src: pm-status-m.png;
+    pm-status-m: 0dp 0dp 0dp 30dp;
+}
+
+@spritesheet pm-status-r {
+    src: pm-status-r.png;
+    pm-status-r: 0dp 0dp 8dp 30dp;
+}
+
+.pm-infopanel {
+    margin: 2dp 0;
+    padding: 2dp 16dp 2dp 2dp;
+    white-space: normal;
+}
+
+.pm-info-empty {
+    /*color: #888;*/
+    color: #d9d9d9;
+    /*color: #ededed;*/
+}
+
+.pm-infotext {
+    display: block;
+    font-size: 16dp;
+    height: auto;
+    line-height: 24dp;
+    padding: 0 0 0 10dp;
+    /*color: #888;*/
+    color: #d9d9d9;
+    /*color: #ededed;*/
+    /*clip: always;*/
+}
+
+.pm-info-headline {
+    /*color: #373737;*/
+    /*color: #5c5c5c;*/
+    color: #888;
+}
+
+.pm-info-text {
+    margin-bottom: 24dp;
+}
+
+.pm-info-name {
+    display: block;
+    font-size: 32dp;
+    height: 106dp;
+    line-height: 36dp;
+    padding: 2dp 0 0dp 10dp;
+    margin-bottom: 12dp;
+    color: #698081;
+    clip: always;
+}
+
+/* Splitters are draggable vertical elements to adjust the width of two siblings */
+
+splitter {
+    width: 10dp;
+    height: 100%;
+    background-color: #00000000;
+    decorator: image(Splitter-Hover.png);
+}
+
+splitter:hover {
+    background-color: #55555500;
+    decorator: image(Splitter-Active.png);
+}
+
+splitter:active {
+    background-color: #99999900;
+    decorator: image(Splitter-Active.png);
+}
+
+/* Everything that is a drag target */
+
+:dragtarget {
+    border: 2dp transparent;
+}
+
+:dragovertop {
+    border-top: 2dp #00caff;
+}
+
+:dragovercenter {
+    border: 2dp #00caff;
+}
+
+:dragoverbottom {
+    border-bottom: 2dp #00caff;
+}
+
+:dragovertop:shift {
+    border-top: 2dp #d3ff4a;
+}
+
+:dragovercenter:shift {
+    border: 2dp #d3ff4a;
+}
+
+:dragoverbottom:shift {
+    border-bottom: 2dp #d3ff4a;
+}

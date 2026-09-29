@@ -1,0 +1,164 @@
+/* == GLOBAL == */
+
+* {
+    font-family: VirusTiBrowser;
+    font-size: 16dp;
+    text-align: left;
+    /*color: #ffffff;*/
+    color: #ededed;
+}
+
+body {
+    left: 0dp;
+    top: 0dp;
+    width: 1814dp;
+    height: 1026dp;
+    position: relative;
+}
+
+combo,
+page,
+section,
+img,
+knob,
+button,
+text,
+canvas,
+url {
+    position: absolute;
+    box-sizing: border-box;
+}
+
+/* == ELEMENTS == */
+
+combo {
+    display: flex;
+    items-per-column: 24;
+    align-items: center;
+    padding-left: 8dp;
+    padding-right: 40dp;
+    border: 0;
+    background-color: transparent;
+    decorator: none;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+combotext {
+    width: auto;
+    height: auto;
+    padding-top: 2dp;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.label-main {
+    height: 18dp;
+    padding-top: 0dp;
+    padding-left: 0dp;
+    position: absolute;
+    box-sizing: border-box;
+    color: #50d7f2;
+    overflow: hidden;
+}
+
+.combo-main {
+    padding-left: 0dp;
+    padding-right: 0dp;
+}
+
+.combo-main > combotext {
+    height: 18dp;
+    padding-top: 0dp;
+    padding-left: 0dp;
+    border: 0;
+}
+
+.combo-blue {
+    padding-right: 26dp;
+}
+
+.combo-blue > combotext {
+    color: #001941;
+}
+
+.combo-blue-lfo {
+    padding-left: 6dp;
+    padding-right: 8dp;
+}
+
+.combo-blue-lfo > combotext {
+    margin-top: 2dp;
+    color: #001941;
+}
+
+.combo-osc-wave {
+    justify-content: center;
+    padding-left: 10dp;
+    padding-right: 8dp;
+}
+
+.combo-osc-wave > combotext {
+    margin-top: 2dp;
+    color: #001941;
+}
+
+label {
+    padding-top: 2dp;
+    padding-left: 2dp;
+    color: #001941;
+    overflow: hidden;
+}
+
+knob>label {
+    pointer-events: none;
+}
+
+/* prettier-ignore */
+
+knob {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	drag: drag;
+	speed: 150;	/* what mouse delta is needed to do a full sweep from 0% to 100% */
+	speedScaleShift: 0.1;
+	speedScaleCtrl: 0.2;
+	speedScaleAlt: 0.5;
+}
+
+url,
+text {
+    color: #001941;
+    transition: color 0.15s cubic-in-out;
+}
+
+url:hover {
+    color: #8e16ff;
+}
+
+/* == DATA-CLASS == */
+
+.disabled {
+    display: none;
+}
+
+.disabled-opacity-40% {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.disabled-opacity-50% {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.disabled-opacity-70% {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.disabled-opacity-80% {
+    opacity: 0.8;
+    pointer-events: none;
+}

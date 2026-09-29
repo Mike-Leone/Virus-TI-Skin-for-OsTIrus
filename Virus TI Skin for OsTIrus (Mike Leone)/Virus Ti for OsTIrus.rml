@@ -1,0 +1,1434 @@
+<rml>
+    <head>
+        <!--        Templates and Rcss TUS-->
+        <link type="text/template" href="tus_colorpicker.rml" />
+        <link type="text/template" href="tus_patchmanager.rml" />
+        <link type="text/rcss" href="tus_default.rcss" />
+        <!--        <link type="text/rcss" href="tus_colorpicker.rcss" />-->
+        <!--        <link type="text/rcss" href="tus_patchmanager.rcss" />-->
+        <!--        <link type="text/rcss" href="tus_juceskin.rcss" />-->
+        <!--        <link type="text/rcss" href="PatchManager.rcss" />-->
+        <!--        <link type="text/rcss" href="Colorpicker.rcss" />-->
+        <!--        Rcss-->
+        <link type="text/rcss" href="Global.rcss" />
+        <link type="text/rcss" href="Menu.rcss" />
+        <link type="text/rcss" href="Class.rcss" />
+        <link type="text/rcss" href="Spritesheet.rcss" />
+        <link type="text/rcss" href="Patch-Manager.rcss" />
+        <!--        <link type="text/rcss" href="Patchmanager Font TeXGyre Heros.rcss" />-->
+        <!--        Lua Scripts-->
+        <script src="Custom-Display.lua"></script>
+        <script src="Part-Manager.lua"></script>
+        <script src="Oscillator.lua"></script>
+        <script src="Filter-Cutoff.lua"></script>
+        <script src="ADSR.lua"></script>
+        <script src="LFO.lua"></script>
+        <script src="Arpeggiator.lua"></script>
+        <!--        Lookup Table for Lua-->
+        <script src="Wavetables-Data.lua"></script>
+        <script src="Arpeggiator-Presets.lua"></script>
+    </head>
+    <body rootScale="0.5" data-model="partCurrent" onload="Custom_Display(); Part_Manager(); Oscillator(); Filter_Cutoff(); ADSR(); LFO(); Arpeggiator();">
+    <page id="Main">
+        <img src="Page-Main.png" />
+        <section id="Button-Page">
+            <button id="Button-Page-Easy" class="Button-Page-Easy" tabgroup="pages" tabbutton="0" isToggle="1" style="left: 428dp; top: 30dp" />
+            <button id="Button-Page-Browser" class="Button-Page-Browser" tabgroup="pages" tabbutton="1" isToggle="1" style="left: 554dp; top: 30dp" />
+            <button id="Button-Page-Osc" class="Button-Page-Osc" tabgroup="pages" tabbutton="2" isToggle="1" style="left: 680dp; top: 30dp" />
+            <button id="Button-Page-Filter" class="Button-Page-Filter" tabgroup="pages" tabbutton="3" isToggle="1" style="left: 806dp; top: 30dp" />
+            <button id="Button-Page-Lfo" class="Button-Page-Lfo" tabgroup="pages" tabbutton="4" isToggle="1" style="left: 932dp; top: 30dp" />
+            <button id="Button-Page-Matrix" class="Button-Page-Matrix" tabgroup="pages" tabbutton="5" isToggle="1" style="left: 1058dp; top: 30dp" />
+            <button id="Button-Page-Arp" class="Button-Page-Arp" tabgroup="pages" tabbutton="6" isToggle="1" style="left: 1184dp; top: 30dp" />
+            <button id="Button-Page-FX-1" class="Button-Page-FX-1" tabgroup="pages" tabbutton="7" isToggle="1" style="left: 1310dp; top: 30dp" />
+            <button id="Button-Page-FX-2" class="Button-Page-FX-2" tabgroup="pages" tabbutton="8" isToggle="1" style="left: 1436dp; top: 30dp" />
+            <button id="Button-Page-Common" class="Button-Page-Common" tabgroup="pages" tabbutton="9" isToggle="1" style="left: 1562dp; top: 30dp" />
+            <button id="Button-Page-Info" class="Button-Page-Info" tabgroup="pages" tabbutton="10" isToggle="1" style="left: 1688dp; top: 30dp; width: 70dp; height: 38dp" />
+        </section>
+        <section id="LCD">
+            <button id="PlayModeToggle" class="Button-Mode" isToggle="1" style="left: 20dp; top: 946dp" />
+            <label id="PatchName" class="label-main" style="left: 854dp; top: 976dp; width: 238dp; height: 18dp"></label>
+            <label id="FocusedParameterValue" class="label-main" style="left: 434dp; top: 976dp; width: 334dp; height: 18dp"></label>
+            <label id="FocusedParameterName" class="label-main" style="left: 434dp; top: 954dp; width: 658dp; height: 18dp; color: #ededed"></label>
+            <label id="Custom-Focused-Value" class="label-main" style="z-index: 10; left: 434dp; top: 976dp; width: 334dp; height: 18dp"></label>
+            <label id="Custom-Focused-Name" class="label-main" style="z-index: 10; left: 434dp; top: 954dp; width: 658dp; height: 18dp; color: #ededed"></label>
+            <label id="VersionNumber" class="label-main" style="left: 1298dp; top: 954dp; width: 334dp; height: 18dp; color: #50d7f2"></label>
+            <combo id="RomSelector" class="combo-main" style="left: 1238dp; top: 976dp; width: 394dp; height: 18dp">
+                <combotext style="color: #50d7f2"></combotext>
+            </combo>
+            <button id="Button-Help" class="Button-Help" url="https://theusualsuspects.io/" isToggle="1" style="left: 1712dp; top: 946dp" />
+        </section>
+        <section id="Part-Manager" data-model="partCurrent" style="left: 12dp; top: 96dp; width: 362dp; height: 834dp">
+            <section id="Background">
+                <section id="Single-Mode" data-class-disabled="Play_Mode_value > 0">
+                    <img id="Virus-TI" data-model="plugin" src="Play-Mode-Single-Virus-TI.png" data-class-disabled="deviceModel == 'Snow'" />
+                    <img id="Virus-Snow" data-model="plugin" src="Play-Mode-Single-Virus-Snow.png" data-class-disabled="deviceModel == 'TI2'" />
+                </section>
+                <section id="Multi-Mode" data-class-disabled="Play_Mode_value == 0">
+                    <img id="Virus-TI" data-model="plugin" src="Play-Mode-Multi-Virus-TI.png" data-class-disabled="deviceModel == 'Snow'" />
+                    <img id="Virus-Snow" data-model="plugin" src="Play-Mode-Multi-Virus-Snow.png" data-class-disabled="deviceModel == 'TI2'" />
+                </section>
+            </section>
+            <section id="Single-Mode">
+                <section id="Part-0" class="Part-0" data-model="plugin" data-class-Snow="deviceModel == 'Snow'">
+                    <section data-model="part0">
+                        <button id="PresetLoad" />
+                        <button id="PresetSave" />
+                        <button id="Preset-Load-0" class="Button-Load" />
+                        <button id="Preset-Save-0" class="Button-Save" />
+                        <knob id="PartVolume" />
+                        <input id="Part-Volume-0" class="Slider-Mini" param="Patch Volume" type="range" data-class-disabled="Play_Mode_value > 0" />
+                        <input id="Part-Volume-0" class="Slider-Mini" param="Part Volume" type="range" data-class-disabled="Play_Mode_value == 0" />
+                        <knob id="PartPan" class="Knob-Mini" />
+                        <input id="Part-Pan-Snow-0" class="Slider-Mini-Snow" param="Panorama" type="range" />
+                        <button id="SelectPart" class="Button-Part-1" />
+                        <button id="PresetPrev" class="Button-Preset-Up" />
+                        <button id="PresetNext" class="Button-Preset-Down" />
+                        <combo id="Preset-Name-0" class="Preset-Name">
+                            <combotext id="PresetName"></combotext>
+                        </combo>
+                    </section>
+                </section>
+            </section>
+            <section id="Multi-Mode" data-class-disabled="Play_Mode_value == 0">
+                <section id="Snow">
+                    <section id="Part-1" class="Part-1" data-model="plugin" data-class-Snow="deviceModel == 'Snow'">
+                        <section data-model="part1">
+                            <button id="Preset-Load-1" class="Button-Load" />
+                            <button id="Preset-Save-1" class="Button-Save" />
+                            <knob id="PartVolume" />
+                            <input id="Part-Volume-1" class="Slider-Mini" param="Part Volume" type="range" />
+                            <knob id="PartPan" class="Knob-Mini" />
+                            <input id="Part-Pan-Snow-1" class="Slider-Mini-Snow" param="Panorama" type="range" />
+                            <button id="SelectPart" class="Button-Part-2" />
+                            <button id="PresetPrev" class="Button-Preset-Up" />
+                            <button id="PresetNext" class="Button-Preset-Down" />
+                            <combo id="Preset-Name-1" class="Preset-Name">
+                                <combotext id="PresetName"></combotext>
+                            </combo>
+                        </section>
+                    </section>
+                    <section id="Part-2" class="Part-2" data-model="plugin" data-class-Snow="deviceModel == 'Snow'">
+                        <section data-model="part2">
+                            <button id="Preset-Load-2" class="Button-Load" />
+                            <button id="Preset-Save-2" class="Button-Save" />
+                            <knob id="PartVolume" />
+                            <input id="Part-Volume-2" class="Slider-Mini" param="Part Volume" type="range" />
+                            <knob id="PartPan" class="Knob-Mini" />
+                            <input id="Part-Pan-Snow-2" class="Slider-Mini-Snow" param="Panorama" type="range" />
+                            <button id="SelectPart" class="Button-Part-3" />
+                            <button id="PresetPrev" class="Button-Preset-Up" />
+                            <button id="PresetNext" class="Button-Preset-Down" />
+                            <combo id="Preset-Name-2" class="Preset-Name">
+                                <combotext id="PresetName"></combotext>
+                            </combo>
+                        </section>
+                    </section>
+                    <section id="Part-3" class="Part-3" data-model="plugin" data-class-Snow="deviceModel == 'Snow'">
+                        <section data-model="part3">
+                            <button id="Preset-Load-3" class="Button-Load" />
+                            <button id="Preset-Save-3" class="Button-Save" />
+                            <knob id="PartVolume" />
+                            <input id="Part-Volume-3" class="Slider-Mini" param="Part Volume" type="range" />
+                            <knob id="PartPan" class="Knob-Mini" />
+                            <input id="Part-Pan-Snow-3" class="Slider-Mini-Snow" param="Panorama" type="range" />
+                            <button id="SelectPart" class="Button-Part-4" />
+                            <button id="PresetPrev" class="Button-Preset-Up" />
+                            <button id="PresetNext" class="Button-Preset-Down" />
+                            <combo id="Preset-Name-3" class="Preset-Name">
+                                <combotext id="PresetName"></combotext>
+                            </combo>
+                        </section>
+                    </section>
+                </section>
+                <section id="Virus-TI" data-model="plugin" data-class-disabled="deviceModel == 'Snow'">
+                    <section id="Part-4" data-model="part4" style="left: 12dp; top: 212dp; width: 350dp; height: 46dp">
+                        <button id="Preset-Load-4" class="Button-Load" />
+                        <button id="Preset-Save-4" class="Button-Save" />
+                        <knob id="PartVolume" />
+                        <input id="Part-Volume-4" class="Slider-Mini" param="Part Volume" type="range" />
+                        <knob id="PartPan" class="Knob-Mini" />
+                        <button id="SelectPart" class="Button-Part-5" />
+                        <button id="PresetPrev" class="Button-Preset-Up" />
+                        <button id="PresetNext" class="Button-Preset-Down" />
+                        <combo id="Preset-Name-4" class="Preset-Name">
+                            <combotext id="PresetName"></combotext>
+                        </combo>
+                    </section>
+                    <section id="Part-5" data-model="part5" style="left: 12dp; top: 264dp; width: 350dp; height: 46dp">
+                        <button id="Preset-Load-5" class="Button-Load" />
+                        <button id="Preset-Save-5" class="Button-Save" />
+                        <knob id="PartVolume" />
+                        <input id="Part-Volume-5" class="Slider-Mini" param="Part Volume" type="range" />
+                        <knob id="PartPan" class="Knob-Mini" />
+                        <button id="SelectPart" class="Button-Part-6" />
+                        <button id="PresetPrev" class="Button-Preset-Up" />
+                        <button id="PresetNext" class="Button-Preset-Down" />
+                        <combo id="Preset-Name-5" class="Preset-Name">
+                            <combotext id="PresetName"></combotext>
+                        </combo>
+                    </section>
+                    <section id="Part-6" data-model="part6" style="left: 12dp; top: 316dp; width: 350dp; height: 46dp">
+                        <button id="Preset-Load-6" class="Button-Load" />
+                        <button id="Preset-Save-6" class="Button-Save" />
+                        <knob id="PartVolume" />
+                        <input id="Part-Volume-6" class="Slider-Mini" param="Part Volume" type="range" />
+                        <knob id="PartPan" class="Knob-Mini" />
+                        <button id="SelectPart" class="Button-Part-7" />
+                        <button id="PresetPrev" class="Button-Preset-Up" />
+                        <button id="PresetNext" class="Button-Preset-Down" />
+                        <combo id="Preset-Name-6" class="Preset-Name">
+                            <combotext id="PresetName"></combotext>
+                        </combo>
+                    </section>
+                    <section id="Part-7" data-model="part7" style="left: 12dp; top: 368dp; width: 350dp; height: 46dp">
+                        <button id="Preset-Load-7" class="Button-Load" />
+                        <button id="Preset-Save-7" class="Button-Save" />
+                        <knob id="PartVolume" />
+                        <input id="Part-Volume-7" class="Slider-Mini" param="Part Volume" type="range" />
+                        <knob id="PartPan" class="Knob-Mini" />
+                        <button id="SelectPart" class="Button-Part-8" />
+                        <button id="PresetPrev" class="Button-Preset-Up" />
+                        <button id="PresetNext" class="Button-Preset-Down" />
+                        <combo id="Preset-Name-7" class="Preset-Name">
+                            <combotext id="PresetName"></combotext>
+                        </combo>
+                    </section>
+                    <section id="Part-8" data-model="part8" style="left: 12dp; top: 420dp; width: 350dp; height: 46dp">
+                        <button id="Preset-Load-8" class="Button-Load" />
+                        <button id="Preset-Save-8" class="Button-Save" />
+                        <knob id="PartVolume" />
+                        <input id="Part-Volume-8" class="Slider-Mini" param="Part Volume" type="range" />
+                        <knob id="PartPan" class="Knob-Mini" />
+                        <button id="SelectPart" class="Button-Part-9" />
+                        <button id="PresetPrev" class="Button-Preset-Up" />
+                        <button id="PresetNext" class="Button-Preset-Down" />
+                        <combo id="Preset-Name-8" class="Preset-Name">
+                            <combotext id="PresetName"></combotext>
+                        </combo>
+                    </section>
+                    <section id="Part-9" data-model="part9" style="left: 12dp; top: 472dp; width: 350dp; height: 46dp">
+                        <button id="Preset-Load-9" class="Button-Load" />
+                        <button id="Preset-Save-9" class="Button-Save" />
+                        <knob id="PartVolume" />
+                        <input id="Part-Volume-9" class="Slider-Mini" param="Part Volume" type="range" />
+                        <knob id="PartPan" class="Knob-Mini" />
+                        <button id="SelectPart" class="Button-Part-10" />
+                        <button id="PresetPrev" class="Button-Preset-Up" />
+                        <button id="PresetNext" class="Button-Preset-Down" />
+                        <combo id="Preset-Name-9" class="Preset-Name">
+                            <combotext id="PresetName"></combotext>
+                        </combo>
+                    </section>
+                    <section id="Part-10" data-model="part10" style="left: 12dp; top: 524dp; width: 350dp; height: 46dp">
+                        <button id="Preset-Load-10" class="Button-Load" />
+                        <button id="Preset-Save-10" class="Button-Save" />
+                        <knob id="PartVolume" />
+                        <input id="Part-Volume-10" class="Slider-Mini" param="Part Volume" type="range" />
+                        <knob id="PartPan" class="Knob-Mini" />
+                        <button id="SelectPart" class="Button-Part-11" />
+                        <button id="PresetPrev" class="Button-Preset-Up" />
+                        <button id="PresetNext" class="Button-Preset-Down" />
+                        <combo id="Preset-Name-10" class="Preset-Name">
+                            <combotext id="PresetName"></combotext>
+                        </combo>
+                    </section>
+                    <section id="Part-11" data-model="part11" style="left: 12dp; top: 576dp; width: 350dp; height: 46dp">
+                        <button id="Preset-Load-11" class="Button-Load" />
+                        <button id="Preset-Save-11" class="Button-Save" />
+                        <knob id="PartVolume" />
+                        <input id="Part-Volume-11" class="Slider-Mini" param="Part Volume" type="range" />
+                        <knob id="PartPan" class="Knob-Mini" />
+                        <button id="SelectPart" class="Button-Part-12" />
+                        <button id="PresetPrev" class="Button-Preset-Up" />
+                        <button id="PresetNext" class="Button-Preset-Down" />
+                        <combo id="Preset-Name-11" class="Preset-Name">
+                            <combotext id="PresetName"></combotext>
+                        </combo>
+                    </section>
+                    <section id="Part-12" data-model="part12" style="left: 12dp; top: 628dp; width: 350dp; height: 46dp">
+                        <button id="Preset-Load-12" class="Button-Load" />
+                        <button id="Preset-Save-12" class="Button-Save" />
+                        <knob id="PartVolume" />
+                        <input id="Part-Volume-12" class="Slider-Mini" param="Part Volume" type="range" />
+                        <knob id="PartPan" class="Knob-Mini" />
+                        <button id="SelectPart" class="Button-Part-13" />
+                        <button id="PresetPrev" class="Button-Preset-Up" />
+                        <button id="PresetNext" class="Button-Preset-Down" />
+                        <combo id="Preset-Name-12" class="Preset-Name">
+                            <combotext id="PresetName"></combotext>
+                        </combo>
+                    </section>
+                    <section id="Part-13" data-model="part13" style="left: 12dp; top: 680dp; width: 350dp; height: 46dp">
+                        <button id="Preset-Load-13" class="Button-Load" />
+                        <button id="Preset-Save-13" class="Button-Save" />
+                        <knob id="PartVolume" />
+                        <input id="Part-Volume-13" class="Slider-Mini" param="Part Volume" type="range" />
+                        <knob id="PartPan" class="Knob-Mini" />
+                        <button id="SelectPart" class="Button-Part-14" />
+                        <button id="PresetPrev" class="Button-Preset-Up" />
+                        <button id="PresetNext" class="Button-Preset-Down" />
+                        <combo id="Preset-Name-13" class="Preset-Name">
+                            <combotext id="PresetName"></combotext>
+                        </combo>
+                    </section>
+                    <section id="Part-14" data-model="part14" style="left: 12dp; top: 732dp; width: 350dp; height: 46dp">
+                        <button id="Preset-Load-14" class="Button-Load" />
+                        <button id="Preset-Save-14" class="Button-Save" />
+                        <knob id="PartVolume" />
+                        <input id="Part-Volume-14" class="Slider-Mini" param="Part Volume" type="range" />
+                        <knob id="PartPan" class="Knob-Mini" />
+                        <button id="SelectPart" class="Button-Part-15" />
+                        <button id="PresetPrev" class="Button-Preset-Up" />
+                        <button id="PresetNext" class="Button-Preset-Down" />
+                        <combo id="Preset-Name-14" class="Preset-Name">
+                            <combotext id="PresetName"></combotext>
+                        </combo>
+                    </section>
+                    <section id="Part-15" data-model="part15" style="left: 12dp; top: 784dp; width: 350dp; height: 46dp">
+                        <button id="Preset-Load-15" class="Button-Load" />
+                        <button id="Preset-Save-15" class="Button-Save" />
+                        <knob id="PartVolume" />
+                        <input id="Part-Volume-15" class="Slider-Mini" param="Part Volume" type="range" />
+                        <knob id="PartPan" class="Knob-Mini" />
+                        <button id="SelectPart" class="Button-Part-16" />
+                        <button id="PresetPrev" class="Button-Preset-Up" />
+                        <button id="PresetNext" class="Button-Preset-Down" />
+                        <combo id="Preset-Name-15" class="Preset-Name">
+                            <combotext id="PresetName"></combotext>
+                        </combo>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </page>
+    <page id="Easy" tabgroup="pages" tabpage="0" style="left: 422dp; top: 96dp; width: 1342dp; height: 834dp">
+        <img src="Page-Easy.png" />
+        <section id="Easy-Edit" style="left: 0dp; top: 0dp; width: 1342dp; height: 542dp">
+            <knob id="Osc-Volume-Saturation" class="Knob-Big-Mini" param="Osc Mainvolume" style="left: 22dp; top: 170dp">
+                <label>{{Osc_Mainvolume_text}}</label>
+            </knob>
+            <knob id="Sub-Osc-Volume" class="Knob-Big-Mini" param="Suboscillator Volume" style="left: 234dp; top: 170dp" data-class-disabled-opacity-40%="!((Osc1_Mode_value <= 1) || (Osc2_Mode_value == 1))">
+                <label>{{Suboscillator_Volume_text}}</label>
+            </knob>
+            <knob id="Ring-Modulator-Volume" class="Knob-Big-Mini" param="Ringmodulator Volume" style="left: 446dp; top: 170dp">
+                <label>{{Ringmodulator_Volume_text}}</label>
+            </knob>
+            <knob id="Filter-1-Resonance" class="Knob-Big-Mini" param="Filter1 Resonance" style="left: 1010dp; top: 170dp">
+                <label>{{Filter1_Resonance_text}}</label>
+            </knob>
+            <knob id="Amplifier-Envelope-Attack" class="Knob-Middle" param="Amp Env Attack" style="left: 1226dp; top: 174dp" />
+            <knob id="Amplifier-Envelope-Decay" class="Knob-Middle" param="Amp Env Decay" style="left: 1226dp; top: 280dp" />
+            <section id="Filter-1-Cutoff-Easy" style="left: 700dp; top: 142dp; width: 258dp; height: 258dp">
+                <knob id="Filter-1-Combobox-Fake" class="Filter-Combobox-Fake" param="Filter1 Mode" style="left: 88dp; top: 56dp" />
+                <knob id="Knob-Filter-1-Cutoff-Easy" class="Knob-Big" param="Cutoff">
+                    <label style="position: relative; left:0dp; top:68dp">{{Cutoff_text}}</label>
+                    <canvas id="Filter-1-Easy-LCD" style="left:46dp; top:46dp; width:166dp; height:166dp;" />
+                </knob>
+                <combo id="Filter-1-Combobox" param="Filter1 Mode" style="overflow: visible; left: 88dp; top: 56dp; width: 82dp; height: 14dp">
+                    <combotext style="display: none"></combotext>
+                </combo>
+            </section>
+        </section>
+        <section id="Soft-Knob" style="left: 0; top: 558dp; width: 822dp; height: 276dp">
+            <combo id="Soft-Knob-1-Name" param="Soft Knob1 ShortName Main" style="left: 130dp; top: 128dp; width: 126dp; height: 30dp; padding-right: 10dp"></combo>
+            <combo id="Soft-Knob-2-Name" param="Soft Knob2 ShortName Main" style="left: 396dp; top: 128dp; width: 126dp; height: 30dp; padding-right: 10dp"></combo>
+            <combo id="Soft-Knob-3-Name" param="Soft Knob3 ShortName Main" style="left: 660dp; top: 128dp; width: 126dp; height: 30dp; padding-right: 10dp"></combo>
+            <knob id="Soft-Knob-1" class="Knob-Middle-Led" param="Soft Knob Configuration/Value Softknob0" style="left: 26dp; top: 98dp" data-class-disabled-opacity-50%="!(Soft_Knob_1_Single_value >= 1)" />
+            <knob id="Soft-Knob-2" class="Knob-Middle-Led" param="Soft Knob Configuration/Value Softknob1" style="left: 292dp; top: 98dp" data-class-disabled-opacity-50%="!(Soft_Knob_2_Single_value >= 1)" />
+            <knob id="Soft-Knob-3" class="Knob-Middle-Led" param="Soft Knob Configuration/Value Softknob2" style="left: 556dp; top: 98dp" data-class-disabled-opacity-50%="!(Soft_Knobs_Destination_3_value >= 1)" />
+        </section>
+        <section id="Effects" style="left: 836dp; top: 558dp; width: 506dp; height: 276dp">
+            <knob id="Delay-Send" class="Knob-Middle-Led" param="Delay Send" style="left: 26dp; top: 98dp" data-class-disabled-opacity-50%="!(Switches_Delay_Enable_value == 1)" />
+            <knob id="Reverb-Send" class="Knob-Middle-Led" param="Reverb Send" style="left: 208dp; top: 98dp" data-class-disabled-opacity-50%="!(Switches_Reverb_Enable_value == 1)" />
+            <section id="Chorus-Mix" style="left: 390dp; top: 98dp">
+                <knob id="Chorus-Mix-0" class="Knob-Middle-Led" param="Chorus Mix" data-class-disabled-opacity-50%="!(Chorus_Type_value == 1)" />
+                <knob id="Chorus-Mix-1" class="Knob-Middle-Led" param="Chorus Mix" data-class-disabled="!((Chorus_Type_value == 1 || Chorus_Type_value == 6))" />
+                <knob id="Chorus-Mix-2" class="Knob-Middle-Led" param="Chorus/Mix2" data-class-disabled="!((Chorus_Type_value >= 2 && Chorus_Type_value <= 3))" />
+                <knob id="Chorus-Mix-3" class="Knob-Chorus-Air" data-class-disabled="!(Chorus_Type_value == 4)" />
+                <knob id="Chorus-Mix-4" class="Knob-Chorus-Vibrato" data-class-disabled="!(Chorus_Type_value == 5)" />
+            </section>
+        </section>
+    </page>
+    <page id="Browser" tabgroup="pages" tabpage="1" style="left: 420dp; top: 94dp; width: 1346dp; height: 838dp">
+        <img src="Page-Browser.png" />
+        <section id="container-patchmanager" style="left: 2dp; top: 2dp; width: 1342dp; height: 834dp">
+            <template src="patchmanager" />
+        </section>
+    </page>
+    <page id="Oscillator" tabgroup="pages" tabpage="2" style="left: 422dp; top: 96dp; width: 1342dp; height: 834dp">
+        <img id="Page-Osc" src="Page-Osc.png" />
+        <section id="Oscillator-1" style="left: 0dp; top: 0dp; width: 498dp; height: 498dp">
+            <section id="Osc1-Classic" data-class-disabled="!(Osc1_Mode_value == 0)">
+                <img id="LCD-Classic-DCO" src="LCD-Classic-DCO.png" />
+                <canvas id="Osc-1-Knob-LCD-Waves" style="left: 186dp; top: 202dp; width: 130dp; height: 62dp;" />
+                <img id="LCD-Waves" src="LCD-Waves.png" style="left: 120dp; top: 390dp; width: 266dp; height: 86dp" data-class-disabled="!(Osc1_Shape_value <= 63)" />
+                <img id="LCD-Pulse-Width" src="LCD-Pulse-Width.png" style="left: 120dp; top: 390dp; width: 266dp; height: 86dp" data-class-disabled="!(Osc1_Shape_value >= 64)" />
+                <combo id="Wave-Select" class="combo-blue-lfo" param="Osc1 Wave Select" style="left: 260dp; top: 396dp; width: 120dp; height: 36dp" data-class-disabled="!(Osc1_Shape_value <= 63)"></combo>
+                <combo id="Wave-Select-Arrow" class="combo-blue-lfo" param="Osc1 Wave Select" style="left: 344dp; top: 438dp; width: 30dp; height: 26dp" data-class-disabled="!(Osc1_Shape_value <= 63)">
+                    <combotext style="display: none" />
+                </combo>
+                <knob id="Pulse-Width" class="Knob-Pulse-Width" param="Osc1 Pulsewidth" style="left: 126dp; top: 428dp" data-class-disabled="!(Osc1_Shape_value >= 64)" />
+                <knob id="Knob-Classic-DCO-1" class="Knob-Big" param="Osc1 Shape" style="left: 122dp; top: 102dp" />
+                <canvas id="Osc-1-LCD-Waves" style="left: 128dp; top: 402dp; width: 130dp; height: 62dp;" data-class-disabled="!(Osc1_Shape_value <= 63)" />
+            </section>
+            <section id="Osc1-HyperSaw" data-class-disabled="!(Osc1_Mode_value == 1)">
+                <img id="LCD-HyperSaw" src="LCD-HyperSaw.png" />
+                <knob id="Density" class="Knob-Big" param="Osc1 HyperSaw/Density" style="left: 122dp; top: 102dp">
+                    <canvas id="HyperSaw-1-Density-LCD" style="left: 68dp; top: 80dp; width: 122dp; height: 78dp" />
+                </knob>
+                <knob id="Detune" param="Osc1 HyperSaw/DetuneSpread" style="left: 154dp; top: 426dp; width: 70dp; height: 30dp">
+                    <label>{{Osc1_HyperSaw_DetuneSpread_text}}</label>
+                </knob>
+                <knob id="Sync-Freq" param="Osc2 HyperSaw/CrossOscSyncFreq" style="left: 282dp; top: 426dp; width: 70dp; height: 30dp">
+                    <label>{{Osc2_HyperSaw_CrossOscSyncFreq_text}}</label>
+                </knob>
+            </section>
+            <section id="Osc1-Wavetable" data-class-disabled="!(Osc1_Mode_value == 2)">
+                <img id="LCD-Wavetable" src="LCD-Wavetable.png" />
+                <knob id="WaveTable-Index" class="Knob-Big" param="Osc1 Wavetable/WaveTableIndex" style="left: 122dp; top: 102dp">
+                    <label style="position: relative; left:0dp; top:26dp">{{Osc1_Wavetable_WaveTableIndex_text}}</label>
+                </knob>
+                <knob id="Interpolation" class="Knob-Middle" param="Osc1 Wavetable/Interpolation" style="left: 208dp; top: 378dp" />
+                <combo id="WaveTable-Select" class="combo-osc-wave" param="Osc1 Wavetable/WaveTableSelect" style="left: 170dp; top: 184dp; width: 162dp; height: 48dp"></combo>
+            </section>
+            <section id="Osc1-Wave-PWM" data-class-disabled="!(Osc1_Mode_value == 3)">
+                <img id="LCD-Wave-PWM" src="LCD-Wave-PWM.png" />
+                <knob id="WaveTable-Index" class="Knob-Big" param="Osc1 Wavetable/WaveTableIndex" style="left: 122dp; top: 102dp">
+                    <label style="position: relative; left:0dp; top:26dp">{{Osc1_Wavetable_WaveTableIndex_text}}</label>
+                </knob>
+                <knob id="PulseWidth" class="Knob-Middle" param="Osc1 Pulsewidth" style="left: 108dp; top: 378dp" />
+                <knob id="Detune" class="Knob-Middle" param="Osc1 Wavetable/Internal Detune" style="left: 208dp; top: 378dp" />
+                <knob id="Interpolation" class="Knob-Middle" param="Osc1 Wavetable/Interpolation" style="left: 308dp; top: 378dp" />
+                <combo id="WaveTable-Select" class="combo-osc-wave" param="Osc1 Wavetable/WaveTableSelect" style="left: 170dp; top: 184dp; width: 162dp; height: 48dp"></combo>
+            </section>
+            <section id="Osc1-Grain/Format-Simple" data-class-disabled="!(Osc1_Mode_value == 4 || Osc1_Mode_value == 6)">
+                <img id="LCD-Formant-Simple" src="LCD-Formant-Simple.png" />
+                <knob id="WaveTable-Index" class="Knob-Big" param="Osc1 Wavetable/WaveTableIndex" style="left: 122dp; top: 102dp">
+                    <label style="position: relative; left:0dp; top:26dp">{{Osc1_Wavetable_WaveTableIndex_text}}</label>
+                </knob>
+                <knob id="Formant-Shift" class="Knob-Middle" param="Osc1 Wavetable/FormantShift" style="left: 128dp; top: 378dp" />
+                <knob id="Interpolation" class="Knob-Middle" param="Osc1 Wavetable/Interpolation" style="left: 288dp; top: 378dp" />
+                <combo id="WaveTable-Select" class="combo-osc-wave" param="Osc1 Wavetable/WaveTableSelect" style="left: 170dp; top: 184dp; width: 162dp; height: 48dp"></combo>
+            </section>
+            <section id="Osc1-Grain/Format-Complex" data-class-disabled="!(Osc1_Mode_value == 5 || Osc1_Mode_value == 7)">
+                <img id="LCD-Formant-Complex" src="LCD-Formant-Complex.png" />
+                <knob id="WaveTable-Index" class="Knob-Big" param="Osc1 Wavetable/WaveTableIndex" style="left: 122dp; top: 102dp">
+                    <label style="position: relative; left:0dp; top:26dp">{{Osc1_Wavetable_WaveTableIndex_text}}</label>
+                </knob>
+                <knob id="Formant-Shift" class="Knob-Middle" param="Osc1 Wavetable/FormantShift" style="left: 88dp; top: 378dp" />
+                <knob id="Formant-Spread" class="Knob-Middle" param="Osc1 Wavetable/Sync" style="left: 188dp; top: 378dp" />
+                <knob id="Detune" class="Knob-Middle" param="Osc1 Wavetable/Internal Detune" style="left: 288dp; top: 378dp" />
+                <knob id="Interpolation" class="Knob-Middle" param="Osc1 Wavetable/Interpolation" style="left: 388dp; top: 378dp" />
+                <combo id="WaveTable-Select" class="combo-osc-wave" param="Osc1 Wavetable/WaveTableSelect" style="left: 170dp; top: 184dp; width: 162dp; height: 48dp"></combo>
+            </section>
+            <combo id="Osc1-Mode" param="Osc1 Mode" style="left: 124dp; top: 48dp; width: 256dp; height: 30dp; justify-content: center"></combo>
+            <knob id="Osc1-Semitone" class="Knob-Middle-Led-Bipolar" param="Osc1 Semitone" style="left: 386dp; top: 96dp" />
+            <knob id="Osc1-Keyfollow" class="Knob-Middle-Led-Bipolar" param="Osc1 Keyfollow" style="left: 26dp; top: 276dp" />
+            <knob id="Osc1-Shape-Velocity " class="Knob-Middle-Led-Bipolar" param="Osc1 Shape Velocity" style="left: 386dp; top: 276dp" />
+            <button id="Button-Sub-Osc-Square" class="Button-Sub-Osc-Square" param="Suboscillator Shape" valueOn="0" isToggle="1" style="left: 38dp; top: 110dp" data-class-disabled-opacity-40%="!(Osc1_Mode_value == 0)" />
+            <button id="Button-Sub-Osc-Triangle" class="Button-Sub-Osc-Triangle" param="Suboscillator Shape" valueOn="1" isToggle="1" style="left: 38dp; top: 142dp" data-class-disabled-opacity-40%="!(Osc1_Mode_value == 0)" />
+        </section>
+        <section id="Oscillator-2" style="left: 844dp; top: 0dp; width: 498dp; height: 498dp">
+            <section id="Osc2-Classic" data-class-disabled="!(Osc2_Mode_value == 0)">
+                <img id="LCD-Classic-DCO-2" src="LCD-Classic-DCO-2.png" />
+                <canvas id="Osc-2-Knob-LCD-Waves" style="left: 182dp; top: 202dp; width: 130dp; height: 62dp;" />
+                <img id="LCD-Waves" src="LCD-Waves-2.png" style="left: 114dp; top: 390dp; width: 266dp; height: 86dp" data-class-disabled="!(Osc2_Shape_value <= 63)" />
+                <img id="LCD-Pulse-Width" src="LCD-Pulse-Width-2.png" style="left: 114dp; top: 390dp; width: 266dp; height: 86dp" data-class-disabled="!(Osc2_Shape_value >= 64)" />
+                <combo id="Wave-Select" class="combo-blue-lfo" param="Osc2 Wave Select" style="left: 254dp; top: 396dp; width: 120dp; height: 36dp" data-class-disabled="!(Osc2_Shape_value <= 63)"></combo>
+                <combo id="Wave-Select-Arrow" class="combo-blue-lfo" param="Osc2 Wave Select" style="left: 338dp; top: 438dp; width: 30dp; height: 26dp" data-class-disabled="!(Osc2_Shape_value <= 63)">
+                    <combotext style="display: none" />
+                </combo>
+                <knob id="Pulse-Width" class="Knob-Pulse-Width" param="Osc2 Pulsewidth" style="left: 120dp; top: 428dp" data-class-disabled="!(Osc2_Shape_value >= 64)" />
+                <knob id="Knob-Classic-DCO-2" class="Knob-Big" param="Osc2 Shape" style="left: 118dp; top: 102dp" />
+                <canvas id="Osc-2-LCD-Waves" style="left: 122dp; top: 402dp; width: 130dp; height: 62dp;" data-class-disabled="!(Osc2_Shape_value <= 63)" />
+            </section>
+            <section id="Osc2-HyperSaw" data-class-disabled="!(Osc2_Mode_value == 1)">
+                <img id="LCD-HyperSaw-2" src="LCD-HyperSaw-2.png" />
+                <knob id="Density" class="Knob-Big" param="Osc2 HyperSaw/Density" style="left: 118dp; top: 102dp">
+                    <canvas id="HyperSaw-2-Density-LCD" style="left: 68dp; top: 80dp; width: 122dp; height: 78dp" />
+                </knob>
+                <knob id="Detune" param="Osc2 HyperSaw/DetuneSpread" style="left: 148dp; top: 426dp; width: 70dp; height: 30dp">
+                    <label>{{Osc2_HyperSaw_DetuneSpread_text}}</label>
+                </knob>
+                <knob id="Sync-Freq" param="Osc2 HyperSaw/CrossOscSyncFreq" style="left: 276dp; top: 426dp; width: 70dp; height: 30dp">
+                    <label>{{Osc2_HyperSaw_CrossOscSyncFreq_text}}</label>
+                </knob>
+            </section>
+            <section id="Osc2-Wavetable" data-class-disabled="!(Osc2_Mode_value == 2)">
+                <img id="LCD-Wavetable-2" src="LCD-Wavetable-2.png" />
+                <knob id="WaveTable-Index" class="Knob-Big" param="Osc2 Wavetable/WaveTableIndex" style="left: 118dp; top: 102dp">
+                    <label style="position: relative; left:0dp; top:26dp">{{Osc2_Wavetable_WaveTableIndex_text}}</label>
+                </knob>
+                <knob id="Interpolation" class="Knob-Middle" param="Osc2 Wavetable/Interpolation" style="left: 204dp; top: 378dp" />
+                <combo id="WaveTable-Select" class="combo-osc-wave" param="Osc2 Wavetable/WaveTableSelect" style="left: 166dp; top: 184dp; width: 162dp; height: 48dp"></combo>
+            </section>
+            <section id="Osc2-Wave-PWM" data-class-disabled="!(Osc2_Mode_value == 3)">
+                <img id="LCD-Wave-PWM-2" src="LCD-Wave-PWM-2.png" />
+                <knob id="WaveTable-Index" class="Knob-Big" param="Osc2 Wavetable/WaveTableIndex" style="left: 118dp; top: 102dp">
+                    <label style="position: relative; left:0dp; top:26dp">{{Osc2_Wavetable_WaveTableIndex_text}}</label>
+                </knob>
+                <knob id="PulseWidth" class="Knob-Middle" param="Osc2 Pulsewidth" style="left: 108dp; top: 378dp" />
+                <knob id="Detune" class="Knob-Middle" param="Osc2 Wavetable/Internal Detune" style="left: 204dp; top: 378dp" />
+                <knob id="Interpolation" class="Knob-Middle" param="Osc2 Wavetable/Interpolation" style="left: 302dp; top: 378dp" />
+                <combo id="WaveTable-Select" class="combo-osc-wave" param="Osc2 Wavetable/WaveTableSelect" style="left: 166dp; top: 184dp; width: 162dp; height: 48dp"></combo>
+            </section>
+            <section id="Osc2-Grain/Format-Simple" data-class-disabled="!(Osc2_Mode_value == 4 || Osc2_Mode_value == 6)">
+                <img id="LCD-Formant-Simple-2" src="LCD-Formant-Simple-2.png" />
+                <knob id="WaveTable-Index" class="Knob-Big" param="Osc2 Wavetable/WaveTableIndex" style="left: 118dp; top: 102dp">
+                    <label style="position: relative; left:0dp; top:26dp">{{Osc2_Wavetable_WaveTableIndex_text}}</label>
+                </knob>
+                <knob id="Formant-Shift" class="Knob-Middle" param="Osc2 Wavetable/FormantShift" style="left: 124dp; top: 378dp" />
+                <knob id="Interpolation" class="Knob-Middle" param="Osc2 Wavetable/Interpolation" style="left: 284dp; top: 378dp" />
+                <combo id="WaveTable-Select" class="combo-osc-wave" param="Osc2 Wavetable/WaveTableSelect" style="left: 166dp; top: 184dp; width: 162dp; height: 48dp"></combo>
+            </section>
+            <section id="Osc2-Grain/Format-Complex" data-class-disabled="!(Osc2_Mode_value == 5 || Osc2_Mode_value == 7)">
+                <img id="LCD-Formant-Complex-2" src="LCD-Formant-Complex-2.png" />
+                <knob id="WaveTable-Index" class="Knob-Big" param="Osc2 Wavetable/WaveTableIndex" style="left: 118dp; top: 102dp">
+                    <label style="position: relative; left:0dp; top:26dp">{{Osc2_Wavetable_WaveTableIndex_text}}</label>
+                </knob>
+                <knob id="Formant-Shift" class="Knob-Middle" param="Osc2 Wavetable/FormantShift" style="left: 24dp; top: 378dp" />
+                <knob id="Formant-Spread" class="Knob-Middle" param="Osc2 Wavetable/Sync" style="left: 124dp; top: 378dp" />
+                <knob id="Detune" class="Knob-Middle" param="Osc2 Wavetable/Internal Detune" style="left: 224dp; top: 378dp" />
+                <knob id="Interpolation" class="Knob-Middle" param="Osc2 Wavetable/Interpolation" style="left: 324dp; top: 378dp" />
+                <combo id="WaveTable-Select" class="combo-osc-wave" param="Osc2 Wavetable/WaveTableSelect" style="left: 166dp; top: 184dp; width: 162dp; height: 48dp"></combo>
+            </section>
+            <combo id="Osc2-Mode" param="Osc2 Mode" style="left: 118dp; top: 48dp; width: 256dp; height: 30dp; justify-content: center"></combo>
+            <knob id="Osc2-Semitone" class="Knob-Middle-Led-Bipolar" param="Osc2 Semitone" style="left: 22dp; top: 96dp" />
+            <knob id="Osc2-Keyfollow" class="Knob-Middle-Led-Bipolar" param="Osc2 Keyfollow" style="left: 382dp; top: 276dp" />
+            <knob id="Osc2-Detune" class="Knob-Middle-Led" param="Osc2 Detune" style="left: 382dp; top: 96dp" />
+            <knob id="Osc2-Shape-Velocity" class="Knob-Middle-Led-Bipolar" param="Osc2 Shape Velocity" style="left: 22dp; top: 276dp" />
+        </section>
+        <section id="Oscillator-Common" style="left: 498dp; top: 0dp; width: 346dp; height: 498dp">
+            <section id="Osc-Common-Osc2-Mode-Classic" data-class-disabled="!(Osc2_Mode_value == 0)">
+                <img src="Oscillator-Common-FM.png" />
+                <knob id="Envelope-Osc2-Pitch" class="Knob-Middle" param="Osc2 Filt Env Amt" style="left: 232dp; top: 38dp" />
+                <knob id="FM-Amount" class="Knob-Middle" param="Osc2 FM Amount" style="left: 32dp; top: 278dp" />
+                <knob id="Envelope-FM" class="Knob-Middle" param="FM Filt Env Amt" style="left: 132dp; top: 278dp" />
+                <knob id="Velocity-FM" class="Knob-Middle" param="Fm Amount Velocity" style="left: 232dp; top: 278dp" />
+            </section>
+            <section id="Osc-Common-Osc2-Mode-HyperSaw" data-class-disabled="!(Osc2_Mode_value == 1)">
+                <img src="Oscillator-Common-SYNC.png" />
+                <knob id="Envelope-Osc2-Pitch" class="Knob-Middle" param="Osc2 HyperSaw/FilterEnv > Pitch" style="left: 232dp; top: 38dp" />
+                <knob id="Sync-Frequency" class="Knob-Middle" param="Osc2 HyperSaw/CrossOscSyncFreq" style="left: 32dp; top: 278dp" />
+                <knob id="Velocity-Sync" class="Knob-Middle" param="Fm Amount Velocity" style="left: 132dp; top: 278dp" />
+                <knob id="Envelope-Sync" class="Knob-Middle" param="Osc2 HyperSaw/FilterEnv > SyncFrequency" style="left: 232dp; top: 278dp" />
+            </section>
+            <section id="Osc-Common-Osc2-Mode-Wavetable" data-class-disabled="!(Osc2_Mode_value >= 2)">
+                <img src="Oscillator-Common-FM.png" />
+                <knob id="Envelope-Osc2-Pitch" class="Knob-Middle" param="Osc2 Wavetable/FilterEnv > Pitch" style="left: 232dp; top: 38dp" />
+                <knob id="FM-Amount" class="Knob-Middle" param="Osc2 Wavetable/FM Amount" style="left: 32dp; top: 278dp" />
+                <knob id="Envelope-FM" class="Knob-Middle" param="Osc2 Wavetable/FilterEnv > FM" style="left: 132dp; top: 278dp" />
+                <knob id="Velocity-FM" class="Knob-Middle" param="Fm Amount Velocity" style="left: 232dp; top: 278dp" />
+            </section>
+            <button id="Osc-Sync" class="Button-Led" param="Osc2 Sync" isToggle="1" style="left: 52dp; top: 60dp" />
+            <knob id="Phase-Init" class="Knob-Middle" param="Osc Init Phase" style="left: 32dp; top: 138dp" />
+            <knob id="Velocity-PulseWidth" class="Knob-Middle" param="PulseWidth Velocity" style="left: 132dp; top: 138dp" />
+            <knob id="Portamento" class="Knob-Middle" param="Portamento Time" style="left: 232dp; top: 138dp" />
+            <combo id="Osc-FM-Mode" param="Osc FM Mode" style="left: 48dp; top: 408dp; width: 252dp; height: 30dp" data-class-disabled="!((Osc2_Mode_value == 0) || (Osc2_Mode_value >= 2))"></combo>
+        </section>
+        <section id="Oscillator-3" style="left: 0dp; top: 512dp; width: 496dp; height: 156dp">
+            <combo id="Osc3-Mode" param="Osc3 Mode" style="left: 26dp; top: 64dp; width: 240dp; height: 30dp"></combo>
+            <section id="Osc3-Knobs" style="left: 284dp; top: 36dp; width: 194dp; height: 108dp" data-class-disabled-opacity-40%="!(Osc3_Mode_value > 0)">
+                <knob id="Osc3-Semitone" class="Knob-Middle" param="Osc3 Semitone" style="left: 4dp; top: 4dp" />
+                <knob id="Osc3-Detune" class="Knob-Middle" param="Osc3 Detune" style="left: 104dp; top: 4dp" />
+            </section>
+        </section>
+        <section id="Unison" style="left: 0dp; top: 680dp; width: 496dp; height: 154dp">
+            <combo id="Unison-Mode" param="Unison Mode" style="left: 26dp; top: 64dp; width: 140dp; height: 30dp"></combo>
+            <section id="Unison-Knobs" style="left: 184dp; top: 36dp; width: 294dp; height: 108dp">
+                <knob id="Unison-Detune" class="Knob-Middle" param="Unison Detune" style="left: 4dp; top: 4dp" data-class-disabled-opacity-40%="!(Unison_Mode_value > 0)" />
+                <knob id="Unison-Pan-Spread" class="Knob-Middle" param="Unison Pan Spread" style="left: 104dp; top: 4dp" data-class-disabled-opacity-40%="!(Unison_Mode_value > 0)" />
+                <knob id="Unison-LFO-Phase" class="Knob-Middle" param="Unison Lfo Phase" style="left: 204dp; top: 4dp" data-class-disabled-opacity-40%="!(Unison_Mode_value > 0)" />
+            </section>
+        </section>
+        <section id="Mixer" style="left: 646dp; top: 512dp; width: 696dp; height: 322dp">
+            <input id="Mixer-Osc-Balance" class="Slider" param="Osc Balance" type="range" orientation="horizontal" style="left: 28dp; top: 52dp" />
+            <input id="Mixer-Osc3-Volume" class="Slider" param="Osc3 Volume" type="range" orientation="horizontal" style="left: 28dp; top: 142dp" data-class-disabled-opacity-40%="!(Osc3_Mode_value > 0)" />
+            <input id="Mixer-Sub-Volume" class="Slider" param="Suboscillator Volume" type="range" orientation="horizontal" style="left: 28dp; top: 232dp" data-class-disabled-opacity-40%="!((Osc1_Mode_value <= 1) || (Osc2_Mode_value == 1))" />
+            <input id="Mixer-Osc-Volume-Saturation" class="Slider" param="Osc Mainvolume" type="range" orientation="horizontal" style="left: 400dp; top: 52dp" />
+            <input id="Mixer-Noise-Volume" class="Slider" param="Noise Volume" type="range" orientation="horizontal" style="left: 400dp; top: 142dp" />
+            <input id="Mixer-Ring-Modulator-Level" class="Slider" param="Ringmodulator Volume" type="range" orientation="horizontal" style="left: 400dp; top: 232dp" />
+        </section>
+        <knob id="Noise-Color" class="Knob-Middle" param="Noise Color" style="left: 528dp; top: 552dp" data-class-disabled-opacity-40%="!(Noise_Volume_value > 0 )" />
+        <knob id="Punch-Intensity" class="Knob-Middle" param="Punch Intensity" style="left: 528dp; top: 720dp" />
+    </page>
+    <page id="Filter" tabgroup="pages" tabpage="3" style="left: 422dp; top: 96dp; width: 1342dp; height: 834dp">
+        <img src="Page-Filter.png" />
+        <section id="Filter-1" style="left: 0dp; top: 0dp; width: 504dp; height: 498dp">
+            <section id="Filter-1-Mode" style="left: 120dp; top: 44dp; width: 262dp; height: 38dp">
+                <button id="Button-Analog-Mode" class="Button-Led" onclick="Button_Analog_Mode()" data-class-checked="Filter1_Mode_value >= 4 && Filter1_Mode_value <= 7" style="left: 290dp; top: 364dp; width: 42dp; height: 42dp" />
+                <section id="Digital-Mode" data-class-disabled="!((Filter1_Mode_value >= 0 && Filter1_Mode_value <= 3))">
+                    <button id="Button-Lowpass" class="Button-Lowpass" param="Filter1 Mode" valueOn="0" isToggle="1" style="left: 4dp; top: 4dp" />
+                    <button id="Button-Highpass" class="Button-Highpass" param="Filter1 Mode" valueOn="1" isToggle="1" style="left: 68dp; top: 4dp" />
+                    <button id="Button-Bandpass" class="Button-Bandpass" param="Filter1 Mode" valueOn="2" isToggle="1" style="left: 132dp; top: 4dp" />
+                    <button id="Button-Bandstop" class="Button-Bandstop" param="Filter1 Mode" valueOn="3" isToggle="1" style="left: 196dp; top: 4dp" />
+                </section>
+                <section id="Analog-Mode" data-class-disabled="!((Filter1_Mode_value >= 4 && Filter1_Mode_value <= 7))">
+                    <button id="Button-Lowpass-1" class="Button-Lowpass-1" param="Filter1 Mode" valueOn="4" isToggle="1" style="left: 4dp; top: 4dp" />
+                    <button id="Button-Lowpass-2" class="Button-Lowpass-2" param="Filter1 Mode" valueOn="5" isToggle="1" style="left: 68dp; top: 4dp" />
+                    <button id="Button-Lowpass-3" class="Button-Lowpass-3" param="Filter1 Mode" valueOn="6" isToggle="1" style="left: 132dp; top: 4dp" />
+                    <button id="Button-Lowpass-4" class="Button-Lowpass-4" param="Filter1 Mode" valueOn="7" isToggle="1" style="left: 196dp; top: 4dp" />
+                </section>
+            </section>
+            <knob id="Envelope 1" class="Knob-Middle-Led" param="Filter1 Env Amt" style="left: 26dp; top: 96dp" controllerLinkCondition="Filter-Filter-Link" controllerLinkTarget="Envelope 2" />
+            <knob id="Resonance 1" class="Knob-Middle-Led" param="Filter1 Resonance" style="left: 386dp; top: 96dp" controllerLinkCondition="Filter-Filter-Link" controllerLinkTarget="Resonance 2" />
+            <knob id="Velocity-Envelope" class="Knob-Middle-Led-Bipolar" param="Flt1 EnvAmt Velocity" style="left: 26dp; top: 276dp" />
+            <knob id="Velocity-Resonance" class="Knob-Middle-Led-Bipolar" param="Resonance1 Velocity" style="left: 386dp; top: 276dp" />
+            <knob id="Keyfollow 1" class="Knob-Middle-Led-Bipolar" param="Filter1 Keyfollow" style="left: 170dp; top: 384dp" controllerLinkCondition="Filter-Filter-Link" controllerLinkTarget="Keyfollow 2" />
+            <button id="Button-Envelope-Polarity" class="Button-Envelope-Polarity" param="Filter1 Env Polarity" isToggle="1" style="left: 32dp; top: 212dp" />
+            <section id="Filter-1-Cutoff" style="left: 122dp; top: 102dp">
+                <knob id="Filter-1-Combobox-Fake" class="Filter-Combobox-Fake" param="Filter1 Mode" style="left: 88dp; top: 56dp" />
+                <knob id="Knob-Filter-1-Cutoff" class="Knob-Big" param="Cutoff">
+                    <label style="position: relative; left:0dp; top:68dp">{{Cutoff_text}}</label>
+                    <canvas id="Filter-1-LCD" style="left:46dp; top:46dp; width:166dp; height:166dp;" />
+                </knob>
+            </section>
+        </section>
+        <section id="Filter-2" style="left: 838dp; top: 0dp; width: 504dp; height: 498dp">
+            <section id="Filter-2-Mode" style="left: 122dp; top: 44dp; width: 262dp; height: 38dp">
+                <button id="Button-Lowpass" class="Button-Lowpass" param="Filter2 Mode" valueOn="0" isToggle="1" style="left: 4dp; top: 4dp" />
+                <button id="Button-Highpass" class="Button-Highpass" param="Filter2 Mode" valueOn="1" isToggle="1" style="left: 68dp; top: 4dp" />
+                <button id="Button-Bandpass" class="Button-Bandpass" param="Filter2 Mode" valueOn="2" isToggle="1" style="left: 132dp; top: 4dp" />
+                <button id="Button-Bandstop" class="Button-Bandstop" param="Filter2 Mode" valueOn="3" isToggle="1" style="left: 196dp; top: 4dp" />
+            </section>
+            <knob id="Envelope 2" class="Knob-Middle-Led" param="Filter2 Env Amt" style="left: 388dp; top: 96dp" controllerLinkCondition="Filter-Filter-Link" controllerLinkTarget="Envelope 1" />
+            <knob id="Resonance 2" class="Knob-Middle-Led" param="Filter2 Resonance" style="left: 28dp; top: 96dp" controllerLinkCondition="Filter-Filter-Link" controllerLinkTarget="Resonance 1" />
+            <knob id="Velocity-Envelope" class="Knob-Middle-Led-Bipolar" param="Flt2 EnvAmt Velocity" style="left: 388dp; top: 276dp" />
+            <knob id="Velocity-Resonance" class="Knob-Middle-Led-Bipolar" param="Resonance2 Velocity" style="left: 28dp; top: 276dp" />
+            <knob id="Keyfollow 2" class="Knob-Middle-Led-Bipolar" param="Filter2 Keyfollow" style="left: 244dp; top: 384dp" controllerLinkCondition="Filter-Filter-Link" controllerLinkTarget="Keyfollow 1" />
+            <button id="Button-Envelope-Polarity" class="Button-Envelope-Polarity" param="Filter2 Env Polarity" isToggle="1" style="left: 434dp; top: 212dp" />
+            <section id="Filter-2-Cutoff" style="left: 124dp; top: 102dp; width: 258dp; height: 258dp">
+                <knob id="Filter-2-Combobox-Fake" class="Filter-Combobox-Fake-2" param="Filter2 Mode" style="left: 88dp; top: 56dp" />
+                <knob id="Knob-Filter-2-Cutoff" class="Knob-Big" param="Cutoff2">
+                    <label style="position: relative; left:0dp; top:68dp" data-class-disabled="!(Filter2_Cutoff_Link_value == 0)">{{Cutoff2_text}}</label>
+                    <label style="position: relative; left:0dp; top:68dp" data-class-disabled="!(Filter2_Cutoff_Link_value == 1)">{{Cutoff2_Offset_text}}</label>
+                    <canvas id="Filter-2-LCD" style="left:46dp; top:46dp; width:166dp; height:166dp;" />
+                </knob>
+            </section>
+        </section>
+        <section id="Filter-Common" style="left: 504dp; top: 0dp; width: 334dp; height: 498dp">
+            <input id="Osc-Volume-Saturation" class="Slider" param="Osc Mainvolume" type="range" orientation="horizontal" style="left: 36dp; top: 46dp" />
+            <section id="Button-Filter-Routing" style="left: 36dp; top: 118dp; width: 262dp; height: 34dp">
+                <button id="Button-Filter-Routing-Serial-4" class="Button-Filter-Routing-Serial-4" param="Filter Routing" valueOn="0" isToggle="1" style="left: 4dp; top: 6dp" />
+                <button id="Button-Filter-Routing-Serial-6" class="Button-Filter-Routing-Serial-6" param="Filter Routing" valueOn="1" isToggle="1" style="left: 68dp; top: 6dp" />
+                <button id="Button-Filter-Routing-Parallel" class="Button-Filter-Routing-Parallel" param="Filter Routing" valueOn="2" isToggle="1" style="left: 132dp; top: 6dp" />
+                <button id="Button-Filter-Routing-Split" class="Button-Filter-Routing-Split" param="Filter Routing" valueOn="3" isToggle="1" style="left: 196dp; top: 6dp" />
+            </section>
+            <knob id="Filter-Routing" class="Knob-Filter-Routing" param="Filter Routing" style="left: 40dp; top: 164dp" />
+            <input id="Filter-Balance" class="Slider" param="Filter Balance" type="range" orientation="horizontal" style="left: 36dp; top: 436dp" />
+            <knob id="Filter-KeyBase" class="Knob-Keytrack" param="Filter Keytrack Base" style="left: 42dp; top: 318dp" />
+            <img id="Combobox-Saturation" src="Combobox-Saturation.png" style="left: 60dp; top: 260dp; width: 214dp; height: 26dp" data-class-disabled="!(Filter1_Mode_value <= 3)" />
+            <text id="Analog-Overdrive" style="left: 72dp; top: 264dp; width: 192dp; height: 16dp" data-class-disabled="!(Filter1_Mode_value >= 4)">Analog Overdrive</text>
+            <combo id="Saturation-Mode" class="combo-blue" param="Saturation Curve" style="left: 62dp; top: 262dp; width: 210dp; height: 22dp" data-class-disabled="!(Filter1_Mode_value <= 3)"></combo>
+            <button id="Filter-Cutoff-Link" class="Button-Cutoff-Link" param="Filter2 Cutoff Link" isToggle="1" style="left: 40dp; top: 368dp" />
+            <button id="Filter-Filter-Link" class="Button-Filter-Link" isToggle="1" style="left: 168dp; top: 368dp" />
+        </section>
+        <section id="Filter-Envelopes" style="left: 0dp; top: 510dp; width: 502dp; height: 324dp" data-class-disabled-opacity-50%="!(Input_Follower_Mode_value == 0)">
+            <canvas id="Filter-Envelopes-Canvas" style="left: 52dp; top: 36dp; width: 432dp; height: 176dp;" />
+            <section id="Filter-Envelope" tabgroup="Envelope-Select" tabpage="0">
+                <knob id="Attack" class="Knob-Middle" param="Filter Env Attack" style="left: 8dp; top: 218dp" />
+                <knob id="Decay" class="Knob-Middle" param="Filter Env Decay" style="left: 108dp; top: 218dp" />
+                <knob id="Sustain" class="Knob-Middle" param="Filter Env Sustain" style="left: 208dp; top: 218dp" />
+                <knob id="Time" class="Knob-Middle" param="Filter Env Sustain Time" style="left: 308dp; top: 218dp" />
+                <knob id="Release" class="Knob-Middle" param="Filter Env Release" style="left: 408dp; top: 218dp" />
+            </section>
+            <section id="Envelope-3" tabgroup="Envelope-Select" tabpage="1">
+                <knob id="Attack" class="Knob-Middle" param="Envelope 3/Attack" style="left: 8dp; top: 218dp" />
+                <knob id="Decay" class="Knob-Middle" param="Envelope 3/Decay" style="left: 108dp; top: 218dp" />
+                <knob id="Sustain" class="Knob-Middle" param="Envelope 3/Sustain" style="left: 208dp; top: 218dp" />
+                <knob id="Time" class="Knob-Middle" param="Envelope 3/Sustain Time" style="left: 308dp; top: 218dp" />
+                <knob id="Release" class="Knob-Middle" param="Envelope 3/Release" style="left: 408dp; top: 218dp" />
+            </section>
+            <section id="Envelope-4" tabgroup="Envelope-Select" tabpage="2">
+                <knob id="Attack" class="Knob-Middle" param="Envelope 4/Attack" style="left: 8dp; top: 218dp" />
+                <knob id="Decay" class="Knob-Middle" param="Envelope 4/Decay" style="left: 108dp; top: 218dp" />
+                <knob id="Sustain" class="Knob-Middle" param="Envelope 4/Sustain" style="left: 208dp; top: 218dp" />
+                <knob id="Time" class="Knob-Middle" param="Envelope 4/Sustain Time" style="left: 308dp; top: 218dp" />
+                <knob id="Release" class="Knob-Middle" param="Envelope 4/Release" style="left: 408dp; top: 218dp" />
+            </section>
+            <section id="Button-Filter-Envelopes" style="left: 18dp; top: 36dp; width: 34dp; height: 176dp">
+                <button id="Button-Filter-Envelope" class="Button-Filter-Envelope" tabgroup="Envelope-Select" tabbutton="0" isToggle="1" style="left: 2dp; top: 2dp" />
+                <button id="Button-Envelope-3" class="Button-Envelope-3" tabgroup="Envelope-Select" tabbutton="1" isToggle="1" style="left: 2dp; top: 60dp" />
+                <button id="Button-Envelope-4" class="Button-Envelope-4" tabgroup="Envelope-Select" tabbutton="2" isToggle="1" style="left: 2dp; top: 118dp" />
+            </section>
+        </section>
+        <section id="Amplifier" style="left: 514dp; top: 510dp; width: 314dp; height: 290dp">
+            <knob id="Patch-Volume" class="Knob-Middle-Led" param="Patch Volume" style="left: 12dp; top: 44dp" />
+            <knob id="Velocity-Volume" class="Knob-Middle" param="Amp Velocity" style="left: 14dp; top: 166dp" />
+            <knob id="Panorama" class="Knob-Middle-Led-Bipolar" param="Panorama" style="left: 112dp; top: 44dp" />
+            <knob id="Velocity-Panorama" class="Knob-Middle" param="Panorama Velocity" style="left: 114dp; top: 166dp" />
+            <knob id="Delay" class="Knob-Middle-Led" param="Delay Send" style="left: 212dp; top: 44dp" data-class-disabled-opacity-50%="!(Switches_Delay_Enable_value == 1)" />
+            <knob id="Reverb" class="Knob-Middle-Led" param="Reverb Send" style="left: 212dp; top: 164dp" data-class-disabled-opacity-50%="!(Switches_Reverb_Enable_value == 1)" />
+        </section>
+        <section id="Amplifier-Envelope" style="left: 840dp; top: 510dp; width: 502dp; height: 324dp">
+            <canvas id="Amplifier-Envelope-Canvas" style="left: 18dp; top: 36dp; width: 466dp; height: 176dp;" />
+            <knob id="Attack" class="Knob-Middle" param="Amp Env Attack" style="left: 8dp;   top: 218dp" />
+            <knob id="Decay" class="Knob-Middle" param="Amp Env Decay" style="left: 108dp; top: 218dp" />
+            <knob id="Sustain" class="Knob-Middle" param="Amp Env Sustain" style="left: 208dp; top: 218dp" />
+            <knob id="Time" class="Knob-Middle" param="Amp Env Sustain Time" style="left: 308dp; top: 218dp" />
+            <knob id="Release" class="Knob-Middle" param="Amp Env Release" style="left: 408dp; top: 218dp" />
+        </section>
+    </page>
+    <page id="LFO" tabgroup="pages" tabpage="4" style="left: 422dp; top: 96dp; width: 1342dp; height: 834dp">
+        <img src="Page-LFO.png" />
+        <section id="LFO-1" style="left: 0dp; top: 0dp; width: 716dp; height: 292dp">
+            <knob id="LFO-1-Rate" class="Knob-Big-Mini" param="Lfo1 Rate" style="left: -2dp; top: 24dp">
+                <label>{{Lfo1_Rate_text}}</label>
+            </knob>
+            <knob id="LFO-1-Clock-Divider" style="left: -2dp; top: 24dp; width: 202dp; height: 202dp">
+                <label>{{Lfo1_Clock_text}}</label>
+            </knob>
+            <button id="LFO-1-Clock-Switch" class="Button-LFO-Clock" onclick="Clock_Switch(event, element, document)" style="left: 330dp; top: 52dp" />
+            <knob id="Keyfollow" class="Knob-Middle-Led" param="Lfo1 Keyfollow" style="left: 212dp; top: 38dp" />
+            <knob id="Trigger-Phase" class="Knob-Middle-Led" param="Lfo1 Keytrigger" style="left: 212dp; top: 188dp" />
+            <canvas id="LFO-1-LCD-Waves" style="left: 334dp; top: 120dp; width: 130dp; height: 62dp;" />
+            <input id="Contour" class="Slider" param="Lfo1 Symmetry" type="range" orientation="horizontal" style="left: 326dp; top: 230dp" />
+            <section id="LFO-Shape" style="left: 398dp; top: 52dp; width: 200dp; height: 60dp">
+                <button id="LFO-Sine" class="Button-LFO-Sine" param="Lfo1 Shape" valueOn="0" isToggle="1" style="left: 4dp; top: 6dp" />
+                <button id="LFO-Triangle" class="Button-LFO-Triangle" param="Lfo1 Shape" valueOn="1" isToggle="1" style="left: 4dp; top: 34dp" />
+                <button id="LFO-Saw" class="Button-LFO-Saw" param="Lfo1 Shape" valueOn="2" isToggle="1" style="left: 68dp; top: 6dp" />
+                <button id="LFO-Square" class="Button-LFO-Square" param="Lfo1 Shape" valueOn="3" isToggle="1" style="left: 68dp; top: 34dp" />
+                <button id="LFO-SH" class="Button-LFO-SH" param="Lfo1 Shape" valueOn="4" isToggle="1" style="left: 132dp; top: 6dp" />
+                <button id="LFO-SG" class="Button-LFO-SG" param="Lfo1 Shape" valueOn="5" isToggle="1" style="left: 132dp; top: 34dp" />
+            </section>
+            <button id="Mode" class="Button-Led" param="Lfo1 Mode" isToggle="1" style="left: 638dp; top: 62dp" />
+            <button id="Envelope-Mode" class="Button-Led" param="Lfo1 Env Mode" isToggle="1" style="left: 638dp; top: 212dp" />
+            <combo id="LFO-1-LCD-Waves-Combobox" class="combo-blue-lfo" param="Lfo1 Shape" style="left: 466dp; top: 114dp; width: 122dp; height: 36dp"></combo>
+            <combo id="Clock-Combobox" class="combo-blue-lfo" param="Lfo1 Clock" style="left: 510dp; top: 152dp; width: 78dp; height: 36dp"></combo>
+        </section>
+        <section id="LFO-2" style="left: 0dp; top: 304dp; width: 716dp; height: 292dp">
+            <knob id="LFO-2-Rate" class="Knob-Big-Mini" param="Lfo2 Rate" style="left: -2dp; top: 24dp">
+                <label>{{Lfo2_Rate_text}}</label>
+            </knob>
+            <knob id="LFO-2-Clock-Divider" style="left: -2dp; top: 24dp; width: 202dp; height: 202dp">
+                <label>{{Lfo2_Clock_text}}</label>
+            </knob>
+            <button id="LFO-2-Clock-Switch" class="Button-LFO-Clock" onclick="Clock_Switch(event, element, document)" style="left: 330dp; top: 52dp" />
+            <knob id="Keyfollow" class="Knob-Middle-Led" param="Lfo2 Keyfollow" style="left: 212dp; top: 38dp" />
+            <knob id="Trigger-Phase" class="Knob-Middle-Led" param="Lfo2 Keytrigger" style="left: 212dp; top: 188dp" />
+            <canvas id="LFO-2-LCD-Waves" style="left: 334dp; top: 120dp; width: 130dp; height: 62dp;" />
+            <input id="Contour" class="Slider" param="Lfo2 Symmetry" type="range" orientation="horizontal" style="left: 326dp; top: 232dp" />
+            <section id="LFO-Shape" style="left: 398dp; top: 52dp; width: 200dp; height: 60dp">
+                <button id="LFO-Sine" class="Button-LFO-Sine" param="Lfo2 Shape" valueOn="0" isToggle="1" style="left: 4dp; top: 6dp" />
+                <button id="LFO-Triangle" class="Button-LFO-Triangle" param="Lfo2 Shape" valueOn="1" isToggle="1" style="left: 4dp; top: 34dp" />
+                <button id="LFO-Saw" class="Button-LFO-Saw" param="Lfo2 Shape" valueOn="2" isToggle="1" style="left: 68dp; top: 6dp" />
+                <button id="LFO-Square" class="Button-LFO-Square" param="Lfo2 Shape" valueOn="3" isToggle="1" style="left: 68dp; top: 34dp" />
+                <button id="LFO-SH" class="Button-LFO-SH" param="Lfo2 Shape" valueOn="4" isToggle="1" style="left: 132dp; top: 6dp" />
+                <button id="LFO-SG" class="Button-LFO-SG" param="Lfo2 Shape" valueOn="5" isToggle="1" style="left: 132dp; top: 34dp" />
+            </section>
+            <button id="Mode" class="Button-Led" param="Lfo2 Mode" isToggle="1" style="left: 638dp; top: 62dp" />
+            <button id="Envelope-Mode" class="Button-Led" param="Lfo2 Env Mode" isToggle="1" style="left: 638dp; top: 212dp" />
+            <combo id="LFO-2-LCD-Waves-Combobox" class="combo-blue-lfo" param="Lfo2 Shape" style="left: 466dp; top: 114dp; width: 122dp; height: 36dp"></combo>
+            <combo id="Clock-Combobox" class="combo-blue-lfo" param="Lfo2 Clock" style="left: 510dp; top: 152dp; width: 78dp; height: 36dp"></combo>
+        </section>
+        <section id="LFO-3" style="left: 0dp; top: 610dp; width: 878dp; height: 224dp">
+            <knob id="LFO-3-Rate" class="Knob-Big-Mini" param="Lfo3 Rate" style="left: -2dp; top: 24dp">
+                <label>{{Lfo3_Rate_text}}</label>
+            </knob>
+            <knob id="LFO-3-Clock-Divider" style="left: -2dp; top: 24dp; width: 202dp; height: 202dp">
+                <label>{{Lfo3_Clock_text}}</label>
+            </knob>
+            <button id="LFO-3-Clock-Switch" class="Button-LFO-Clock" onclick="Clock_Switch(event, element, document)" style="left: 330dp; top: 52dp" />
+            <knob id="Keyfollow" class="Knob-Middle-Led" param="Lfo3 Keyfollow" style="left: 212dp; top: 80dp" />
+            <canvas id="LFO-3-LCD-Waves" style="left: 334dp; top: 120dp; width: 130dp; height: 62dp;" />
+            <knob id="Fade-In" class="Knob-Middle-Led" param="Lfo3 Fade-In Time" style="left: 750dp; top: 80dp" />
+            <section id="LFO-Shape" style="left: 398dp; top: 52dp; width: 200dp; height: 60dp">
+                <button id="LFO-Sine" class="Button-LFO-Sine" param="Lfo3 Shape" valueOn="0" isToggle="1" style="left: 4dp; top: 6dp" />
+                <button id="LFO-Triangle" class="Button-LFO-Triangle" param="Lfo3 Shape" valueOn="1" isToggle="1" style="left: 4dp; top: 34dp" />
+                <button id="LFO-Saw" class="Button-LFO-Saw" param="Lfo3 Shape" valueOn="2" isToggle="1" style="left: 68dp; top: 6dp" />
+                <button id="LFO-Square" class="Button-LFO-Square" param="Lfo3 Shape" valueOn="3" isToggle="1" style="left: 68dp; top: 34dp" />
+                <button id="LFO-SH" class="Button-LFO-SH" param="Lfo3 Shape" valueOn="4" isToggle="1" style="left: 132dp; top: 6dp" />
+                <button id="LFO-SG" class="Button-LFO-SG" param="Lfo3 Shape" valueOn="5" isToggle="1" style="left: 132dp; top: 34dp" />
+            </section>
+            <button id="Mode" class="Button-Led" param="Lfo3 Mode" isToggle="1" style="left: 638dp; top: 104dp" />
+            <combo id="LFO-3-LCD-Waves-Combobox" class="combo-blue-lfo" param="Lfo3 Shape" style="left: 466dp; top: 114dp; width: 122dp; height: 36dp"></combo>
+            <combo id="Clock-Combobox" class="combo-blue-lfo" param="Lfo3 Clock" style="left: 510dp; top: 152dp; width: 78dp; height: 36dp"></combo>
+        </section>
+        <section id="LFO-Modulation-1" style="left: 728dp; top: 0dp; width: 614dp; height: 292dp">
+            <knob id="Osc-1-Pitch" class="Knob-Middle-Led-Bipolar" param="Osc1 Lfo1 Amount" style="left: 22dp; top: 38dp" controllerLinkCondition="Link-Osc-Pitch" controllerLinkTarget="Osc-2-Pitch" />
+            <knob id="Osc-2-Pitch" class="Knob-Middle-Led-Bipolar" param="Osc2 Lfo1 Amount" style="left: 142dp; top: 38dp" controllerLinkCondition="Link-Osc-Pitch" controllerLinkTarget="Osc-1-Pitch" />
+            <knob id="PW-1+2" class="Knob-Middle-Led-Bipolar" param="PW Lfo1 Amount" style="left: 262dp; top: 38dp" />
+            <knob id="Reso-1+2" class="Knob-Middle-Led-Bipolar" param="Reso Lfo1 Amount" style="left: 382dp; top: 38dp" />
+            <knob id="Filter-Gain" class="Knob-Middle-Led-Bipolar" param="FiltGain Lfo1 Amount" style="left: 502dp; top: 38dp" />
+            <knob id="Assign-Amount" class="Knob-Middle-Led-Bipolar" param="LFO1 Assign Amount" style="left: 142dp; top: 188dp" data-class-disabled-opacity-50%="!(LFO1_Assign_Dest_value >= 1)" />
+            <combo id="Assign-Destination" param="LFO1 Assign Dest" style="left: 258dp; top: 218dp; width: 332dp; height: 30dp"></combo>
+            <button id="Link-Osc-Pitch" class="Button-Led" isToggle="1" style="left: 106dp; top: 120dp" />
+        </section>
+        <section id="LFO-Modulation-2" style="left: 728dp; top: 304dp; width: 614dp; height: 292dp">
+            <knob id="LFO-Filter-1" class="Knob-Middle-Led-Bipolar" param="Cutoff1 Lfo2 Amount" style="left: 22dp; top: 38dp" controllerLinkCondition="Link-Filter" controllerLinkTarget="LFO-Filter-2" />
+            <knob id="LFO-Filter-2" class="Knob-Middle-Led-Bipolar" param="Cutoff2 Lfo2 Amount" style="left: 142dp; top: 38dp" controllerLinkCondition="Link-Filter" controllerLinkTarget="LFO-Filter-1" />
+            <knob id="Shape-1+2" class="Knob-Middle-Led-Bipolar" param="Shape Lfo2 Amount" style="left: 262dp; top: 38dp" />
+            <knob id="Pan" class="Knob-Middle-Led-Bipolar" param="Pan Lfo2 Amount" style="left: 382dp; top: 38dp" />
+            <knob id="FM-Amount" class="Knob-Middle-Led-Bipolar" param="FM Lfo2 Amount" style="left: 502dp; top: 38dp" />
+            <knob id="Assign-Amount" class="Knob-Middle-Led-Bipolar" param="LFO2 Assign Amount" style="left: 142dp; top: 188dp" data-class-disabled-opacity-50%="!(LFO2_Assign_Dest_value >= 1)" />
+            <combo id="Assign-Destination" param="LFO2 Assign Dest" style="left: 258dp; top: 218dp; width: 332dp; height: 30dp"></combo>
+            <button id="Link-Filter" class="Button-Led" isToggle="1" style="left: 106dp; top: 120dp" />
+        </section>
+        <section id="LFO-Modulation-3" style="left: 890dp; top: 610dp; width: 452dp; height: 224dp">
+            <knob id="Assign-Amount" class="Knob-Middle-Led" param="Osc Lfo3 Amount" style="left: 30dp; top: 80dp" />
+            <combo id="Assign-Destination" param="Lfo3 Destination" style="left: 146dp; top: 110dp; width: 282dp; height: 30dp"></combo>
+        </section>
+    </page>
+    <page id="Matrix" tabgroup="pages" tabpage="5" style="left: 422dp; top: 96dp; width: 1342dp; height: 834dp">
+        <img src="Page-Matrix.png" />
+        <section id="Slot-1" style="left: 0dp; top: 0dp; width: 664dp; height: 270dp">
+            <combo id="Source" param="Assign1 Source" style="left: 320dp; top: 52dp; width: 320dp; height: 30dp"></combo>
+            <section id="Matrix-1" style="left: 36dp; top: 108dp; width: 612dp; height: 146dp" data-class-disabled-opacity-70%="!(Assign1_Source_value > 0)">
+                <input id="Amount-1" class="Slider" param="Assign1 Amount" type="range" orientation="horizontal" style="left: 4dp; top: 8dp" data-class-disabled-opacity-70%="!(Assign1_Destination_value > 0)" />
+                <input id="Amount-2" class="Slider" param="Assign 1 Amount 2" type="range" orientation="horizontal" style="left: 4dp; top: 56dp" data-class-disabled-opacity-70%="!(Assign_1_Destination_2_value > 0)" />
+                <input id="Amount-3" class="Slider" param="Assign 1 Amount 3" type="range" orientation="horizontal" style="left: 4dp; top: 104dp" data-class-disabled-opacity-70%="!(Assign_1_Destination_3_value > 0)" />
+                <combo id="Destination-1" param="Assign1 Destination" style="left: 284dp; top: 10dp; width: 320dp; height: 30dp"></combo>
+                <combo id="Destination-2" param="Assign 1 Destination 2" style="left: 284dp; top: 58dp; width: 320dp; height: 30dp"></combo>
+                <combo id="Destination-3" param="Assign 1 Destination 3" style="left: 284dp; top: 106dp; width: 320dp; height: 30dp"></combo>
+            </section>
+        </section>
+        <section id="Slot-2" style="left: 0dp; top: 282dp; width: 664dp; height: 270dp">
+            <combo id="Source" param="Assign2 Source" style="left: 320dp; top: 52dp; width: 320dp; height: 30dp"></combo>
+            <section id="Matrix-1" style="left: 36dp; top: 108dp; width: 612dp; height: 146dp" data-class-disabled-opacity-70%="!(Assign2_Source_value > 0)">
+                <input id="Amount-1" class="Slider" param="Assign2 Amount1" type="range" orientation="horizontal" style="left: 4dp; top: 8dp" data-class-disabled-opacity-70%="!(Assign2_Destination1_value > 0)" />
+                <input id="Amount-2" class="Slider" param="Assign2 Amount2" type="range" orientation="horizontal" style="left: 4dp; top: 56dp" data-class-disabled-opacity-70%="!(Assign2_Destination2_value > 0)" />
+                <input id="Amount-3" class="Slider" param="Assign 2 Amount 3" type="range" orientation="horizontal" style="left: 4dp; top: 104dp" data-class-disabled-opacity-70%="!(Assign_2_Destination_3_value > 0)" />
+                <combo id="Destination-1" param="Assign2 Destination1" style="left: 284dp; top: 10dp; width: 320dp; height: 30dp"></combo>
+                <combo id="Destination-2" param="Assign2 Destination2" style="left: 284dp; top: 58dp; width: 320dp; height: 30dp"></combo>
+                <combo id="Destination-3" param="Assign 2 Destination 3" style="left: 284dp; top: 106dp; width: 320dp; height: 30dp"></combo>
+            </section>
+        </section>
+        <section id="Slot-3" style="left: 0dp; top: 564dp; width: 664dp; height: 270dp">
+            <combo id="Source" param="Assign3 Source" style="left: 320dp; top: 52dp; width: 320dp; height: 30dp"></combo>
+            <section id="Matrix-1" style="left: 36dp; top: 108dp; width: 612dp; height: 146dp" data-class-disabled-opacity-70%="!(Assign3_Source_value > 0)">
+                <input id="Amount-1" class="Slider" param="Assign3 Amount1" type="range" orientation="horizontal" style="left: 4dp; top: 8dp" data-class-disabled-opacity-70%="!(Assign3_Destination1_value > 0)" />
+                <input id="Amount-2" class="Slider" param="Assign3 Amount2" type="range" orientation="horizontal" style="left: 4dp; top: 56dp" data-class-disabled-opacity-70%="!(Assign3_Destination2_value > 0)" />
+                <input id="Amount-3" class="Slider" param="Assign3 Amount3" type="range" orientation="horizontal" style="left: 4dp; top: 104dp" data-class-disabled-opacity-70%="!(Assign3_Destination3_value > 0)" />
+                <combo id="Destination-1" param="Assign3 Destination1" style="left: 284dp; top: 10dp; width: 320dp; height: 30dp"></combo>
+                <combo id="Destination-2" param="Assign3 Destination2" style="left: 284dp; top: 58dp; width: 320dp; height: 30dp"></combo>
+                <combo id="Destination-3" param="Assign3 Destination3" style="left: 284dp; top: 106dp; width: 320dp; height: 30dp"></combo>
+            </section>
+        </section>
+        <section id="Slot-4" style="left: 676dp; top: 0dp; width: 666dp; height: 270dp">
+            <combo id="Source" param="Assign 4 Source" style="left: 320dp; top: 52dp; width: 320dp; height: 30dp"></combo>
+            <section id="Matrix-1" style="left: 36dp; top: 108dp; width: 612dp; height: 146dp" data-class-disabled-opacity-70%="!(Assign_4_Source_value > 0)">
+                <input id="Amount-1" class="Slider" param="Assign 4 Amount" type="range" orientation="horizontal" style="left: 4dp; top: 8dp" data-class-disabled-opacity-70%="!(Assign_4_Destination_value > 0)" />
+                <input id="Amount-2" class="Slider" param="Assign 4 Amount 2" type="range" orientation="horizontal" style="left: 4dp; top: 56dp" data-class-disabled-opacity-70%="!(Assign_4_Destination_2_value > 0)" />
+                <input id="Amount-3" class="Slider" param="Assign 4 Amount 3" type="range" orientation="horizontal" style="left: 4dp; top: 104dp" data-class-disabled-opacity-70%="!(Assign_4_Destination_3_value > 0)" />
+                <combo id="Destination-1" param="Assign 4 Destination" style="left: 284dp; top: 10dp; width: 320dp; height: 30dp"></combo>
+                <combo id="Destination-2" param="Assign 4 Destination 2" style="left: 284dp; top: 58dp; width: 320dp; height: 30dp"></combo>
+                <combo id="Destination-3" param="Assign 4 Destination 3" style="left: 284dp; top: 106dp; width: 320dp; height: 30dp"></combo>
+            </section>
+        </section>
+        <section id="Slot-5" style="left: 676dp; top: 282dp; width: 666dp; height: 270dp">
+            <combo id="Source" param="Assign 5 Source" style="left: 320dp; top: 52dp; width: 320dp; height: 30dp"></combo>
+            <section id="Matrix-1" style="left: 36dp; top: 108dp; width: 612dp; height: 146dp" data-class-disabled-opacity-70%="!(Assign_5_Source_value > 0)">
+                <input id="Amount-1" class="Slider" param="Assign 5 Amount" type="range" orientation="horizontal" style="left: 4dp; top: 8dp" data-class-disabled-opacity-70%="!(Assign_5_Destination_value > 0)" />
+                <input id="Amount-2" class="Slider" param="Assign 5 Amount 2" type="range" orientation="horizontal" style="left: 4dp; top: 56dp" data-class-disabled-opacity-70%="!(Assign_5_Destination_2_value > 0)" />
+                <input id="Amount-3" class="Slider" param="Assign 5 Amount 3" type="range" orientation="horizontal" style="left: 4dp; top: 104dp" data-class-disabled-opacity-70%="!(Assign_5_Destination_3_value > 0)" />
+                <combo id="Destination-1" param="Assign 5 Destination" style="left: 284dp; top: 10dp; width: 320dp; height: 30dp"></combo>
+                <combo id="Destination-2" param="Assign 5 Destination 2" style="left: 284dp; top: 58dp; width: 320dp; height: 30dp"></combo>
+                <combo id="Destination-3" param="Assign 5 Destination 3" style="left: 284dp; top: 106dp; width: 320dp; height: 30dp"></combo>
+            </section>
+        </section>
+        <section id="Slot-6" style="left: 676dp; top: 564dp; width: 666dp; height: 270dp">
+            <combo id="Source" param="Assign 6 Source" style="left: 320dp; top: 52dp; width: 320dp; height: 30dp"></combo>
+            <section id="Matrix-1" style="left: 36dp; top: 108dp; width: 612dp; height: 146dp" data-class-disabled-opacity-70%="!(Assign_6_Source_value > 0)">
+                <input id="Amount-1" class="Slider" param="Assign 6 Amount" type="range" orientation="horizontal" style="left: 4dp; top: 8dp" data-class-disabled-opacity-70%="!(Assign_6_Destination_value > 0)" />
+                <input id="Amount-2" class="Slider" param="Assign 6 Amount 2" type="range" orientation="horizontal" style="left: 4dp; top: 56dp" data-class-disabled-opacity-70%="!(Assign_6_Destination_2_value > 0)" />
+                <input id="Amount-3" class="Slider" param="Assign 6 Amount 3" type="range" orientation="horizontal" style="left: 4dp; top: 104dp" data-class-disabled-opacity-70%="!(Assign_6_Destination_3_value > 0)" />
+                <combo id="Destination-1" param="Assign 6 Destination" style="left: 284dp; top: 10dp; width: 320dp; height: 30dp"></combo>
+                <combo id="Destination-2" param="Assign 6 Destination 2" style="left: 284dp; top: 58dp; width: 320dp; height: 30dp"></combo>
+                <combo id="Destination-3" param="Assign 6 Destination 3" style="left: 284dp; top: 106dp; width: 320dp; height: 30dp"></combo>
+            </section>
+        </section>
+    </page>
+    <page id="Arpeggiator" tabgroup="pages" tabpage="6" style="left: 422dp; top: 96dp; width: 1342dp; height: 834dp">
+        <img src="Page-Arpeggiator.png" />
+        <section id="Arp-Setting" style="left: 0dp; top: 0dp; width: 1342dp; height: 168dp">
+            <section id="Arp-Knob" data-class-disabled-opacity-40%="!(Arp_Mode_value >= 1)">
+                <combo id="Pattern" param="Arp Pattern Selct" style="left: 288dp; top: 82dp; width: 230dp; height: 30dp"></combo>
+                <combo id="Oct-Range" param="Arp Octave Range" style="left: 550dp; top: 82dp; width: 128dp; height: 30dp"></combo>
+                <combo id="Resolution" param="Arp Clock" style="left: 710dp; top: 82dp; width: 116dp; height: 30dp"></combo>
+                <combo id="Arp-Pattern" param="Arpeggiator/UserPatternLength" style="left: 858dp; top: 82dp; width: 116dp; height: 30dp" data-class-disabled-opacity-40%="!(Arp_Pattern_Selct_value == 0)"></combo>
+                <knob id="Note-Length" class="Knob-Middle" param="Arp Note Length" style="left: 1028dp; top: 54dp" />
+                <knob id="Swing" class="Knob-Middle" param="Arp Swing" style="left: 1148dp; top: 54dp" />
+                <button id="Hold" class="Button-Arp-Hold" isToggle="1" param="Arp Hold Enable" style="left: 1258dp; top: 78dp" />
+            </section>
+            <combo id="Arp-Mode" param="Arp Mode" style="left: 26dp; top: 82dp; width: 230dp; height: 30dp"></combo>
+        </section>
+        <section id="Pattern-Editor" style="left: 0dp; top: 180dp; width: 1342dp; height: 654dp">
+            <img id="Arp-Off" src="Arp-Off.png" data-class-disabled="!(Arp_Mode_value == 0)" style="left: 0dp; top: 0dp; width: 1342dp; height: 654dp" />
+            <section id="Arp-On" data-class-disabled="!(Arp_Mode_value >= 1)" style="left: 0dp; top: 0dp; width: 1342dp; height: 654dp">
+                <img src="Arp-On.png" />
+                <section id="Step-Elements" data-class-disabled-opacity-40%="!(Arp_Pattern_Selct_value == 0)" style="left: 0dp; top: 26dp; width: 1342dp; height: 582dp">
+                    <section id="Step-1" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 0 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 30dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 1 Velocity" style="left: 0dp; top: 16dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 1 Length" style="left: 0dp; top: 476dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-1" isToggle="1" param="Step 1 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-2" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 1 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 70dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 2 Velocity" style="left: 0dp; top: 68dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 2 Length" style="left: 0dp; top: 528dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-2" isToggle="1" param="Step 2 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-3" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 2 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 110dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 3 Velocity" style="left: 0dp; top: 16dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 3 Length" style="left: 0dp; top: 476dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-3" isToggle="1" param="Step 3 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-4" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 3 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 150dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 4 Velocity" style="left: 0dp; top: 68dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 4 Length" style="left: 0dp; top: 528dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-4" isToggle="1" param="Step 4 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-5" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 4 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 190dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 5 Velocity" style="left: 0dp; top: 16dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 5 Length" style="left: 0dp; top: 476dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-5" isToggle="1" param="Step 5 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-6" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 5 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 230dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 6 Velocity" style="left: 0dp; top: 68dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 6 Length" style="left: 0dp; top: 528dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-6" isToggle="1" param="Step 6 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-7" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 6 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 270dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 7 Velocity" style="left: 0dp; top: 16dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 7 Length" style="left: 0dp; top: 476dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-7" isToggle="1" param="Step 7 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-8" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 7 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 310dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 8 Velocity" style="left: 0dp; top: 68dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 8 Length" style="left: 0dp; top: 528dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-8" isToggle="1" param="Step 8 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-9" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 8 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 350dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 9 Velocity" style="left: 0dp; top: 16dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 9 Length" style="left: 0dp; top: 476dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-9" isToggle="1" param="Step 9 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-10" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 9 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 390dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 10 Velocity" style="left: 0dp; top: 68dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 10 Length" style="left: 0dp; top: 528dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-10" isToggle="1" param="Step 10 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-11" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 10 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 430dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 11 Velocity" style="left: 0dp; top: 16dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 11 Length" style="left: 0dp; top: 476dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-11" isToggle="1" param="Step 11 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-12" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 11 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 470dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 12 Velocity" style="left: 0dp; top: 68dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 12 Length" style="left: 0dp; top: 528dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-12" isToggle="1" param="Step 12 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-13" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 12 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 510dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 13 Velocity" style="left: 0dp; top: 16dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 13 Length" style="left: 0dp; top: 476dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-13" isToggle="1" param="Step 13 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-14" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 13 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 550dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 14 Velocity" style="left: 0dp; top: 68dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 14 Length" style="left: 0dp; top: 528dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-14" isToggle="1" param="Step 14 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-15" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 14 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 590dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 15 Velocity" style="left: 0dp; top: 16dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 15 Length" style="left: 0dp; top: 476dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-15" isToggle="1" param="Step 15 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-16" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 15 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 630dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 16 Velocity" style="left: 0dp; top: 68dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 16 Length" style="left: 0dp; top: 528dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-16" isToggle="1" param="Step 16 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-17" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 16 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 670dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 17 Velocity" style="left: 0dp; top: 16dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 17 Length" style="left: 0dp; top: 476dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-17" isToggle="1" param="Step 17 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-18" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 17 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 710dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 18 Velocity" style="left: 0dp; top: 68dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 18 Length" style="left: 0dp; top: 528dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-18" isToggle="1" param="Step 18 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-19" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 18 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 750dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 19 Velocity" style="left: 0dp; top: 16dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 19 Length" style="left: 0dp; top: 476dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-19" isToggle="1" param="Step 19 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-20" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 19 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 790dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 20 Velocity" style="left: 0dp; top: 68dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 20 Length" style="left: 0dp; top: 528dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-20" isToggle="1" param="Step 20 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-21" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 20 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 830dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 21 Velocity" style="left: 0dp; top: 16dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 21 Length" style="left: 0dp; top: 476dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-21" isToggle="1" param="Step 21 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-22" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 21 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 870dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 22 Velocity" style="left: 0dp; top: 68dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 22 Length" style="left: 0dp; top: 528dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-22" isToggle="1" param="Step 22 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-23" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 22 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 910dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 23 Velocity" style="left: 0dp; top: 16dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 23 Length" style="left: 0dp; top: 476dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-23" isToggle="1" param="Step 23 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-24" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 23 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 950dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 24 Velocity" style="left: 0dp; top: 68dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 24 Length" style="left: 0dp; top: 528dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-24" isToggle="1" param="Step 24 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-25" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 24 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 990dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 25 Velocity" style="left: 0dp; top: 16dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 25 Length" style="left: 0dp; top: 476dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-25" isToggle="1" param="Step 25 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-26" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 25 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 1030dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 26 Velocity" style="left: 0dp; top: 68dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 26 Length" style="left: 0dp; top: 528dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-26" isToggle="1" param="Step 26 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-27" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 26 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 1070dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 27 Velocity" style="left: 0dp; top: 16dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 27 Length" style="left: 0dp; top: 476dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-27" isToggle="1" param="Step 27 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-28" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 27 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 1110dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 28 Velocity" style="left: 0dp; top: 68dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 28 Length" style="left: 0dp; top: 528dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-28" isToggle="1" param="Step 28 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-29" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 28 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 1150dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 29 Velocity" style="left: 0dp; top: 16dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 29 Length" style="left: 0dp; top: 476dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-29" isToggle="1" param="Step 29 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-30" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 29 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 1190dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 30 Velocity" style="left: 0dp; top: 68dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 30 Length" style="left: 0dp; top: 528dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-30" isToggle="1" param="Step 30 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-31" data-class-disabled-opacity-40%="!((Arpeggiator_UserPatternLength_value >= 30 && Arpeggiator_UserPatternLength_value <= 31))" style="left: 1230dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 31 Velocity" style="left: 0dp; top: 16dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 31 Length" style="left: 0dp; top: 476dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-31" isToggle="1" param="Step 31 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                    <section id="Step-32" data-class-disabled-opacity-40%="!(Arpeggiator_UserPatternLength_value == 31)" style="left: 1270dp; top: 0dp; width: 38dp; height: 582dp">
+                        <knob id="Velocity" class="Knob-Mini" param="Step 32 Velocity" style="left: 0dp; top: 68dp" />
+                        <knob id="Length" class="Knob-Mini" param="Step 32 Length" style="left: 0dp; top: 528dp" />
+                        <button id="Bitfield" class="Button-Arp-Step-32" isToggle="1" param="Step 32 Bitfield" style="left: 2dp; top: 132dp" />
+                    </section>
+                </section>
+                <canvas id="Lua-Arpeggiator" style="left: 30dp; top: 196dp; width: 1280dp; height: 252dp" />
+                <input id="Slider-Arp" data-class-disabled-opacity-80%="!(Arp_Pattern_Selct_value == 0)" class="Slider-Arp" param="Arpeggiator/UserPatternLength" type="range" style="left: 66dp; top: 462dp" />
+                <section id="Button-Arp-Pattern-Editor" data-class-disabled-opacity-80%="!(Arp_Pattern_Selct_value == 0)" style="left: 0dp; top: 608dp; width: 1342dp; height: 46dp">
+                    <button id="Button-Arp-Left" class="Button-Arp-Left" onclick="Left()" style="left: 22dp; top: 8dp" />
+                    <button id="Button-Arp-Right" class="Button-Arp-Right" onclick="Right()" style="left: 86dp; top: 8dp" />
+                    <button id="Button-Arp-Fill" class="Button-Arp-Fill" onclick="Fill()" style="left: 252dp; top: 8dp" />
+                    <button id="Button-Arp-Reset" class="Button-Arp-Reset" onclick="Reset()" style="left: 364dp; top: 8dp" />
+                    <button id="Button-Arp-Step" class="Button-Arp-Step" onclick="RandomizeStep()" style="left: 1006dp; top: 8dp" />
+                    <button id="Button-Arp-Velocity" class="Button-Arp-Velocity" onclick="RandomizeVelocity()" style="left: 1110dp; top: 8dp" />
+                    <button id="Button-Arp-Length" class="Button-Arp-Length" onclick="RandomizeLengths()" style="left: 1214dp; top: 8dp" />
+                </section>
+            </section>
+        </section>
+    </page>
+    <page id="FX-1" tabgroup="pages" tabpage="7" style="left: 422dp; top: 96dp; width: 1342dp; height: 834dp">
+        <img src="Page-FX-1.png" />
+        <section id="Character" style="left: 0dp; top: 0dp; width: 516dp; height: 200dp">
+            <section id="Character-Knob" data-class-disabled-opacity-50%="!(Character_Type_value == 0 || Character_Type_value >= 7)">
+                <knob id="Intensity" class="Knob-Middle-Led" param="Bass Intensity" style="left: 12dp; top: 68dp" />
+                <knob id="Tune" class="Knob-Middle" param="Bass Tune" style="left: 416dp; top: 70dp" />
+            </section>
+            <combo id="Type" param="Character Type" style="left: 126dp; top: 98dp; width: 276dp; height: 30dp"></combo>
+        </section>
+        <section id="Chorus" style="left: 528dp; top: 0dp; width: 814dp; height: 200dp">
+            <section id="Chorus-Classic" data-class-disabled-opacity-50%="!(Chorus_Type_value == 1)">
+                <img src="Chorus-Classic.png" />
+                <knob id="Mix" class="Knob-Middle-Led" param="Chorus Mix" style="left: 12dp; top: 68dp" />
+                <knob id="Delay" class="Knob-Middle" param="Chorus Delay" style="left: 366dp; top: 70dp" />
+                <knob id="Feedback" class="Knob-Middle" param="Chorus Feedback" style="left: 466dp; top: 70dp" />
+                <knob id="Rate" class="Knob-Middle" param="Chorus Rate" style="left: 616dp; top: 70dp" />
+                <knob id="Depth" class="Knob-Middle" param="Chorus Depth" style="left: 716dp; top: 70dp" />
+                <section id="Chorus-LFO-Shape" style="left: 610dp; top: 38dp; width: 192dp; height: 30dp">
+                    <button id="Chorus-LFO-Sine" class="Button-Chorus-LFO-Sine" param="Chorus Lfo Shape" valueOn="0" isToggle="1" style="left: 6dp; top: 4dp" />
+                    <button id="Chorus-LFO-Triangle" class="Button-Chorus-LFO-Triangle" param="Chorus Lfo Shape" valueOn="1" isToggle="1" style="left: 36dp; top: 4dp" />
+                    <button id="Chorus-LFO-Saw" class="Button-Chorus-LFO-Saw" param="Chorus Lfo Shape" valueOn="2" isToggle="1" style="left: 66dp; top: 4dp" />
+                    <button id="Chorus-LFO-Square" class="Button-Chorus-LFO-Square" param="Chorus Lfo Shape" valueOn="3" isToggle="1" style="left: 96dp; top: 4dp" />
+                    <button id="Chorus-LFO-SH" class="Button-Chorus-LFO-SH" param="Chorus Lfo Shape" valueOn="4" isToggle="1" style="left: 126dp; top: 4dp" />
+                    <button id="Chorus-LFO-SG" class="Button-Chorus-LFO-SG" param="Chorus Lfo Shape" valueOn="5" isToggle="1" style="left: 156dp; top: 4dp" />
+                </section>
+            </section>
+            <section id="Chorus-Vintage" data-class-disabled="!(Chorus_Type_value == 2)">
+                <img src="Chorus-Vintage.png" />
+                <knob id="Mix" class="Knob-Middle-Led" param="Chorus/Mix2" style="left: 12dp; top: 68dp" />
+                <knob id="X-Over" class="Knob-Middle" param="Chorus/X Over" style="left: 366dp; top: 70dp" />
+                <knob id="Rate" class="Knob-Middle" param="Chorus Rate" style="left: 616dp; top: 70dp" />
+                <knob id="Depth" class="Knob-Middle" param="Chorus Depth" style="left: 716dp; top: 70dp" />
+            </section>
+            <section id="Chorus-Hyper" data-class-disabled="!(Chorus_Type_value == 3)">
+                <img src="Chorus-Hyper.png" />
+                <knob id="Mix" class="Knob-Middle-Led" param="Chorus/Mix2" style="left: 12dp; top: 68dp" />
+                <knob id="X-Over" class="Knob-Middle" param="Chorus/X Over" style="left: 366dp; top: 70dp" />
+                <knob id="Amount" class="Knob-Middle" param="Chorus/Amount" style="left: 466dp; top: 70dp" />
+                <knob id="Depth" class="Knob-Middle" param="Chorus Depth" style="left: 666dp; top: 70dp" />
+            </section>
+            <section id="Chorus-Air" data-class-disabled="!(Chorus_Type_value == 4)">
+                <img src="Chorus-Air.png" />
+                <knob id="Amount" class="Knob-Middle" param="Chorus/X Over" style="left: 366dp; top: 70dp" />
+                <knob id="Depth" class="Knob-Middle" param="Chorus Depth" style="left: 666dp; top: 70dp" />
+            </section>
+            <section id="Chorus-Vibrato" data-class-disabled="!(Chorus_Type_value == 5)">
+                <img src="Chorus-Vibrato.png" />
+                <knob id="X-Over" class="Knob-Middle" param="Chorus/X Over" style="left: 366dp; top: 70dp" />
+                <knob id="Rate" class="Knob-Middle" param="Chorus Rate" style="left: 616dp; top: 70dp" />
+                <knob id="Depth" class="Knob-Middle" param="Chorus Depth" style="left: 716dp; top: 70dp" />
+            </section>
+            <section id="Chorus-Rotary" data-class-disabled="!(Chorus_Type_value == 6)">
+                <img src="Chorus-Rotary.png" />
+                <knob id="Mix" class="Knob-Middle-Led" param="Chorus Mix" style="left: 12dp; top: 68dp" />
+                <knob id="Low/High" class="Knob-Middle" param="Chorus/LowHigh Bal" style="left: 516dp; top: 70dp" />
+                <knob id="Angle" class="Knob-Middle" param="Chorus/Mic Angle" style="left: 616dp; top: 70dp" />
+                <knob id="Depth" class="Knob-Middle" param="Chorus/Distance" style="left: 716dp; top: 70dp" />
+                <knob id="Speed" class="Knob-Chorus-Rotary" param="Chorus/Speed" style="left: 366dp; top: 82dp" />
+            </section>
+            <combo id="Chorus-Type" param="Chorus/Type" style="left: 126dp; top: 98dp; width: 224dp; height: 30dp"></combo>
+        </section>
+        <section id="Distortion" style="left: 0dp; top: 212dp; width: 516dp; height: 276dp">
+            <section id="Distortion-1" data-class-disabled-opacity-50%="!((Distortion_Curve_value >= 1 && Distortion_Curve_value <= 7) || (Distortion_Curve_value >= 12 && Distortion_Curve_value <= 17))">
+                <img src="Distortion-1.png" />
+                <knob id="Mix" class="Knob-Middle-Led" param="Patch Distortion/Mix" style="left: 12dp; top: 68dp" />
+                <knob id="Drive" class="Knob-Middle" param="Distortion Intensity" style="left: 120dp; top: 70dp" />
+                <knob id="Treble-Booster" class="Knob-Middle" param="Patch Distortion/Treble Booster" style="left: 318dp; top: 70dp" />
+                <knob id="High-Cut" class="Knob-Middle" param="Patch Distortion/High Cut" style="left: 418dp; top: 70dp" />
+            </section>
+            <section id="Distortion-2" data-class-disabled="!((Distortion_Curve_value >= 8 && Distortion_Curve_value <= 9))">
+                <img src="Distortion-2.png" />
+                <knob id="Mix" class="Knob-Middle-Led" param="Patch Distortion/Mix" style="left: 12dp; top: 68dp" />
+                <knob id="Intensity" class="Knob-Middle" param="Distortion Intensity" style="left: 118dp; top: 70dp" />
+                <knob id="Quality" class="Knob-Middle" param="Patch Distortion/Quality" style="left: 316dp; top: 70dp" />
+            </section>
+            <section id="Distortion-3" data-class-disabled="!((Distortion_Curve_value >= 10 && Distortion_Curve_value <= 11))">
+                <img src="Distortion-3.png" />
+                <knob id="Mix" class="Knob-Middle-Led" param="Patch Distortion/Mix" style="left: 12dp; top: 68dp" />
+                <knob id="Cutoff" class="Knob-Middle" param="Distortion Intensity" style="left: 118dp; top: 70dp" />
+            </section>
+            <section id="Distortion-4" data-class-disabled="!((Distortion_Curve_value >= 18 && Distortion_Curve_value <= 19))">
+                <img src="Distortion-4.png" />
+                <knob id="Mix" class="Knob-Middle-Led" param="Patch Distortion/Mix" style="left: 12dp; top: 68dp" />
+                <knob id="Intensity" class="Knob-Middle" param="Distortion Intensity" style="left: 118dp; top: 70dp" />
+            </section>
+            <section id="Distortion-5" data-class-disabled="!(Distortion_Curve_value == 20 || Distortion_Curve_value == 24)">
+                <img src="Distortion-5.png" />
+                <knob id="Mix" class="Knob-Middle-Led" param="Patch Distortion/Mix" style="left: 12dp; top: 68dp" />
+                <knob id="Drive" class="Knob-Middle" param="Distortion Intensity" style="left: 118dp; top: 70dp" />
+                <knob id="Tone" class="Knob-Middle" param="Patch Distortion/Tone64" style="left: 316dp; top: 70dp" />
+                <knob id="High-Cut" class="Knob-Middle" param="Patch Distortion/High Cut" style="left: 416dp; top: 70dp" />
+            </section>
+            <section id="Distortion-6" data-class-disabled="!((Distortion_Curve_value >= 21 && Distortion_Curve_value <= 23) || (Distortion_Curve_value >= 25 && Distortion_Curve_value <= 26))">
+                <img src="Distortion-5.png" />
+                <knob id="Mix" class="Knob-Middle-Led" param="Patch Distortion/Mix" style="left: 12dp; top: 68dp" />
+                <knob id="Drive" class="Knob-Middle" param="Distortion Intensity" style="left: 118dp; top: 70dp" />
+                <knob id="Tone" class="Knob-Middle" param="Patch Distortion/Tone127" style="left: 316dp; top: 70dp" />
+                <knob id="High-Cut" class="Knob-Middle" param="Patch Distortion/High Cut" style="left: 416dp; top: 70dp" />
+            </section>
+            <combo id="Distortion-Type" param="Distortion Curve" style="left: 126dp; top: 198dp; width: 276dp; height: 30dp"></combo>
+        </section>
+        <section id="Phaser" style="left: 528dp; top: 212dp; width: 814dp; height: 200dp">
+            <section id="Phaser-Components" data-class-disabled-opacity-50%="!(Phaser_Mix_value >= 1)">
+                <section id="Phaser-Stage" style="left: 118dp; top: 82dp; width: 138dp; height: 62dp">
+                    <button id="Phaser-Stage-1" class="Button-Phaser-Stage-1" param="Phaser Mode" valueOn="0" isToggle="1" style="left: 4dp; top: 6dp" />
+                    <button id="Phaser-Stage-2" class="Button-Phaser-Stage-2" param="Phaser Mode" valueOn="1" isToggle="1" style="left: 48dp; top: 6dp" />
+                    <button id="Phaser-Stage-3" class="Button-Phaser-Stage-3" param="Phaser Mode" valueOn="2" isToggle="1" style="left: 92dp; top: 6dp" />
+                    <button id="Phaser-Stage-4" class="Button-Phaser-Stage-4" param="Phaser Mode" valueOn="3" isToggle="1" style="left: 4dp; top: 34dp" />
+                    <button id="Phaser-Stage-5" class="Button-Phaser-Stage-5" param="Phaser Mode" valueOn="4" isToggle="1" style="left: 48dp; top: 34dp" />
+                    <button id="Phaser-Stage-6" class="Button-Phaser-Stage-6" param="Phaser Mode" valueOn="5" isToggle="1" style="left: 92dp; top: 34dp" />
+                </section>
+                <knob id="Frequency" class="Knob-Middle" param="Phaser Frequency" style="left: 266dp; top: 70dp" />
+                <knob id="Feedback" class="Knob-Middle" param="Phaser Feedback" style="left: 366dp; top: 70dp" />
+                <knob id="Spread" class="Knob-Middle" param="Phaser Spread" style="left: 466dp; top: 70dp" />
+                <knob id="Rate" class="Knob-Middle" param="Phaser Rate" style="left: 616dp; top: 70dp" />
+                <knob id="Depth" class="Knob-Middle" param="Phaser Depth" style="left: 716dp; top: 70dp" />
+            </section>
+            <knob id="Mix" class="Knob-Middle-Led" param="Phaser Mix" style="left: 12dp; top: 68dp" />
+        </section>
+        <section id="Input" style="left: 0dp; top: 500dp; width: 516dp; height: 124dp">
+            <combo id="Mode" class="combo-blue" param="Input Mode" style="left: 30dp; top: 72dp; width: 128dp; height: 22dp"></combo>
+            <combo id="Input" class="combo-blue" param="Input Select" style="left: 192dp; top: 72dp; width: 130dp; height: 22dp" data-class-disabled-opacity-50%="!(Input_Mode_value >= 1)"></combo>
+            <combo id="Atomizer" class="combo-blue" param="Atomizer" style="left: 356dp; top: 72dp; width: 130dp; height: 22dp"></combo>
+        </section>
+        <section id="Filter-Bank" style="left: 528dp; top: 424dp; width: 814dp; height: 200dp">
+            <section id="Ring-Modulator" data-class-disabled-opacity-50%="!(Filter_Bank_Type_value == 1)">
+                <img src="Filter-Bank-Ring-Modulator.png" />
+                <knob id="Frequency" class="Knob-Middle" param="Filter Bank/Frequency" style="left: 366dp; top: 70dp" />
+                <knob id="Stereo-Phase" class="Knob-Middle" param="Filter Bank/Stereo Phase" style="left: 466dp; top: 70dp" />
+            </section>
+            <section id="Frequency-Shifter" data-class-disabled="!(Filter_Bank_Type_value == 2)">
+                <img src="Filter-Bank-Frequency-Shifter.png" />
+                <knob id="Frequency" class="Knob-Middle" param="Filter Bank/Frequency" style="left: 366dp; top: 70dp" />
+                <knob id="Stereo-Phase" class="Knob-Middle" param="Filter Bank/Stereo Phase" style="left: 466dp; top: 70dp" />
+                <knob id="Shape-L" class="Knob-Middle" param="Filter Bank/Shape L" style="left: 616dp; top: 70dp" />
+                <knob id="Shape-R" class="Knob-Middle" param="Filter Bank/Shape R" style="left: 716dp; top: 70dp" />
+            </section>
+            <section id="Vowel-Filter" data-class-disabled="!(Filter_Bank_Type_value == 3)">
+                <img src="Filter-Bank-Vowel-Filter.png" />
+                <knob id="Vowel" class="Knob-Middle" param="Filter Bank/Vowel Frequency" style="left: 366dp; top: 70dp" />
+                <knob id="Resonance" class="Knob-Middle" param="Filter Bank/Resonance" style="left: 466dp; top: 70dp" />
+                <knob id="Stereo-Phase" class="Knob-Middle" param="Filter Bank/Stereo Phase" style="left: 666dp; top: 70dp" />
+            </section>
+            <section id="Comb-Filter" data-class-disabled="!(Filter_Bank_Type_value == 4)">
+                <img src="Filter-Bank-Comb-Filter.png" />
+                <knob id="Frequency" class="Knob-Middle" param="Filter Bank/Comb Frequency" style="left: 366dp; top: 70dp" />
+                <knob id="Resonance" class="Knob-Middle" param="Filter Bank/Resonance" style="left: 466dp; top: 70dp" />
+                <knob id="Stereo-Phase" class="Knob-Middle" param="Filter Bank/Stereo Phase" style="left: 666dp; top: 70dp" />
+            </section>
+            <section id="Pole-X-Fade" data-class-disabled="!((Filter_Bank_Type_value >= 5 && Filter_Bank_Type_value <= 8))">
+                <img src="Filter-Bank-Pole-X-Fade.png" />
+                <knob id="Frequency" class="Knob-Middle" param="Filter Bank/Frequency" style="left: 366dp; top: 70dp" />
+                <knob id="Resonance" class="Knob-Middle" param="Filter Bank/Resonance" style="left: 466dp; top: 70dp" />
+                <knob id="Filter-Type" class="Knob-Middle" param="Filter Bank/Filter Type" style="left: 666dp; top: 70dp" />
+            </section>
+            <section id="Vari-Slope" data-class-disabled="!(Filter_Bank_Type_value >= 9)">
+                <img src="Filter-Bank-Vari-Slope.png" />
+                <knob id="Frequency" class="Knob-Middle" param="Filter Bank/Frequency" style="left: 366dp; top: 70dp" />
+                <knob id="Resonance" class="Knob-Middle" param="Filter Bank/Resonance" style="left: 466dp; top: 70dp" />
+                <knob id="PoleS" class="Knob-Middle" param="Filter Bank/Poles" style="left: 616dp; top: 70dp" />
+                <knob id="Slope" class="Knob-Middle" param="Filter Bank/Slope" style="left: 716dp; top: 70dp" />
+            </section>
+            <knob id="Mix" class="Knob-Middle-Led" param="Filter Bank/Mix" style="left: 12dp; top: 68dp" data-class-disabled-opacity-50%="!((Filter_Bank_Type_value >= 1 && Filter_Bank_Type_value <= 4))" />
+            <combo id="Filter-Bank-Type" param="Filter Bank/Type" style="left: 126dp; top: 98dp; width: 224dp; height: 30dp"></combo>
+        </section>
+        <section id="Envelope-Follower" style="left: 0dp; top: 636dp; width: 516dp; height: 198dp">
+            <section id="Envelope-Follower" data-class-disabled-opacity-50%="!(Input_Follower_Mode_value >= 1)">
+                <knob id="Level" class="Knob-Middle-Led" param="Filter Env Sustain" style="left: 12dp; top: 68dp" />
+                <knob id="Attack" class="Knob-Middle" param="Filter Env Attack" style="left: 316dp; top: 70dp" />
+                <knob id="Release" class="Knob-Middle" param="Filter Env Release" style="left: 416dp; top: 70dp" />
+            </section>
+            <combo id="Envelope-Follower-Input" param="Input Follower Mode" style="left: 126dp; top: 98dp; width: 176dp; height: 30dp"></combo>
+        </section>
+        <section id="EQ" style="left: 528dp; top: 636dp; width: 814dp; height: 198dp">
+            <knob id="Low-Gain" class="Knob-Middle-Led-Bipolar" param="LowEQ Gain" style="left: 12dp; top: 68dp" />
+            <knob id="Low-Freq" class="Knob-Middle" param="LowEQ Frequency" style="left: 114dp; top: 70dp" />
+            <knob id="Mid-Gain" class="Knob-Middle-Led-Bipolar" param="MidEQ Gain" style="left: 262dp; top: 68dp" />
+            <knob id="Mid-Freq" class="Knob-Middle" param="MidEQ Frequency" style="left: 366dp; top: 70dp" />
+            <knob id="Mid-Q" class="Knob-Middle" param="MidEQ Q-Factor" style="left: 464dp; top: 70dp" />
+            <knob id="High-Gain" class="Knob-Middle-Led-Bipolar" param="HighEQ Gain" style="left: 612dp; top: 68dp" />
+            <knob id="High-Freq" class="Knob-Middle" param="HighEQ Frequency" style="left: 714dp; top: 70dp" />
+        </section>
+    </page>
+    <page id="FX-2" tabgroup="pages" tabpage="8" style="left: 422dp; top: 96dp; width: 1342dp; height: 834dp">
+        <img src="Page-FX-2.png" />
+        <section id="Delay" style="left: 0dp; top: 0dp; width: 1342dp; height: 270dp" data-class-disabled-opacity-50%="!((Switches_Delay_Enable_value == 1))">
+            <section id="Delay-Type" style="left: 216dp; top: 26dp; width: 1126dp; height: 244dp" data-class-disabled-opacity-50%="!((Delay_Send_value > 0))">
+                <section id="Classic" data-class-disabled="!(Delay_Type_value == 0)">
+                    <img src="Delay-Classic.png" />
+                    <section id="Classic-Components" data-class-disabled-opacity-50%="!(Delay_Mode_value > 0)">
+                        <knob id="Time" class="Knob-Middle-Led" param="Delay Time" style="left: 354dp; top: 74dp" data-class-disabled-opacity-50%="!((Delay_Clock_value == 0 && Delay_Mode_value >= 0 && Delay_Mode_value <= 5))" />
+                        <knob id="Feedback" class="Knob-Middle-Led" param="Delay Feedback" style="left: 474dp; top: 74dp" />
+                        <knob id="Color" class="Knob-Middle" param="Delay Color" style="left: 606dp; top: 76dp" />
+                        <knob id="Rate" class="Knob-Middle" param="Dly Rate / Rev Decay" style="left: 706dp; top: 76dp" />
+                        <knob id="Depth" class="Knob-Middle" param="Dly Depth " style="left: 806dp; top: 76dp" />
+                        <section id="Delay-LFO-Shape" style="left: 914dp; top: 88dp; width: 198dp; height: 62dp">
+                            <button id="Delay-LFO-Sine" class="Button-LFO-Sine" param="Delay Lfo Shape" valueOn="0" isToggle="1" style="left: 4dp; top: 6dp" />
+                            <button id="Delay-LFO-Triangle" class="Button-LFO-Triangle" param="Delay Lfo Shape" valueOn="1" isToggle="1" style="left: 4dp; top: 34dp" />
+                            <button id="Delay-LFO-Saw" class="Button-LFO-Saw" param="Delay Lfo Shape" valueOn="2" isToggle="1" style="left: 68dp; top: 6dp" />
+                            <button id="Delay-LFO-Square" class="Button-LFO-Square" param="Delay Lfo Shape" valueOn="3" isToggle="1" style="left: 68dp; top: 34dp" />
+                            <button id="Delay-LFO-SH" class="Button-LFO-SH" param="Delay Lfo Shape" valueOn="4" isToggle="1" style="left: 132dp; top: 6dp" />
+                            <button id="Delay-LFO-SG" class="Button-LFO-SG" param="Delay Lfo Shape" valueOn="5" isToggle="1" style="left: 132dp; top: 34dp" />
+                        </section>
+                        <combo id="Delay-Clock" class="combo-blue" param="Delay Clock" style="left: 242dp; top: 146dp; width: 80dp; height: 22dp; padding-left: 4dp; padding-right: 26dp" data-class-disabled-opacity-50%="!((Delay_Mode_value >= 0 && Delay_Mode_value <= 5))"></combo>
+                    </section>
+                    <combo id="Delay-Mode" class="combo-blue" param="Delay Mode" style="left: 22dp; top: 146dp; width: 188dp; height: 22dp; padding-left: 4dp"></combo>
+                </section>
+                <section id="Tape-Clocked" data-class-disabled="!(Delay_Type_value == 1)">
+                    <img src="Delay-Clocked.png" />
+                    <knob id="Time" class="Knob-Middle-Led" param="Delay/Tape Delay Time" style="left: 354dp; top: 74dp" data-class-disabled-opacity-50%="!(Delay_Tape_Delay_Left_Clock_value == -1)" />
+                    <knob id="Feedback" class="Knob-Middle-Led" param="Delay/Tape Delay Feedback" style="left: 474dp; top: 74dp" />
+                    <knob id="Center-Frequency" class="Knob-Middle" param="Delay/Tape Delay Center Frequency" style="left: 606dp; top: 76dp" />
+                    <knob id="Bandwidth" class="Knob-Middle" param="Delay Tape Delay Bandwidth" style="left: 806dp; top: 76dp" />
+                    <knob id="Modulation" class="Knob-Middle" param="Delay/Tape Delay Modulation" style="left: 1004dp; top: 76dp" />
+                    <combo id="Clock-Left" class="combo-blue" param="Delay Tape Delay Left Clock" style="left: 22dp; top: 146dp; width: 134dp; height: 22dp"></combo>
+                    <combo id="Clock-Right" class="combo-blue" param="Delay Tape Delay Right Clock" style="left: 186dp; top: 146dp; width: 136dp; height: 22dp"></combo>
+                </section>
+                <section id="Tape-Free/Doppler" data-class-disabled="!(Delay_Type_value >= 2)">
+                    <img src="Delay-Free.png" />
+                    <knob id="Time" class="Knob-Middle-Led" param="Delay/Tape Delay Time" style="left: 354dp; top: 74dp" />
+                    <knob id="Feedback" class="Knob-Middle-Led" param="Delay/Tape Delay Feedback" style="left: 474dp; top: 74dp" />
+                    <knob id="Center-Frequency" class="Knob-Middle" param="Delay/Tape Delay Center Frequency" style="left: 606dp; top: 76dp" />
+                    <knob id="Bandwidth" class="Knob-Middle" param="Delay Tape Delay Bandwidth" style="left: 806dp; top: 76dp" />
+                    <knob id="Modulation" class="Knob-Middle" param="Delay/Tape Delay Modulation" style="left: 1004dp; top: 76dp" />
+                    <combo id="Ratio" param="Delay Tape Delay Ratio" style="left: 136dp; top: 142dp; width: 70dp; height: 30dp; padding: 0">
+                        <combotext style="text-align: center; color: #001941" />
+                    </combo>
+                </section>
+                <combo id="Delay-Type" param="Delay Type" style="left: 12dp; top: 44dp; width: 322dp; height: 30dp"></combo>
+            </section>
+            <knob id="Delay-Send" class="Knob-Big-Mini" param="Delay Send" style="left: 18dp; top: 46dp">
+                <label>{{Delay_Send_text}}</label>
+            </knob>
+        </section>
+        <section id="Reverb" style="left: 0dp; top: 282dp; width: 1342dp; height: 270dp" data-class-disabled-opacity-50%="!(Switches_Reverb_Enable_value == 1)">
+            <section id="Reverb-Components" data-class-disabled-opacity-50%="!(Reverb_Send_value > 0)">
+                <section id="Reverb-Components" data-class-disabled-opacity-50%="!(Reverb_Mode_value > 0)">
+                    <knob id="Decay" class="Knob-Middle-Led" param="Reverb Time" style="left: 570dp; top: 100dp" />
+                    <knob id="Damping" class="Knob-Middle-Led" param="Reverb Damping" style="left: 690dp; top: 100dp" />
+                    <knob id="Color" class="Knob-Middle" param="Reverb Color" style="left: 822dp; top: 102dp" />
+                    <knob id="Time" class="Knob-Middle" param="Reverb Predelay" style="left: 922dp; top: 102dp" data-class-disabled-opacity-50%="!(Reverb_Clock_value == 0)" />
+                    <knob id="Feedback" class="Knob-Middle" param="Reverb Feedback" style="left: 1022dp; top: 102dp" data-class-disabled-opacity-50%="!(Reverb_Mode_value >= 2)" />
+                    <combo id="Reverb-Clock" param="Reverb Clock" style="left: 1138dp; top: 130dp; width: 184dp; height: 30dp"></combo>
+                    <combo id="Reverb-Type" param="Reverb Type" style="left: 228dp; top: 196dp; width: 322dp; height: 30dp"></combo>
+                </section>
+                <combo id="Reverb-Mode" param="Reverb Mode" style="left: 228dp; top: 70dp; width: 322dp; height: 30dp"></combo>
+            </section>
+            <knob id="Reverb-Send" class="Knob-Big-Mini" param="Reverb Send" style="left: 18dp; top: 46dp">
+                <label>{{Reverb_Send_text}}</label>
+            </knob>
+        </section>
+        <section id="Vocoder" style="left: 0dp; top: 564dp; width: 1342dp; height: 270dp">
+            <section id="Vocoder" data-class-disabled-opacity-50%="!(Vocoder_Mode_value >= 1)">
+                <knob id="Bands" param="Vocoder/Bands" style="left: 104dp; top: 170dp; width: 70dp; height: 30dp">
+                    <label>{{Vocoder_Bands_text}}</label>
+                </knob>
+                <input id="Source-Balance" class="Slider" param="Vocoder/Balance" type="range" style="left: 292dp; top: 76dp" />
+                <input id="Spectral-Balance" class="Slider" param="Vocoder/Spectral Balance" type="range" style="left: 292dp; top: 182dp" />
+                <knob id="Attack" class="Knob-Middle" param="Vocoder/Attack" style="left: 572dp; top: 52dp" />
+                <knob id="Release" class="Knob-Middle" param="Vocoder/Release" style="left: 572dp; top: 154dp" />
+                <knob id="Carrier-Center" class="Knob-Middle-Led-Bipolar" param="Vocoder/Carrier Center Frequency" style="left: 710dp; top: 102dp" />
+                <knob id="Carrier-Spread" class="Knob-Middle" param="Vocoder/Modulator Frequency Spread" style="left: 1122dp; top: 104dp" controllerLinkCondition="Vocoder-Link" controllerLinkTarget="Modulator-Spread" />
+                <knob id="Carrier-Q" class="Knob-Middle" param="Vocoder/Modulator Q Factor" style="left: 1022dp; top: 104dp" controllerLinkCondition="Vocoder-Link" controllerLinkTarget="Modulator-Q" />
+                <knob id="Modulator-Q" class="Knob-Middle" param="Vocoder/Carrier Q Factor" style="left: 912dp; top: 104dp" controllerLinkCondition="Vocoder-Link" controllerLinkTarget="Carrier-Q" />
+                <knob id="Modulator-Spread" class="Knob-Middle" param="Carrier Frequency Spread" style="left: 812dp; top: 104dp" controllerLinkCondition="Vocoder-Link" controllerLinkTarget="Carrier-Spread" />
+                <knob id="Modulator-Offset" class="Knob-Middle-Led-Bipolar" param="Vocoder/Modulator Frequency Offset" style="left: 1220dp; top: 102dp" />
+                <button id="Vocoder-Link" class="Button-Led" param="Vocoder Link" isToggle="1" style="left: 988dp; top: 182dp" />
+            </section>
+            <combo id="Vocoder-Mode" class="combo-blue" param="Vocoder Mode" style="left: 34dp; top: 112dp; width: 210dp; height: 22dp"></combo>
+        </section>
+        <button id="Delay-ON/OFF" class="Button-Led" param="Switches/Delay Enable" isToggle="1" style="left: 10dp; top: 214dp" />
+        <button id="Reverb-ON/OFF" class="Button-Led" param="Switches/Reverb Enable" isToggle="1" style="left: 10dp; top: 496dp" />
+    </page>
+    <page id="Common" tabgroup="pages" tabpage="9" style="left: 422dp; top: 96dp; width: 1342dp; height: 834dp">
+        <img src="Page-Common.png" />
+        <section id="Common-Parameters" style="left: 0dp; top: 0dp; width: 664dp; height: 168dp">
+            <knob id="Transpose" param="Transpose" style="left: 56dp; top: 90dp; width: 70dp; height: 30dp">
+                <label>{{Transpose_text}}</label>
+            </knob>
+            <knob id="Part-Detune" param="Part Detune" style="left: 216dp; top: 90dp; width: 70dp; height: 30dp">
+                <label>{{Part_Detune_text}}</label>
+            </knob>
+            <combo id="Smooth-Mode" class="combo-blue" param="Control Smooth Mode" style="left: 376dp; top: 66dp; width: 232dp; height: 22dp"></combo>
+            <combo id="Key-Mode" class="combo-blue" param="Key Mode" style="left: 376dp; top: 122dp; width: 232dp; height: 22dp"></combo>
+        </section>
+        <section id="Pitch-Bender" style="left: 0dp; top: 182dp; width: 664dp; height: 168dp">
+            <knob id="Bend-Down" param="Bender Range Down" style="left: 56dp; top: 90dp; width: 70dp; height: 30dp">
+                <label>{{Bender_Range_Down_text}}</label>
+            </knob>
+            <knob id="Bend-Up" param="Bender Range Up" style="left: 216dp; top: 90dp; width: 70dp; height: 30dp">
+                <label>{{Bender_Range_Up_text}}</label>
+            </knob>
+            <combo id="Bend-Scale" class="combo-blue" param="Bender Scale" style="left: 376dp; top: 94dp; width: 232dp; height: 22dp"></combo>
+        </section>
+        <section id="Midi-Ports" style="left: 0dp; top: 364dp; width: 664dp; height: 168dp">
+            <combo id="MidiIn" class="combo-blue" style="left: 52dp; top: 94dp; width: 232dp; height: 22dp"></combo>
+            <combo id="MidiOut" class="combo-blue" style="left: 376dp; top: 94dp; width: 232dp; height: 22dp"></combo>
+        </section>
+        <section id="Output" style="left: 678dp; top: 0dp; width: 664dp; height: 168dp">
+            <input id="Surround-Balance" class="Slider-Surround-Balance" param="Balance" type="range" orientation="horizontal" style="left: 58dp; top: 96dp" />
+            <combo id="Main-Out" class="combo-blue" param="Part Output Select" style="left: 374dp; top: 94dp; width: 232dp; height: 22dp"></combo>
+        </section>
+        <section id="Category" style="left: 678dp; top: 182dp; width: 664dp; height: 168dp">
+            <combo id="Category-1" class="combo-blue" param="Category1" style="left: 52dp; top: 94dp; width: 232dp; height: 22dp"></combo>
+            <combo id="Category-2" class="combo-blue" param="Category2" style="left: 374dp; top: 94dp; width: 232dp; height: 22dp"></combo>
+        </section>
+        <section id="Input/Output-Configuration" style="left: 678dp; top: 364dp; width: 664dp; height: 168dp">
+            <combo id="USB-Audio-Mode" class="combo-blue" param="USB/Virus Control USB IO Configuration" style="left: 52dp; top: 94dp; width: 232dp; height: 22dp"></combo>
+            <combo id="Surround-Output" class="combo-blue" param="Part Output Select" style="left: 374dp; top: 94dp; width: 232dp; height: 22dp"></combo>
+        </section>
+        <section id="Soft-Knob" style="left: 0dp; top: 546dp; width: 1342dp; height: 168dp">
+            <combo id="Soft-Knob-1-Destination" param="Soft Knob-1 Single" style="left: 26dp; top: 60dp; width: 412dp; height: 30dp"></combo>
+            <combo id="Soft-Knob-2-Destination" param="Soft Knob-2 Single" style="left: 466dp; top: 60dp; width: 412dp; height: 30dp"></combo>
+            <combo id="Soft-Knob-3-Destination" param="Soft Knobs/Destination 3" style="left: 906dp; top: 60dp; width: 412dp; height: 30dp"></combo>
+            <combo id="Soft-Knob-1-Name" param="Soft Knob1 ShortName" style="left: 26dp; top: 102dp; width: 412dp; height: 30dp"></combo>
+            <combo id="Soft-Knob-2-Name" param="Soft Knob2 ShortName" style="left: 466dp; top: 102dp; width: 412dp; height: 30dp"></combo>
+            <combo id="Soft-Knob-3-Name" param="Soft Knob3 ShortName" style="left: 906dp; top: 102dp; width: 412dp; height: 30dp"></combo>
+        </section>
+    </page>
+    <page id="Info" tabgroup="pages" tabpage="10" style="left: 422dp; top: 96dp; width: 1342dp; height: 832dp">
+        <img src="Page-Info.png" />
+        <text id="Changelog" class="Changelog" style="left: 36dp; top: 92dp; width: 1270dp; height: 348dp">
+            Ostirus Update 02.09.2026<br />
+
+            <!--            <br />"INFO":<br />-->
+
+            <!--            <br />"INFO" page now includes "Changelog" section that lists all updates made to latest version of skin.<br />-->
+
+            <br />"PART-MANAGER":<br />
+
+            <br />"Load-Preset" and "Save-Preset" buttons in "Part-Manager" have been fixed — they now work correctly in both "Single-Mode" and "Multi-Mode".
+            "Multi-Mode" toggle button has been replaced with less bright version. "Snow" skin has been removed, as it is no longer needed. When switching "ROM" modes,
+            skin now automatically adapts to selected "ROM" and updates "Part Manager" image accordingly.<br />
+
+            <br />"OSCILLATOR":<br />
+
+            <br />On "Oscillator" page in "Classic" mode, waveform morphing visualization has been added. When adjusting "Oscillator 1/2 Waveform Shape" parameter,
+            displayed waveform now smoothly morphs between two selected types. Morphing also works between "Saw" and "Pulse" modes and responds to changes in "Pulsewidth" parameter.
+            In "Hypersaw" mode, voices state display has been fixed — visualization now updates correctly when adjusting "Density" and "Detune" parameters.<br />
+
+            <br />"FILTER":<br />
+
+            <br />"Filter" page now features fully functional "ADSR" model for all envelope types. Parameters can be adjusted either via knobs or by dragging small square markers directly on
+            "ADSR" graph. These markers move in different directions depending on which parameter they control. "Decay" square marker is particularly versatile — dragging it horizontally
+            changes "Decay" parameter, while dragging vertically changes "Sustain" parameter.<br />
+            Simultaneous control of "Cutoff" and "Resonance" parameters has been implemented via dedicated square markers located on LCD display of "Filter Cutoff" knob.
+            Main screen shows values of both parameters at same time.<br />
+            Double-clicking square markers resets "Resonance" parameter, while double-clicking elsewhere on LCD display resets "Cutoff" parameter. Same reset behavior applies to squares
+            markers in "ADSR" area. Parameters can also be adjusted using mouse wheel, with adjustment speed controlled by "CTRL", "SHIFT", and "ALT" modifier keys — exactly as implemented in
+            plugin for native knobs, both in drag mode and when using mouse wheel.<br />
+            In "ADSR" area, solid color fill without gradient is used, and lines are drawn with slight angles, as current version lacks support for gradients and "Bezier curves".
+            This will be improved once appropriate methods become available in "Canvas" toolkit.<br />
+            "Analog Mode" button now remembers last value set by user within group, so state persists between last selected value in "Classic" (0–3) and "Analog" (4–7) groups.<br />
+
+            <br />"LFO":<br />
+
+            <br />On "LFO" page, behavior of "Clock Switch" button has been fixed. It now correctly toggles between "Rate" knob (which controls LFO speed in "Free" mode) and "Clock Divider"
+            knob (tied to clock generator). Essentially, this button changes "LFO 1/2/3 Clock" values, mirroring behavior of dropdown menu responsible for same parameter.<br />
+
+            <br />"ARPEGGIATOR":<br />
+
+            <br />On arpeggiator page, you can now adjust "Length" and "Velocity" parameters by grabbing edge of visual "Step" and dragging vertically or horizontally, depending on
+            which parameter you want to change. Adjustment speed is controlled by CTRL, SHIFT, and ALT modifier keys — similar to how it works with native knobs in plugin, both when dragging
+            and when using mouse wheel.<br />
+            You can also adjust both parameters simultaneously by dragging upper-right corner of "Step". With SHIFT held down, only "Length" parameter changes; with CTRL held down, only
+            "Velocity" changes. ALT key slows down adjustment speed.<br />
+            All draggable areas are marked in yellow and highlight on hover. Main display shows both parameter values simultaneously. Double-clicking corresponding areas resets parameters to
+            their default values. Reset is also performed by double-clicking body of "Step" itself.<br />
+            Mouse wheel works as well — scrolling normally changes "Velocity" parameter, while holding SHIFT changes "Length" instead.<br />
+            Holding "ALT" key activates "Drawing" mode. Click anywhere to set "Velocity" of that step to your chosen value, or drag across entire arpeggiator area to paint custom pattern.
+            Two additional drawing options are available: "ALT+SHIFT" lets you draw straight line at any angle from start point to end point (this mode only works when moving in original
+            direction; moving backward falls back to regular drawing mode), and "ALT+SHIFT+CTRL" draws horizontal straight line, height of which is set by first click — then simply drag across
+            arpeggiator area to achieve desired result.<br />
+            You can also copy arpeggiator patterns — simply start editing any parameter by dragging edge of "Step", and that step will automatically be copied to "User-Pattern",
+            where it can be edited further.<br />
+            To copy "Step", middle-click it and drag to target "Step". Right-clicking toggles "Step" on or off ("Bitfield" parameter) — just click individual steps or drag across area.<br />
+            "Slider" responsible for arpeggiator pattern length can now be interacted with not only by dragging but also by clicking on desired numbers within its area.<br />
+            All parameter visualizations automatically adapt to global "Note Length" and "Swing" settings.<br />
+            "Randomize Lengths", "Randomize Velocity", and "Randomize Step"(Minimum number of active steps is at least 25%) buttons have been added — each sets random values for active steps.<br />
+            "Left" and "Right" buttons perform cyclic shift of steps in corresponding direction.<br />
+            "Fill" button replicates current pattern across all thirty-two steps.<br />
+            "Reset" button completely resets all parameters to their default values for all thirty-two steps.<br />
+
+            <br />"FX-2":<br />
+
+            <br />"Delay" and "Reverb" effect "Switches" have been left as they are, since they are native controls for effect states. Their behavior fully follows factory logic,
+            and there is no need to create additional buttons or try to override their operation. Full functionality has not yet been implemented by developers, but this will be
+            addressed in future update, at which point switches will work as expected.<br />
+        </text>
+        <url id="QR" url="https://www.donationalerts.com/r/mikesunrise" style="left: 540dp; top: 518dp; width: 108dp; height: 108dp"></url>
+        <url id="Donate" url="https://www.donationalerts.com/r/mikesunrise" style="left: 668dp; top: 528dp; width: 126dp; height: 46dp"></url>
+        <url id="Home-Page" url="https://theusualsuspects.io/" style="left: 108dp; top: 702dp; width: 358dp; height: 16dp">https://theusualsuspects.io/</url>
+        <url id="Discord" url="https://discord.gg/AaGHXSWM" style="left: 840dp; top: 702dp; width: 346dp; height: 16dp">https://discord.gg/dsp56300</url>
+        <url id="Github" url="https://github.com/dsp56300/gearmulator" style="left: 840dp; top: 740dp; width: 466dp; height: 16dp">https://github.com/dsp56300/gearmulator</url>
+        <url id="Donate-Info" url="https://paypal.me/dsp56300" style="left: 840dp; top: 776dp; width: 310dp; height: 16dp">https://paypal.me/dsp56300</url>
+        <text id="Version-Skin" style="left: 352dp; top: 742dp; width: 168dp; height: 16dp">02.09.26</text>
+        <text id="DeviceModel" style="left: 352dp; top: 778dp; width: 168dp; height: 16dp"></text>
+    </page>
+    </body>
+</rml>

@@ -1,0 +1,636 @@
+/* == COMBO-MENU and MENU-PRESETS PART-MANAGER == */
+
+/* Background */
+
+@media (theme: advancedrenderer) {
+    .menubox.dialogbox {
+        background-color: #FFFFFF00;
+        decorator: linear-gradient(180deg, rgba(230, 230, 230, 85%) 0%, rgba(210, 210, 210, 85%) 100%);
+        box-shadow: rgba(0, 0, 0, 25%) 0dp 0dp 6dp 2dp, rgba(208, 208, 208, 25%) 0dp 0dp 0dp 2dp inset;
+        backdrop-filter: blur(4dp);
+    }
+}
+
+@media not (theme: advancedrenderer) {
+    .menubox.dialogbox {
+        background-color: rgb(204, 204, 204);
+        box-shadow: rgba(0, 0, 0, 0%) 0dp 0dp 0dp 0dp;
+    }
+}
+
+.menubox.dialogbox {
+    display: flex;
+    flex-direction: row;
+    border: 0dp;
+    border-radius: 8dp;
+    padding: 4dp 4dp 4dp 4dp;
+    gap: 2dp;
+    position: absolute;
+    z-index: 100;
+}
+
+.menucolumn {
+    display: flex;
+    flex-direction: column;
+    gap: 4dp;
+    padding-right: 4dp;
+    padding-left: 2dp;
+    /*Separator-Horizontal*/
+    border-right: 2dp rgba(132, 132, 132, 50%);
+}
+
+.menucolumn:last-child {
+    border-right: 0dp;
+    padding-right: 0dp;
+}
+
+.menucolumn:first-child {
+    padding-left: 0dp;
+}
+
+.menuitem {
+    font-family: TeX Gyre Heros MS;
+    font-size: 20dp;
+    font-weight: normal;
+    height: 20dp;
+    line-height: 20dp;
+    color: #000000D8;
+    border-radius: 4dp;
+    padding-top: 2dp;
+    padding-right: 28dp;
+    padding-left: 28dp;
+    padding-bottom: 4dp;
+    white-space: nowrap;
+}
+
+.menuitem:hover:disabled {
+    background-color: transparent;
+}
+
+.menuitem:hover,
+.menuitem:active,
+.menuitem:hover:checked {
+    color: #000000D8;
+    background-color: rgba(255, 255, 255, 50%);
+}
+
+.menuitem:checked {
+    color: #EBEBEB;
+    background-color: rgba(100, 100, 100, 50%);
+    decorator: image(Menu-Check.png scale-none left);
+    image-color: #000000BD;
+}
+
+.menuitem:disabled {
+    color: #888;
+}
+
+.menuitem:submenu {
+    decorator: image(PM-Arrow-Right.png scale-none right);
+    image-color: #000000D8;
+}
+
+.menuitem:separator {
+    height: 2dp;
+    background-color: #888;
+    padding: 0dp;
+    margin: 4dp 0dp 4dp 0dp;
+}
+
+/* == MENU-SETTINGS ==*/
+
+.dialogbox {
+    border: 0dp rgb(172, 176, 179);
+    border-radius: 10dp;
+}
+
+@media (theme: advancedrenderer) {
+    .dialogbox {
+        decorator: image(Menu-Settings-Background.png scale-none), linear-gradient(#458FD3 0%, #2B65B6 100%);
+        backdrop-filter: blur(0dp);
+        box-shadow: rgba(0, 0, 0, 25%) -4dp 4dp 4dp 0dp, rgba(0, 0, 0, 25%) -18dp 18dp 4dp 0dp;
+    }
+}
+
+@media not (theme: advancedrenderer) {
+    .dialogbox {
+        background-color: rgba(50, 62, 68, 230);
+    }
+}
+
+/* Background Backside Setting-Menu */
+
+.settings-parent {
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #0008;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+}
+
+/* Main Setting-Menu */
+
+.settings-root {
+    display: flex;
+    flex-direction: row;
+    width: 1450dp;
+    height: 922dp;
+}
+
+.settings-table {
+    column-gap: 1em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+}
+
+.settings-tr {
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+}
+
+.settings-td {
+}
+
+/* Background Left-Menu */
+
+.settings-categories {
+    decorator: linear-gradient(180deg, rgba(38, 34, 80, 6.5%) 0%, rgba(27, 25, 66, 8.5%) 57.44%, rgba(23, 22, 59, 10%) 100%);
+    background-color: #00000000;
+    flex: 0 0 auto;
+    width: 190dp;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+    align-items: center;
+    padding: 1em;
+    padding-left: 34dp;
+}
+
+/* Background Right-Menu */
+
+.settings-pagecontainer {
+    flex: 1 1 auto;
+    padding: 1em;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+
+.settings-headline {
+    font-family: TeX Gyre Heros MS;
+    font-style: normal;
+    font-size: 23dp;
+    text-transform: uppercase;
+    line-height: 23dp;
+    /*letter-spacing: 1dp;*/
+    font-weight: bold;
+    text-align: center;
+    padding-top: 14dp;
+    font-effect: shadow(0dp 1dp rgba(0, 0, 0, 15%));
+    color: #FFFFFF;
+}
+
+.settings-page {
+    font-family: TeX Gyre Heros MS;
+    font-style: normal;
+    font-size: 20dp;
+    line-height: 14dp;
+    /*letter-spacing: 1dp;*/
+    font-weight: bold;
+    text-align: center;
+    font-effect: shadow(0dp 1dp rgba(0, 0, 0, 15%));
+    color: #B1CBE7;
+}
+
+.settings-page h1 {
+    display: block;
+    font-family: TeX Gyre Heros MS;
+    font-style: normal;
+    font-size: 23dp;
+    text-transform: uppercase;
+    line-height: 40dp;
+    /*letter-spacing: 1dp;*/
+    font-weight: bold;
+    text-align: center;
+    font-effect: shadow(0dp 1dp rgba(0, 0, 0, 15%));
+    color: #FFFFFF;
+    width: 100%;
+    padding-bottom: 0.2em;
+    padding-top: 0.2em;
+    background-color: rgba(0, 0, 0, 25%);
+    border-radius: 6dp;
+}
+
+.settings-page h2 {
+    display: block;
+    font-family: TeX Gyre Heros MS;
+    font-style: normal;
+    font-size: 22dp;
+    text-transform: uppercase;
+    line-height: 22dp;
+    /*letter-spacing: 1dp;*/
+    font-weight: bold;
+    text-align: center;
+    font-effect: shadow(0dp 1dp rgba(0, 0, 0, 15%));
+    color: #B1CBE7;
+    width: 100%;
+    padding-bottom: 20dp;
+    padding-top: 20dp;
+}
+
+.settings-page h3 {
+    display: block;
+    font-family: TeX Gyre Heros MS;
+    font-style: normal;
+    font-size: 22dp;
+    text-transform: uppercase;
+    line-height: 22dp;
+    /*letter-spacing: 1dp;*/
+    font-weight: bold;
+    text-align: center;
+    font-effect: shadow(0dp 1dp rgba(0, 0, 0, 15%));
+    color: #B1CBE7;
+    width: 100%;
+    padding-bottom: 20dp;
+}
+
+.settings-skin-tr td {
+    font-family: TeX Gyre Heros MS;
+    font-style: normal;
+    font-size: 20dp;
+    line-height: 20dp;
+    /*letter-spacing: 1dp;*/
+    font-weight: bold;
+    text-align: left;
+    font-effect: shadow(0dp 1dp rgba(0, 0, 0, 15%));
+    color: #B1CBE7;
+}
+
+.settings-skin-tr:current {
+    width: 100%;
+    border-radius: 6dp;
+    background-color: rgba(163, 199, 247, 25%);
+    color: #F7C4A3;
+}
+
+.settings-skin-tr:current td {
+    color: #F7C4A3;
+}
+
+.settings-skin-tr-headline {
+    width: 100%;
+    border-radius: 6dp;
+    background-color: rgba(0, 0, 0, 10%);
+}
+
+.settings-skin-tr-headline td {
+    font-effect: shadow(0dp 1dp rgba(0, 0, 0, 15%));
+    color: #A3C7F7;
+    text-align: left;
+}
+
+td {
+    font-family: TeX Gyre Heros MS;
+    font-style: normal;
+    font-size: 20dp;
+    line-height: 20dp;
+    /*letter-spacing: 1dp;*/
+    padding: 2dp;
+    font-weight: bold;
+    text-align: left;
+    color: #FFFFFF98;
+}
+
+.settings-combo,
+.settings-combo-small,
+#presetList > input {
+    display: block;
+    position: relative;
+    line-height: 28dp;
+    width: 48%;
+    min-width: 1em;
+    height: 28dp;
+    padding: 0dp;
+    padding-left: 4dp;
+    border: 0 #00000000;
+    background-color: #0000001A;
+    border-radius: 4dp;
+}
+
+.settings-combo combotext,
+.settings-combo-small combotext,
+#presetList .text {
+    font-family: TeX Gyre Heros MS;
+    font-style: normal;
+    font-size: 20dp;
+    line-height: 20dp;
+    /*letter-spacing: 1dp;*/
+    padding: 2dp;
+    font-weight: bold;
+    text-align: left;
+    color: #FFFFFF98;
+}
+
+#presetList > input {
+    z-index: 1;
+    background-color: #3D80BD;
+}
+
+#presetList .text {
+    padding-left: 6dp;
+}
+
+.settings-combo-channel {
+    width: 100%;
+    items-per-column: 17;
+}
+
+.settings-parent label {
+    font-family: TeX Gyre Heros MS;
+    font-style: normal;
+    font-size: 20dp;
+    line-height: 20dp;
+    /*letter-spacing: 1dp;*/
+    font-weight: bold;
+    text-align: left;
+    font-effect: shadow(0dp 1dp rgba(0, 0, 0, 15%));
+    color: #B1CBE7;
+}
+
+.settings-checkbox {
+    display: block;
+    position: relative;
+    width: 22dp;
+    min-width: 1em;
+    height: 22dp;
+    margin-top: 2dp;
+    border: 0 #00000000;
+    background-color: rgba(0, 0, 0, 15%);
+    border-radius: 4dp;
+}
+
+#matrix .settings-checkbox {
+    margin-top: 0dp;
+    margin-bottom: 2dp;
+}
+
+.midimatrix-tr:nth-child(even) {
+    border-radius: 4dp;
+}
+
+.midimatrix-tr > td,
+#matrix .settings-tr-headline > td {
+    line-height: 22dp;
+    padding-left: 6dp;
+}
+
+.settings-checkbox:checked {
+    decorator: image(check.png fill);
+    image-color: #0f8;
+}
+
+#btEnableAdvancedOptions .settings-checkbox {
+    display: block;
+    position: relative;
+    font-size: 48dp;
+    line-height: 32dp;
+    width: 48dp;
+    height: 32dp;
+    left: 84dp;
+    top: 58dp;
+    border: 0 #00000000;
+    background-color: rgba(0, 0, 0, 0%);
+    decorator: image(button-advanced-options_default);
+    border-radius: 0dp;
+}
+
+#btEnableAdvancedOptions .settings-checkbox:checked {
+    image-color: white;
+    decorator: image(button-advanced-options_checked);
+}
+
+#btEnableAdvancedOptions.settings-checkboxwithlabel {
+    display: block;
+    position: relative;
+    margin-left: -8dp;
+}
+
+#btEnableAdvancedOptions > label {
+    line-height: 26dp;
+    color: #FFFFFF;
+}
+
+.settings-checkbox:disabled {
+    background-color: #FFFFFF;
+    opacity: 0.1;
+}
+
+.settings-hlayout {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+settingsspacer1 {
+    display: block;
+    height: 1em
+}
+
+.settings-checkboxwithlabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.settings-slider-h {
+    width: 20em;
+    height: 2em;
+    background-color: #7775;
+    border-radius: 4dp;
+}
+
+.settings-slider-h sliderbar {
+    width: 2em;
+    height: 2em;
+    background-color: #00000080;
+    border-radius: 4dp;
+}
+
+.settings-advanced {
+}
+
+.settings-advanced:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* All buttons */
+
+.button {
+    font-family: TeX Gyre Heros MS;
+    font-style: normal;
+    font-size: 20dp;
+    line-height: 14dp;
+    /*letter-spacing: 1dp;*/
+    font-weight: bold;
+    text-align: center;
+    font-effect: shadow(0dp 1dp rgba(0, 0, 0, 15%));
+    color: #B1CBE7;
+    box-shadow: rgba(0, 0, 0, 25%) 0dp 2dp 2dp 0dp;
+    background-color: rgba(0, 0, 0, 12%);
+    border: 0;
+    border-radius: 6dp;
+    position: relative;
+}
+
+.button:hover {
+    /*background-color: rgba(60, 72, 78, 50%);*/
+    background-color: rgba(31, 65, 102, 50%);
+}
+
+.button:active {
+    background-color: rgba(31, 65, 102, 70%);
+    box-shadow: rgba(0, 0, 0, 10%) 0dp 1dp 1dp 0dp;
+}
+
+#btOpenFolder, #btExport {
+    color: #DEF7A3;
+}
+
+/* Button Left-Menu */
+
+.settings-category-button {
+    background-color: #FFFFFF00;
+    box-shadow: #FFFFFF00 0 0 0;
+    /*text-transform: uppercase;*/
+    width: 100%;
+    height: 40dp;
+    font-size: 22dp;
+    line-height: 40dp;
+    position: relative;
+    text-align: left;
+    padding-left: 44dp;
+    padding-top: -10dp;
+    margin-left: -16dp;
+    white-space: nowrap;
+}
+
+.settings-category-button:nth-child(4) {
+    decorator: image(menu-settings-icons_skin scale-none left);
+    image-color: #FFFFFF99
+}
+
+.settings-category-button:nth-child(5) {
+    decorator: image(menu-settings-icons_gui scale-none left);
+    image-color: #FFFFFF99
+}
+
+.settings-category-button:nth-child(6) {
+    decorator: image(menu-settings-icons_midi scale-none left);
+    image-color: #FFFFFF99
+}
+
+.settings-category-button:nth-child(7) {
+    decorator: image(menu-settings-icons_midi-learn scale-none left);
+    image-color: #FFFFFF99
+}
+
+.settings-category-button:nth-child(8) {
+    decorator: image(menu-settings-icons_dsp-audio scale-none left);
+    image-color: #FFFFFF99
+}
+
+.settings-category-button:nth-child(9) {
+    decorator: image(menu-settings-icons_dsp-bridge scale-none left);
+    image-color: #FFFFFF99
+}
+
+.settings-category-button:hover {
+    color: #FFFFFF;
+    image-color: #FFFFFF;
+    background-color: rgba(60, 72, 78, 0%);
+}
+
+
+.settings-category-button:checked {
+    color: #FFFFFF;
+    image-color: #DEF7A3;
+    border-width: 0;
+    padding: 0;
+    padding-left: 44dp;
+    margin-left: -16dp;
+}
+
+.settings-close-button {
+    display: block;
+    position: absolute;
+    font-family: TeX Gyre Heros MS;
+    font-style: normal;
+    font-size: 18dp;
+    line-height: 30dp;
+    font-weight: bold;
+    text-align: center;
+    width: 32dp;
+    height: 30dp;
+    padding-top: -10dp;
+    padding-left: 10dp;
+    margin-top: 26dp;
+    margin-left: 28dp;
+    /*letter-spacing: 1dp;*/
+    font-effect: shadow(0dp 1dp rgba(0, 0, 0, 15%));
+    background-color: rgba(0, 0, 0, 18%);
+    color: #DEF7A3;
+}
+
+/* == MIDI LEARN MODE OVERLAYS == */
+
+.tus-parameteroverlaytype-midilearn {
+    position: absolute;
+    left: 0dp;
+    top: 0dp;
+    right: 0dp;
+    bottom: 0dp;
+    pointer-events: auto;
+    z-index: 100;
+    text-align: center;
+    border: 1dp #000f;
+    border-radius: 15dp;
+    min-width: 3em;
+    white-space: nowrap;
+}
+
+.tus-parameteroverlaytype-midilearn:midi-unbound {
+    background-color: rgba(225, 81, 42, 90);
+}
+
+.tus-parameteroverlaytype-midilearn:midi-bound {
+    background-color: rgba(99, 234, 201, 90);
+}
+
+.tus-parameteroverlaytype-midilearn:midi-listening {
+    background-color: rgba(255, 200, 50, 115);
+}
+
+.tus-midilearn-label {
+    font-size: 0.95em;
+    color: white;
+    text-align: center;
+    font-effect: outline(1dp #000);
+}
+
+/* Input Colorpicker RGB */
+
+.cp-inputchannel.text {
+    height: 36dp;
+    line-height: 36dp;
+    padding: 0;
+    text-align: center;
+    background: #222222;
+    color: #ededed;
+    decorator: none;
+}
