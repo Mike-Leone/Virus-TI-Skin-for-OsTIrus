@@ -1,7 +1,7 @@
 # Virus TI Skin for OsTIrus (Mike Leone)
 
-![License](https://img.shields.io/badge/license-GPL--3.0-blue.svg)
-![Platform](https://img.shields.io/badge/platform-OsTIrus-lightgrey.svg)
+![License](https://img.shields.io/badge/license-GPL--3.0-65A30D.svg)
+![Platform](https://img.shields.io/badge/platform-OsTIrus-0EA5E9.svg)
 
 ## 📖 Description
 
