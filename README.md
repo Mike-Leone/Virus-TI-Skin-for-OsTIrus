@@ -93,7 +93,7 @@ The skin applies immediately. Sound and presets are not affected.
 ## ⚖️ License
 
 This project is distributed under the **GNU General Public License v3.0**.
-The full license text is available in the [LICENSE](LICENSE) file.
+The full license text is available in the [LICENSE.md](LICENSE.md) file.
 
 You are free to use, modify, and redistribute this skin
 provided the same license is preserved and attribution is given.
