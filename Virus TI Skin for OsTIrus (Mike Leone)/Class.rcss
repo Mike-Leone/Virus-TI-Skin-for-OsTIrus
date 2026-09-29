@@ -1,0 +1,2332 @@
+/* == KNOBS == */
+
+.Knob-Mini {
+    left: 302dp;
+    top: 0dp;
+    width: 48dp;
+    height: 48dp;
+    margin-top: -2dp;
+    frames: 128;
+    spriteprefix: knob-mini_;
+}
+
+.Snow .Knob-Mini {
+    display: none;
+}
+
+page#Arpeggiator .Knob-Mini {
+    margin-top: 0dp;
+    margin-left: -6dp;
+}
+
+.Knob-Middle {
+    width: 86dp;
+    height: 86dp;
+    frames: 128;
+    spriteprefix: knob-middle_;
+}
+
+.Knob-Middle-Led {
+    width: 90dp;
+    height: 90dp;
+    frames: 128;
+    spriteprefix: knob-middle-led_;
+}
+
+.Knob-Middle-Led-Bipolar {
+    width: 90dp;
+    height: 90dp;
+    frames: 128;
+    spriteprefix: knob-middle-led-bipolar_;
+}
+
+.Knob-Big {
+    width: 258dp;
+    height: 258dp;
+    frames: 128;
+    spriteprefix: knob-big_;
+}
+
+.Knob-Big-Mini {
+    width: 202dp;
+    height: 202dp;
+    frames: 128;
+    spriteprefix: knob-big-mini_;
+}
+
+.Knob-Pulse-Width {
+    width: 254dp;
+    height: 42dp;
+    frames: 60;
+    spriteprefix: knob-pulse-width_;
+}
+
+.Knob-Filter-Routing {
+    width: 254dp;
+    height: 82dp;
+    frames: 4;
+    spriteprefix: knob-filter-routing_;
+}
+
+.Knob-Keytrack {
+    width: 250dp;
+    height: 42dp;
+    frames: 128;
+    spriteprefix: knob-keytrack_;
+}
+
+.Knob-Chorus-Air {
+    left: -2dp;
+    top: -2dp;
+    width: 94dp;
+    height: 94dp;
+    decorator: image(knob-chorus-air);
+}
+
+.Knob-Chorus-Vibrato {
+    left: -2dp;
+    top: -2dp;
+    width: 94dp;
+    height: 94dp;
+    decorator: image(knob-chorus-vibrato);
+}
+
+.Knob-Chorus-Rotary {
+    width: 124dp;
+    height: 62dp;
+    frames: 2;
+    spriteprefix: knob-chorus-rotary_;
+}
+
+/* == BUTTONS == */
+
+/* Buttons Page */
+
+.Button-Page-Easy {
+    width: 120dp;
+    height: 38dp;
+    decorator: image(button-page-easy_default);
+}
+
+.Button-Page-Easy:checked,
+.Button-Page-Easy:checked:active {
+    decorator: image(button-page-easy_checked);
+}
+
+.Button-Page-Easy:active {
+    decorator: image(button-page-easy_active);
+}
+
+.Button-Page-Browser {
+    width: 120dp;
+    height: 38dp;
+    decorator: image(button-page-browser_default);
+}
+
+.Button-Page-Browser:checked,
+.Button-Page-Browser:checked:active {
+    decorator: image(button-page-browser_checked);
+}
+
+.Button-Page-Browser:active {
+    decorator: image(button-page-browser_active);
+}
+
+.Button-Page-Osc {
+    width: 120dp;
+    height: 38dp;
+    decorator: image(button-page-osc_default);
+}
+
+.Button-Page-Osc:checked,
+.Button-Page-Osc:checked:active {
+    decorator: image(button-page-osc_checked);
+}
+
+.Button-Page-Osc:active {
+    decorator: image(button-page-osc_active);
+}
+
+.Button-Page-Filter {
+    width: 120dp;
+    height: 38dp;
+    decorator: image(button-page-filter_default);
+}
+
+.Button-Page-Filter:checked,
+.Button-Page-Filter:checked:active {
+    decorator: image(button-page-filter_checked);
+}
+
+.Button-Page-Filter:active {
+    decorator: image(button-page-filter_active);
+}
+
+.Button-Page-Lfo {
+    width: 120dp;
+    height: 38dp;
+    decorator: image(button-page-lfo_default);
+}
+
+.Button-Page-Lfo:checked,
+.Button-Page-Lfo:checked:active {
+    decorator: image(button-page-lfo_checked);
+}
+
+.Button-Page-Lfo:active {
+    decorator: image(button-page-lfo_active);
+}
+
+.Button-Page-Matrix {
+    width: 120dp;
+    height: 38dp;
+    decorator: image(button-page-matrix_default);
+}
+
+.Button-Page-Matrix:checked,
+.Button-Page-Matrix:checked:active {
+    decorator: image(button-page-matrix_checked);
+}
+
+.Button-Page-Matrix:active {
+    decorator: image(button-page-matrix_active);
+}
+
+.Button-Page-Arp {
+    width: 120dp;
+    height: 38dp;
+    decorator: image(button-page-arp_default);
+}
+
+.Button-Page-Arp:checked,
+.Button-Page-Arp:checked:active {
+    decorator: image(button-page-arp_checked);
+}
+
+.Button-Page-Arp:active {
+    decorator: image(button-page-arp_active);
+}
+
+.Button-Page-FX-1 {
+    width: 120dp;
+    height: 38dp;
+    decorator: image(button-page-fx-1_default);
+}
+
+.Button-Page-FX-1:checked,
+.Button-Page-FX-1:checked:active {
+    decorator: image(button-page-fx-1_checked);
+}
+
+.Button-Page-FX-1:active {
+    decorator: image(button-page-fx-1_active);
+}
+
+.Button-Page-FX-2 {
+    width: 120dp;
+    height: 38dp;
+    decorator: image(button-page-fx-2_default);
+}
+
+.Button-Page-FX-2:checked,
+.Button-Page-FX-2:checked:active {
+    decorator: image(button-page-fx-2_checked);
+}
+
+.Button-Page-FX-2:active {
+    decorator: image(button-page-fx-2_active);
+}
+
+.Button-Page-Common {
+    width: 120dp;
+    height: 38dp;
+    decorator: image(button-page-common_default);
+}
+
+.Button-Page-Common:checked,
+.Button-Page-Common:checked:active {
+    decorator: image(button-page-common_checked);
+}
+
+.Button-Page-Common:active {
+    decorator: image(button-page-common_active);
+}
+
+.Button-Page-Info {
+    width: 120dp;
+    height: 38dp;
+    decorator: image(button-page-info_default);
+}
+
+.Button-Page-Info:checked,
+.Button-Page-Info:checked:active {
+    decorator: image(button-page-info_checked);
+}
+
+.Button-Page-Info:active {
+    decorator: image(button-page-info_active);
+}
+
+/* Buttons Part-Manager */
+
+.Button-Part-1 {
+    left: 2dp;
+    top: 2dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-1_default);
+}
+
+.Button-Part-1:checked,
+.Button-Part-1:checked:active {
+    decorator: image(button-part-1_checked);
+}
+
+.Button-Part-1:active {
+    decorator: image(button-part-1_active);
+}
+
+.Snow .Button-Part-1 {
+    left: 14dp;
+    top: 10dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-1_default);
+}
+
+.Snow .Button-Part-1:checked,
+.Snow .Button-Part-1:checked:active {
+    decorator: image(button-part-1_checked);
+}
+
+.Snow .Button-Part-1:active {
+    decorator: image(button-part-1_active);
+}
+
+.Button-Part-2 {
+    left: 2dp;
+    top: 2dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-2_default);
+}
+
+.Button-Part-2:checked,
+.Button-Part-2:checked:active {
+    decorator: image(button-part-2_checked);
+}
+
+.Button-Part-2:active {
+    decorator: image(button-part-2_active);
+}
+
+.Snow .Button-Part-2 {
+    left: 14dp;
+    top: 10dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-2_default);
+}
+
+.Snow .Button-Part-2:checked,
+.Snow .Button-Part-2:checked:active {
+    decorator: image(button-part-2_checked);
+}
+
+.Snow .Button-Part-2:active {
+    decorator: image(button-part-2_active);
+}
+
+.Button-Part-3 {
+    left: 2dp;
+    top: 2dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-3_default);
+}
+
+.Button-Part-3:checked,
+.Button-Part-3:checked:active {
+    decorator: image(button-part-3_checked);
+}
+
+.Button-Part-3:active {
+    decorator: image(button-part-3_active);
+}
+
+.Snow .Button-Part-3 {
+    left: 14dp;
+    top: 10dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-3_default);
+}
+
+.Snow .Button-Part-3:checked,
+.Snow .Button-Part-3:checked:active {
+    decorator: image(button-part-3_checked);
+}
+
+.Snow .Button-Part-3:active {
+    decorator: image(button-part-3_active);
+}
+
+.Button-Part-4 {
+    left: 2dp;
+    top: 2dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-4_default);
+}
+
+.Button-Part-4:checked,
+.Button-Part-4:checked:active {
+    decorator: image(button-part-4_checked);
+}
+
+.Button-Part-4:active {
+    decorator: image(button-part-4_active);
+}
+
+.Snow .Button-Part-4 {
+    left: 14dp;
+    top: 10dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-4_default);
+}
+
+.Snow .Button-Part-4:checked,
+.Snow .Button-Part-4:checked:active {
+    decorator: image(button-part-4_checked);
+}
+
+.Snow .Button-Part-4:active {
+    decorator: image(button-part-4_active);
+}
+
+.Button-Part-5 {
+    left: 2dp;
+    top: 2dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-5_default);
+}
+
+.Button-Part-5:checked,
+.Button-Part-5:checked:active {
+    decorator: image(button-part-5_checked);
+}
+
+.Button-Part-5:active {
+    decorator: image(button-part-5_active);
+}
+
+.Button-Part-6 {
+    left: 2dp;
+    top: 2dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-6_default);
+}
+
+.Button-Part-6:checked,
+.Button-Part-6:checked:active {
+    decorator: image(button-part-6_checked);
+}
+
+.Button-Part-6:active {
+    decorator: image(button-part-6_active);
+}
+
+.Button-Part-7 {
+    left: 2dp;
+    top: 2dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-7_default);
+}
+
+.Button-Part-7:checked,
+.Button-Part-7:checked:active {
+    decorator: image(button-part-7_checked);
+}
+
+.Button-Part-7:active {
+    decorator: image(button-part-7_active);
+}
+
+.Button-Part-8 {
+    left: 2dp;
+    top: 2dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-8_default);
+}
+
+.Button-Part-8:checked,
+.Button-Part-8:checked:active {
+    decorator: image(button-part-8_checked);
+}
+
+.Button-Part-8:active {
+    decorator: image(button-part-8_active);
+}
+
+.Button-Part-9 {
+    left: 2dp;
+    top: 2dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-9_default);
+}
+
+.Button-Part-9:checked,
+.Button-Part-9:checked:active {
+    decorator: image(button-part-9_checked);
+}
+
+.Button-Part-9:active {
+    decorator: image(button-part-9_active);
+}
+
+.Button-Part-10 {
+    left: 2dp;
+    top: 2dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-10_default);
+}
+
+.Button-Part-10:checked,
+.Button-Part-10:checked:active {
+    decorator: image(button-part-10_checked);
+}
+
+.Button-Part-10:active {
+    decorator: image(button-part-10_active);
+}
+
+.Button-Part-11 {
+    left: 2dp;
+    top: 2dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-11_default);
+}
+
+.Button-Part-11:checked,
+.Button-Part-11:checked:active {
+    decorator: image(button-part-11_checked);
+}
+
+.Button-Part-11:active {
+    decorator: image(button-part-11_active);
+}
+
+.Button-Part-12 {
+    left: 2dp;
+    top: 2dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-12_default);
+}
+
+.Button-Part-12:checked,
+.Button-Part-12:checked:active {
+    decorator: image(button-part-12_checked);
+}
+
+.Button-Part-12:active {
+    decorator: image(button-part-12_active);
+}
+
+.Button-Part-13 {
+    left: 2dp;
+    top: 2dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-13_default);
+}
+
+.Button-Part-13:checked,
+.Button-Part-13:checked:active {
+    decorator: image(button-part-13_checked);
+}
+
+.Button-Part-13:active {
+    decorator: image(button-part-13_active);
+}
+
+.Button-Part-14 {
+    left: 2dp;
+    top: 2dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-14_default);
+}
+
+.Button-Part-14:checked,
+.Button-Part-14:checked:active {
+    decorator: image(button-part-14_checked);
+}
+
+.Button-Part-14:active {
+    decorator: image(button-part-14_active);
+}
+
+.Button-Part-15 {
+    left: 2dp;
+    top: 2dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-15_default);
+}
+
+.Button-Part-15:checked,
+.Button-Part-15:checked:active {
+    decorator: image(button-part-15_checked);
+}
+
+.Button-Part-15:active {
+    decorator: image(button-part-15_active);
+}
+
+.Button-Part-16 {
+    left: 2dp;
+    top: 2dp;
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-part-16_default);
+}
+
+.Button-Part-16:checked,
+.Button-Part-16:checked:active {
+    decorator: image(button-part-16_checked);
+}
+
+.Button-Part-16:active {
+    decorator: image(button-part-16_active);
+}
+
+.Button-Preset-Up {
+    left: 46dp;
+    top: 2dp;
+    width: 34dp;
+    height: 20dp;
+    decorator: image(button-preset-up_default);
+}
+
+.Button-Preset-Up:active {
+    decorator: image(button-preset-up_active);
+}
+
+.Snow .Button-Preset-Up {
+    left: 260dp;
+    top: 10dp;
+    width: 44dp;
+    height: 42dp;
+    decorator: none;
+}
+
+.Button-Preset-Down {
+    left: 46dp;
+    top: 24dp;
+    width: 34dp;
+    height: 20dp;
+    decorator: image(button-preset-down_default);
+}
+
+.Button-Preset-Down:active {
+    decorator: image(button-preset-down_active);
+}
+
+.Snow .Button-Preset-Down {
+    left: 306dp;
+    top: 10dp;
+    width: 44dp;
+    height: 42dp;
+    decorator: none;
+}
+
+.Button-Load {
+    left: 206dp;
+    top: 2dp;
+    width: 46dp;
+    height: 18dp;
+    decorator: image(button-load_default);
+}
+
+.Button-Load:active {
+    decorator: image(button-load_active);
+}
+
+.Snow .Button-Load {
+    left: 14dp;
+    top: 66dp;
+    width: 92dp;
+    height: 30dp;
+    decorator: image(button-load-snow_default);
+}
+
+.Snow .Button-Load:active {
+    decorator: image(button-load-snow_active);
+}
+
+.Button-Save {
+    left: 252dp;
+    top: 2dp;
+    width: 46dp;
+    height: 18dp;
+    decorator: image(button-save_default);
+}
+
+.Button-Save:active {
+    decorator: image(button-save_active);
+}
+
+.Snow .Button-Save {
+    left: 108dp;
+    top: 66dp;
+    width: 92dp;
+    height: 30dp;
+    decorator: image(button-save-snow_default);
+}
+
+.Snow .Button-Save:active {
+    decorator: image(button-save-snow_active);
+}
+
+/* Buttons Osc */
+
+.Button-Sub-Osc-Square {
+    width: 58dp;
+    height: 30dp;
+    decorator: image(button-sub-osc-square_default);
+}
+
+.Button-Sub-Osc-Square:checked,
+.Button-Sub-Osc-Square:checked:active {
+    decorator: image(button-sub-osc-square_checked);
+}
+
+.Button-Sub-Osc-Square:active {
+    decorator: image(button-sub-osc-square_active);
+}
+
+.Button-Sub-Osc-Triangle {
+    width: 58dp;
+    height: 30dp;
+    decorator: image(button-sub-osc-triangle_default);
+}
+
+.Button-Sub-Osc-Triangle:checked,
+.Button-Sub-Osc-Triangle:checked:active {
+    decorator: image(button-sub-osc-triangle_checked);
+}
+
+.Button-Sub-Osc-Triangle:active {
+    decorator: image(button-sub-osc-triangle_active);
+}
+
+/* Buttons Filter */
+
+.Button-Lowpass {
+    width: 62dp;
+    height: 30dp;
+    decorator: image(button-lowpass_default);
+}
+
+.Button-Lowpass:checked,
+.Button-Lowpass:checked:active {
+    decorator: image(button-lowpass_checked);
+}
+
+.Button-Lowpass:active {
+    decorator: image(button-lowpass_active);
+}
+
+.Button-Highpass {
+    width: 62dp;
+    height: 30dp;
+    decorator: image(button-highpass_default);
+}
+
+.Button-Highpass:checked,
+.Button-Highpass:checked:active {
+    decorator: image(button-highpass_checked);
+}
+
+.Button-Highpass:active {
+    decorator: image(button-highpass_active);
+}
+
+.Button-Bandpass {
+    width: 62dp;
+    height: 30dp;
+    decorator: image(button-bandpass_default);
+}
+
+.Button-Bandpass:checked,
+.Button-Bandpass:checked:active {
+    decorator: image(button-bandpass_checked);
+}
+
+.Button-Bandpass:active {
+    decorator: image(button-bandpass_active);
+}
+
+.Button-Bandstop {
+    width: 62dp;
+    height: 30dp;
+    decorator: image(button-bandstop_default);
+}
+
+.Button-Bandstop:checked,
+.Button-Bandstop:checked:active {
+    decorator: image(button-bandstop_checked);
+}
+
+.Button-Bandstop:active {
+    decorator: image(button-bandstop_active);
+}
+
+.Button-Lowpass-1 {
+    width: 62dp;
+    height: 30dp;
+    decorator: image(button-lowpass-1_default);
+}
+
+.Button-Lowpass-1:checked,
+.Button-Lowpass-1:checked:active {
+    decorator: image(button-lowpass-1_checked);
+}
+
+.Button-Lowpass-1:active {
+    decorator: image(button-lowpass-1_active);
+}
+
+.Button-Lowpass-2 {
+    width: 62dp;
+    height: 30dp;
+    decorator: image(button-lowpass-2_default);
+}
+
+.Button-Lowpass-2:checked,
+.Button-Lowpass-2:checked:active {
+    decorator: image(button-lowpass-2_checked);
+}
+
+.Button-Lowpass-2:active {
+    decorator: image(button-lowpass-2_active);
+}
+
+.Button-Lowpass-3 {
+    width: 62dp;
+    height: 30dp;
+    decorator: image(button-lowpass-3_default);
+}
+
+.Button-Lowpass-3:checked,
+.Button-Lowpass-3:checked:active {
+    decorator: image(button-lowpass-3_checked);
+}
+
+.Button-Lowpass-3:active {
+    decorator: image(button-lowpass-3_active);
+}
+
+.Button-Lowpass-4 {
+    width: 62dp;
+    height: 30dp;
+    decorator: image(button-lowpass-4_default);
+}
+
+.Button-Lowpass-4:checked,
+.Button-Lowpass-4:checked:active {
+    decorator: image(button-lowpass-4_checked);
+}
+
+.Button-Lowpass-4:active {
+    decorator: image(button-lowpass-4_active);
+}
+
+.Button-Filter-Routing-Serial-4 {
+    width: 62dp;
+    height: 22dp;
+    decorator: image(button-filter-routing-serial-4_default);
+}
+
+.Button-Filter-Routing-Serial-4:checked,
+.Button-Filter-Routing-Serial-4:checked:active {
+    decorator: image(button-filter-routing-serial-4_checked);
+}
+
+.Button-Filter-Routing-Serial-4:active {
+    decorator: image(button-filter-routing-serial-4_active);
+}
+
+.Button-Filter-Routing-Serial-6 {
+    width: 62dp;
+    height: 22dp;
+    decorator: image(button-filter-routing-serial-6_default);
+}
+
+.Button-Filter-Routing-Serial-6:checked,
+.Button-Filter-Routing-Serial-6:checked:active {
+    decorator: image(button-filter-routing-serial-6_checked);
+}
+
+.Button-Filter-Routing-Serial-6:active {
+    decorator: image(button-filter-routing-serial-6_active);
+}
+
+.Button-Filter-Routing-Parallel {
+    width: 62dp;
+    height: 22dp;
+    decorator: image(button-filter-routing-parallel_default);
+}
+
+.Button-Filter-Routing-Parallel:checked,
+.Button-Filter-Routing-Parallel:checked:active {
+    decorator: image(button-filter-routing-parallel_checked);
+}
+
+.Button-Filter-Routing-Parallel:active {
+    decorator: image(button-filter-routing-parallel_active);
+}
+
+.Button-Filter-Routing-Split {
+    width: 62dp;
+    height: 22dp;
+    decorator: image(button-filter-routing-split_default);
+}
+
+.Button-Filter-Routing-Split:checked,
+.Button-Filter-Routing-Split:checked:active {
+    decorator: image(button-filter-routing-split_checked);
+}
+
+.Button-Filter-Routing-Split:active {
+    decorator: image(button-filter-routing-split_active);
+}
+
+.Button-Cutoff-Link {
+    width: 126dp;
+    height: 30dp;
+    decorator: image(button-cutoff-link_default);
+}
+
+.Button-Cutoff-Link:checked {
+    decorator: image(button-cutoff-link_checked);
+}
+
+.Button-Cutoff-Link:active {
+    decorator: image(button-cutoff-link_active);
+}
+
+.Button-Cutoff-Link:checked:active {
+    decorator: image(button-cutoff-link_active);
+}
+
+.Button-Filter-Link {
+    width: 126dp;
+    height: 30dp;
+    decorator: image(button-filter-link_default);
+}
+
+.Button-Filter-Link:checked {
+    decorator: image(button-filter-link_checked);
+}
+
+.Button-Filter-Link:active {
+    decorator: image(button-filter-link_active);
+}
+
+.Button-Filter-Link:checked:active {
+    decorator: image(button-filter-link_active);
+}
+
+.Button-Envelope-Polarity {
+    width: 38dp;
+    height: 38dp;
+    decorator: image(button-envelope-polarity_default);
+}
+
+.Button-Envelope-Polarity:checked {
+    decorator: image(button-envelope-polarity_checked);
+}
+
+.Button-Envelope-Polarity:active {
+    decorator: image(button-envelope-polarity_active);
+}
+
+.Button-Envelope-Polarity:checked:active {
+    decorator: image(button-envelope-polarity_checked-active);
+}
+
+.Button-Filter-Envelope {
+    width: 30dp;
+    height: 56dp;
+    decorator: image(button-filter-envelope_default);
+}
+
+.Button-Filter-Envelope:checked,
+.Button-Filter-Envelope:checked:active {
+    decorator: image(button-filter-envelope_checked);
+}
+
+.Button-Filter-Envelope:active {
+    decorator: image(button-filter-envelope_active);
+}
+
+.Button-Envelope-3 {
+    width: 30dp;
+    height: 56dp;
+    decorator: image(button-envelope-3_default);
+}
+
+.Button-Envelope-3:checked,
+.Button-Envelope-3:checked:active {
+    decorator: image(button-envelope-3_checked);
+}
+
+.Button-Envelope-3:active {
+    decorator: image(button-envelope-3_active);
+}
+
+.Button-Envelope-4 {
+    width: 30dp;
+    height: 56dp;
+    decorator: image(button-envelope-4_default);
+}
+
+.Button-Envelope-4:checked,
+.Button-Envelope-4:checked:active {
+    decorator: image(button-envelope-4_checked);
+}
+
+.Button-Envelope-4:active {
+    decorator: image(button-envelope-4_active);
+}
+
+/* Buttons LFO */
+
+.Button-LFO-Clock {
+    width: 66dp;
+    height: 60dp;
+    decorator: image(button-lfo-clock_default);
+}
+
+/*.Button-LFO-Clock:checked {*/
+/*    decorator: image(button-lfo-clock_checked);*/
+/*}*/
+
+.Button-LFO-Clock.checked {
+    decorator: image(button-lfo-clock_checked);
+}
+
+.Button-LFO-Clock:active {
+    decorator: image(button-lfo-clock_active);
+}
+
+.Button-LFO-Clock:checked:active {
+    decorator: image(button-lfo-clock_checked-active);
+}
+
+.Button-LFO-Sine {
+    width: 62dp;
+    height: 22dp;
+    decorator: image(button-lfo-sine_default);
+}
+
+.Button-LFO-Sine:checked,
+.Button-LFO-Sine:checked:active {
+    decorator: image(button-lfo-sine_checked);
+}
+
+.Button-LFO-Sine:active {
+    decorator: image(button-lfo-sine_active);
+}
+
+.Button-LFO-Triangle {
+    width: 62dp;
+    height: 22dp;
+    decorator: image(button-lfo-triangle_default);
+}
+
+.Button-LFO-Triangle:checked,
+.Button-LFO-Triangle:checked:active {
+    decorator: image(button-lfo-triangle_checked);
+}
+
+.Button-LFO-Triangle:active {
+    decorator: image(button-lfo-triangle_active);
+}
+
+.Button-LFO-Saw {
+    width: 62dp;
+    height: 22dp;
+    decorator: image(button-lfo-saw_default);
+}
+
+.Button-LFO-Saw:checked,
+.Button-LFO-Saw:checked:active {
+    decorator: image(button-lfo-saw_checked);
+}
+
+.Button-LFO-Saw:active {
+    decorator: image(button-lfo-saw_active);
+}
+
+.Button-LFO-Square {
+    width: 62dp;
+    height: 22dp;
+    decorator: image(button-lfo-square_default);
+}
+
+.Button-LFO-Square:checked,
+.Button-LFO-Square:checked:active {
+    decorator: image(button-lfo-square_checked);
+}
+
+.Button-LFO-Square:active {
+    decorator: image(button-lfo-square_active);
+}
+
+.Button-LFO-SH {
+    width: 62dp;
+    height: 22dp;
+    decorator: image(button-lfo-sh_default);
+}
+
+.Button-LFO-SH:checked,
+.Button-LFO-SH:checked:active {
+    decorator: image(button-lfo-sh_checked);
+}
+
+.Button-LFO-SH:active {
+    decorator: image(button-lfo-sh_active);
+}
+
+.Button-LFO-SG {
+    width: 62dp;
+    height: 22dp;
+    decorator: image(button-lfo-sg_default);
+}
+
+.Button-LFO-SG:checked,
+.Button-LFO-SG:checked:active {
+    decorator: image(button-lfo-sg_checked);
+}
+
+.Button-LFO-SG:active {
+    decorator: image(button-lfo-sg_active);
+}
+
+/* Buttons FX-1 */
+
+.Button-Chorus-LFO-Sine {
+    width: 30dp;
+    height: 22dp;
+    decorator: image(button-chorus-lfo-sine_default);
+}
+
+.Button-Chorus-LFO-Sine:checked,
+.Button-Chorus-LFO-Sine:checked:active {
+    decorator: image(button-chorus-lfo-sine_checked);
+}
+
+.Button-Chorus-LFO-Sine:active {
+    decorator: image(button-chorus-lfo-sine_active);
+}
+
+.Button-Chorus-LFO-Triangle {
+    width: 30dp;
+    height: 22dp;
+    decorator: image(button-chorus-lfo-triangle_default);
+}
+
+.Button-Chorus-LFO-Triangle:checked,
+.Button-Chorus-LFO-Triangle:checked:active {
+    decorator: image(button-chorus-lfo-triangle_checked);
+}
+
+.Button-Chorus-LFO-Triangle:active {
+    decorator: image(button-chorus-lfo-triangle_active);
+}
+
+.Button-Chorus-LFO-Saw {
+    width: 30dp;
+    height: 22dp;
+    decorator: image(button-chorus-lfo-saw_default);
+}
+
+.Button-Chorus-LFO-Saw:checked,
+.Button-Chorus-LFO-Saw:checked:active {
+    decorator: image(button-chorus-lfo-saw_checked);
+}
+
+.Button-Chorus-LFO-Saw:active {
+    decorator: image(button-chorus-lfo-saw_active);
+}
+
+.Button-Chorus-LFO-Square {
+    width: 30dp;
+    height: 22dp;
+    decorator: image(button-chorus-lfo-square_default);
+}
+
+.Button-Chorus-LFO-Square:checked,
+.Button-Chorus-LFO-Square:checked:active {
+    decorator: image(button-chorus-lfo-square_checked);
+}
+
+.Button-Chorus-LFO-Square:active {
+    decorator: image(button-chorus-lfo-square_active);
+}
+
+.Button-Chorus-LFO-SH {
+    width: 30dp;
+    height: 22dp;
+    decorator: image(button-chorus-lfo-sh_default);
+}
+
+.Button-Chorus-LFO-SH:checked,
+.Button-Chorus-LFO-SH:checked:active {
+    decorator: image(button-chorus-lfo-sh_checked);
+}
+
+.Button-Chorus-LFO-SH:active {
+    decorator: image(button-chorus-lfo-sh_active);
+}
+
+.Button-Chorus-LFO-SG {
+    width: 30dp;
+    height: 22dp;
+    decorator: image(button-chorus-lfo-sg_default);
+}
+
+.Button-Chorus-LFO-SG:checked,
+.Button-Chorus-LFO-SG:checked:active {
+    decorator: image(button-chorus-lfo-sg_checked);
+}
+
+.Button-Chorus-LFO-SG:active {
+    decorator: image(button-chorus-lfo-sg_active);
+}
+
+.Button-Phaser-Stage-1 {
+    width: 42dp;
+    height: 22dp;
+    decorator: image(button-phaser-stage-1_default);
+}
+
+.Button-Phaser-Stage-1:checked,
+.Button-Phaser-Stage-1:checked:active {
+    decorator: image(button-phaser-stage-1_checked);
+}
+
+.Button-Phaser-Stage-1:active {
+    decorator: image(button-phaser-stage-1_active);
+}
+
+.Button-Phaser-Stage-2 {
+    width: 42dp;
+    height: 22dp;
+    decorator: image(button-phaser-stage-2_default);
+}
+
+.Button-Phaser-Stage-2:checked,
+.Button-Phaser-Stage-2:checked:active {
+    decorator: image(button-phaser-stage-2_checked);
+}
+
+.Button-Phaser-Stage-2:active {
+    decorator: image(button-phaser-stage-2_active);
+}
+
+.Button-Phaser-Stage-3 {
+    width: 42dp;
+    height: 22dp;
+    decorator: image(button-phaser-stage-3_default);
+}
+
+.Button-Phaser-Stage-3:checked,
+.Button-Phaser-Stage-3:checked:active {
+    decorator: image(button-phaser-stage-3_checked);
+}
+
+.Button-Phaser-Stage-3:active {
+    decorator: image(button-phaser-stage-3_active);
+}
+
+.Button-Phaser-Stage-4 {
+    width: 42dp;
+    height: 22dp;
+    decorator: image(button-phaser-stage-4_default);
+}
+
+.Button-Phaser-Stage-4:checked,
+.Button-Phaser-Stage-4:checked:active {
+    decorator: image(button-phaser-stage-4_checked);
+}
+
+.Button-Phaser-Stage-4:active {
+    decorator: image(button-phaser-stage-4_active);
+}
+
+.Button-Phaser-Stage-5 {
+    width: 42dp;
+    height: 22dp;
+    decorator: image(button-phaser-stage-5_default);
+}
+
+.Button-Phaser-Stage-5:checked,
+.Button-Phaser-Stage-5:checked:active {
+    decorator: image(button-phaser-stage-5_checked);
+}
+
+.Button-Phaser-Stage-5:active {
+    decorator: image(button-phaser-stage-5_active);
+}
+
+.Button-Phaser-Stage-6 {
+    width: 42dp;
+    height: 22dp;
+    decorator: image(button-phaser-stage-6_default);
+}
+
+.Button-Phaser-Stage-6:checked,
+.Button-Phaser-Stage-6:checked:active {
+    decorator: image(button-phaser-stage-6_checked);
+}
+
+.Button-Phaser-Stage-6:active {
+    decorator: image(button-phaser-stage-6_active);
+}
+
+/* Buttons Arpeggiator */
+
+.Button-Arp-Hold {
+    width: 62dp;
+    height: 38dp;
+    decorator: image(button-arp-hold_default);
+}
+
+.Button-Arp-Hold:checked {
+    decorator: image(button-arp-hold_checked);
+}
+
+.Button-Arp-Hold:checked:active {
+    decorator: image(button-arp-hold_checked-active);
+}
+
+.Button-Arp-Hold:active {
+    decorator: image(button-arp-hold_active);
+}
+
+.Button-Arp-Left {
+    width: 62dp;
+    height: 30dp;
+    decorator: image(button-arp-left_default);
+}
+
+.Button-Arp-Left:active {
+    width: 62dp;
+    height: 30dp;
+    decorator: image(button-arp-left_active);
+}
+
+.Button-Arp-Right {
+    width: 62dp;
+    height: 30dp;
+    decorator: image(button-arp-right_default);
+}
+
+.Button-Arp-Right:active {
+    width: 62dp;
+    height: 30dp;
+    decorator: image(button-arp-right_active);
+}
+
+.Button-Arp-Fill {
+    width: 102dp;
+    height: 30dp;
+    decorator: image(button-arp-fill_default);
+}
+
+.Button-Arp-Fill:active {
+    width: 102dp;
+    height: 30dp;
+    decorator: image(button-arp-fill_active);
+}
+
+.Button-Arp-Reset {
+    width: 102dp;
+    height: 30dp;
+    decorator: image(button-arp-reset_default);
+}
+
+.Button-Arp-Reset:active {
+    width: 102dp;
+    height: 30dp;
+    decorator: image(button-arp-reset_active);
+}
+
+.Button-Arp-Step {
+    width: 102dp;
+    height: 30dp;
+    decorator: image(button-arp-step_default);
+}
+
+.Button-Arp-Step:active {
+    width: 102dp;
+    height: 30dp;
+    decorator: image(button-arp-step_active);
+}
+
+.Button-Arp-Velocity {
+    width: 102dp;
+    height: 30dp;
+    decorator: image(button-arp-velocity_default);
+}
+
+.Button-Arp-Velocity:active {
+    decorator: image(button-arp-velocity_active);
+}
+
+.Button-Arp-Length {
+    width: 102dp;
+    height: 30dp;
+    decorator: image(button-arp-length_default);
+}
+
+.Button-Arp-Length:active {
+    decorator: image(button-arp-length_active);
+}
+
+.Button-Arp-Step-1 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-1_default);
+}
+
+.Button-Arp-Step-1:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-1_checked);
+}
+
+.Button-Arp-Step-1:checked:active,
+.Button-Arp-Step-1:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-1_active);
+}
+
+.Button-Arp-Step-2 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-2_default);
+}
+
+.Button-Arp-Step-2:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-2_checked);
+}
+
+.Button-Arp-Step-2:checked:active,
+.Button-Arp-Step-2:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-2_active);
+}
+
+.Button-Arp-Step-3 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-3_default);
+}
+
+.Button-Arp-Step-3:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-3_checked);
+}
+
+.Button-Arp-Step-3:checked:active,
+.Button-Arp-Step-3:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-3_active);
+}
+
+.Button-Arp-Step-4 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-4_default);
+}
+
+.Button-Arp-Step-4:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-4_checked);
+}
+
+.Button-Arp-Step-4:checked:active,
+.Button-Arp-Step-4:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-4_active);
+}
+
+.Button-Arp-Step-5 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-5_default);
+}
+
+.Button-Arp-Step-5:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-5_checked);
+}
+
+.Button-Arp-Step-5:checked:active,
+.Button-Arp-Step-5:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-5_active);
+}
+
+.Button-Arp-Step-6 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-6_default);
+}
+
+.Button-Arp-Step-6:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-6_checked);
+}
+
+.Button-Arp-Step-6:checked:active,
+.Button-Arp-Step-6:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-6_active);
+}
+
+.Button-Arp-Step-7 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-7_default);
+}
+
+.Button-Arp-Step-7:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-7_checked);
+}
+
+.Button-Arp-Step-7:checked:active,
+.Button-Arp-Step-7:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-7_active);
+}
+
+.Button-Arp-Step-8 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-8_default);
+}
+
+.Button-Arp-Step-8:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-8_checked);
+}
+
+.Button-Arp-Step-8:checked:active,
+.Button-Arp-Step-8:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-8_active);
+}
+
+.Button-Arp-Step-9 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-9_default);
+}
+
+.Button-Arp-Step-9:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-9_checked);
+}
+
+.Button-Arp-Step-9:checked:active,
+.Button-Arp-Step-9:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-9_active);
+}
+
+.Button-Arp-Step-10 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-10_default);
+}
+
+.Button-Arp-Step-10:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-10_checked);
+}
+
+.Button-Arp-Step-10:checked:active,
+.Button-Arp-Step-10:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-10_active);
+}
+
+.Button-Arp-Step-11 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-11_default);
+}
+
+.Button-Arp-Step-11:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-11_checked);
+}
+
+.Button-Arp-Step-11:checked:active,
+.Button-Arp-Step-11:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-11_active);
+}
+
+.Button-Arp-Step-12 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-12_default);
+}
+
+.Button-Arp-Step-12:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-12_checked);
+}
+
+.Button-Arp-Step-12:checked:active,
+.Button-Arp-Step-12:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-12_active);
+}
+
+.Button-Arp-Step-13 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-13_default);
+}
+
+.Button-Arp-Step-13:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-13_checked);
+}
+
+.Button-Arp-Step-13:checked:active,
+.Button-Arp-Step-13:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-13_active);
+}
+
+.Button-Arp-Step-14 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-14_default);
+}
+
+.Button-Arp-Step-14:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-14_checked);
+}
+
+.Button-Arp-Step-14:checked:active,
+.Button-Arp-Step-14:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-14_active);
+}
+
+.Button-Arp-Step-15 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-15_default);
+}
+
+.Button-Arp-Step-15:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-15_checked);
+}
+
+.Button-Arp-Step-15:checked:active,
+.Button-Arp-Step-15:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-15_active);
+}
+
+.Button-Arp-Step-16 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-16_default);
+}
+
+.Button-Arp-Step-16:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-16_checked);
+}
+
+.Button-Arp-Step-16:checked:active,
+.Button-Arp-Step-16:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-16_active);
+}
+
+.Button-Arp-Step-17 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-17_default);
+}
+
+.Button-Arp-Step-17:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-17_checked);
+}
+
+.Button-Arp-Step-17:checked:active,
+.Button-Arp-Step-17:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-17_active);
+}
+
+.Button-Arp-Step-18 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-18_default);
+}
+
+.Button-Arp-Step-18:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-18_checked);
+}
+
+.Button-Arp-Step-18:checked:active,
+.Button-Arp-Step-18:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-18_active);
+}
+
+.Button-Arp-Step-19 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-19_default);
+}
+
+.Button-Arp-Step-19:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-19_checked);
+}
+
+.Button-Arp-Step-19:checked:active,
+.Button-Arp-Step-19:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-19_active);
+}
+
+.Button-Arp-Step-20 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-20_default);
+}
+
+.Button-Arp-Step-20:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-20_checked);
+}
+
+.Button-Arp-Step-20:checked:active,
+.Button-Arp-Step-20:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-20_active);
+}
+
+.Button-Arp-Step-21 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-21_default);
+}
+
+.Button-Arp-Step-21:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-21_checked);
+}
+
+.Button-Arp-Step-21:checked:active,
+.Button-Arp-Step-21:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-21_active);
+}
+
+.Button-Arp-Step-22 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-22_default);
+}
+
+.Button-Arp-Step-22:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-22_checked);
+}
+
+.Button-Arp-Step-22:checked:active,
+.Button-Arp-Step-22:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-22_active);
+}
+
+.Button-Arp-Step-23 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-23_default);
+}
+
+.Button-Arp-Step-23:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-23_checked);
+}
+
+.Button-Arp-Step-23:checked:active,
+.Button-Arp-Step-23:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-23_active);
+}
+
+.Button-Arp-Step-24 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-24_default);
+}
+
+.Button-Arp-Step-24:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-24_checked);
+}
+
+.Button-Arp-Step-24:checked:active,
+.Button-Arp-Step-24:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-24_active);
+}
+
+.Button-Arp-Step-25 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-25_default);
+}
+
+.Button-Arp-Step-25:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-25_checked);
+}
+
+.Button-Arp-Step-25:checked:active,
+.Button-Arp-Step-25:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-25_active);
+}
+
+.Button-Arp-Step-26 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-26_default);
+}
+
+.Button-Arp-Step-26:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-26_checked);
+}
+
+.Button-Arp-Step-26:checked:active,
+.Button-Arp-Step-26:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-26_active);
+}
+
+.Button-Arp-Step-27 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-27_default);
+}
+
+.Button-Arp-Step-27:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-27_checked);
+}
+
+.Button-Arp-Step-27:checked:active,
+.Button-Arp-Step-27:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-27_active);
+}
+
+.Button-Arp-Step-28 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-28_default);
+}
+
+.Button-Arp-Step-28:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-28_checked);
+}
+
+.Button-Arp-Step-28:checked:active,
+.Button-Arp-Step-28:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-28_active);
+}
+
+.Button-Arp-Step-29 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-29_default);
+}
+
+.Button-Arp-Step-29:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-29_checked);
+}
+
+.Button-Arp-Step-29:checked:active,
+.Button-Arp-Step-29:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-29_active);
+}
+
+.Button-Arp-Step-30 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-30_default);
+}
+
+.Button-Arp-Step-30:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-30_checked);
+}
+
+.Button-Arp-Step-30:checked:active,
+.Button-Arp-Step-30:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-30_active);
+}
+
+.Button-Arp-Step-31 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-31_default);
+}
+
+.Button-Arp-Step-31:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-31_checked);
+}
+
+.Button-Arp-Step-31:checked:active,
+.Button-Arp-Step-31:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-31_active);
+}
+
+.Button-Arp-Step-32 {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-32_default);
+}
+
+.Button-Arp-Step-32:checked {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-32_checked);
+}
+
+.Button-Arp-Step-32:checked:active,
+.Button-Arp-Step-32:active {
+    width: 34dp;
+    height: 28dp;
+    decorator: image(button-arp-step-32_active);
+}
+
+/* Other Buttons */
+
+.Button-Mode {
+    width: 90dp;
+    height: 56dp;
+    decorator: image(button-mode_default);
+}
+
+.Button-Mode:checked {
+    decorator: image(button-mode_checked);
+}
+
+.Button-Mode:active {
+    decorator: image(button-mode_active);
+}
+
+.Button-Mode:checked:active {
+    decorator: image(button-mode_checked-active);
+}
+
+.Button-Help {
+    width: 56dp;
+    height: 58dp;
+    decorator: image(button-help_default);
+}
+
+.Button-Help:active {
+    decorator: image(button-help_checked-active);
+}
+
+.Button-Led {
+    width: 42dp;
+    height: 42dp;
+    decorator: image(button-led_default);
+}
+
+.Button-Led:active {
+    decorator: image(button-led_active);
+}
+
+.Button-Led:checked {
+    decorator: image(button-led_checked);
+}
+
+.Button-Led:checked:active {
+    decorator: image(button-led_checked-active);
+}
+
+.Button-Led.checked {
+    decorator: image(button-led_checked);
+}
+
+.Button-Led.checked:active {
+    decorator: image(button-led_checked-active);
+}
+
+/* == SLIDERS == */
+
+.Slider {
+    width: 262dp;
+    height: 34dp;
+    position: absolute;
+    box-sizing: border-box;
+    decorator: image(Slider-Shadow.png);
+}
+
+.Slider sliderbar {
+    width: 54dp;
+    height: 46dp;
+    margin: -6dp -4dp;
+    decorator: image(Slider.png);
+}
+
+.Slider-Mini {
+    left: 82dp;
+    top: 22dp;
+    width: 218dp;
+    height: 24dp;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.Slider-Mini sliderbar {
+    width: 54dp;
+    height: 36dp;
+    margin: -6dp -6dp;
+    decorator: image(Slider-Mini.png);
+}
+
+.Snow .Slider-Mini {
+    left: 106dp;
+    top: 160dp;
+    width: 246dp;
+    height: 24dp;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.Snow .Slider-Mini sliderbar {
+    width: 58dp;
+    height: 36dp;
+    margin: -6dp -6dp;
+    decorator: image(Slider-Mini-Snow.png);
+}
+
+.Slider-Mini-Snow {
+    display: none;
+}
+
+.Snow .Slider-Mini-Snow {
+    left: 106dp;
+    top: 126dp;
+    width: 246dp;
+    height: 24dp;
+    position: absolute;
+    box-sizing: border-box;
+    display: block;
+}
+
+.Snow .Slider-Mini-Snow sliderbar {
+    width: 58dp;
+    height: 36dp;
+    margin: -6dp -6dp;
+    decorator: image(Slider-Mini-Snow.png);
+}
+
+.Slider-Arp {
+    height: 22dp;
+    width: 1246dp;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.Slider-Arp sliderbar {
+    height: 22dp;
+    width: 6dp;
+    background-color: #b6c8e4;
+}
+
+.Slider-Arp sliderprogress {
+    margin-left: -38dp;
+    padding-right: 38dp;
+    background-color: #8691A580;
+}
+
+.Slider-Surround-Balance {
+    width: 226dp;
+    height: 18dp;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.Slider-Surround-Balance sliderprogress {
+    background-color: #b8becb;
+}
+
+.Slider-Surround-Balance sliderbar {
+    width: 6dp;
+    height: 18dp;
+    background-color: #001941;
+}
+
+/* == PART-MANAGER == */
+
+/* Container for deviceModel TI and Snow */
+
+.Part-0 {
+    left: 12dp;
+    top: 4dp;
+    width: 350dp;
+    height: 46dp;
+}
+
+.Part-0.Snow {
+    left: 0dp;
+    top: 2dp;
+    width: 362dp;
+    height: 206dp;
+}
+
+.Part-1 {
+    left: 12dp;
+    top: 56dp;
+    width: 350dp;
+    height: 46dp;
+}
+
+.Part-1.Snow {
+    left: 0dp;
+    top: 210dp;
+    width: 362dp;
+    height: 206dp;
+}
+
+.Part-2 {
+    left: 12dp;
+    top: 108dp;
+    width: 350dp;
+    height: 46dp;
+}
+
+.Part-2.Snow {
+    left: 0dp;
+    top: 418dp;
+    width: 362dp;
+    height: 206dp;
+}
+
+.Part-3 {
+    left: 12dp;
+    top: 160dp;
+    width: 350dp;
+    height: 46dp;
+}
+
+.Part-3.Snow {
+    left: 0dp;
+    top: 626dp;
+    width: 362dp;
+    height: 208dp;
+}
+
+/* Preset Name Combobox */
+
+/* for Ti */
+
+.Preset-Name {
+    left: 84dp;
+    top: 2dp;
+    width: 122dp;
+    height: 18dp;
+    padding-left: 0dp;
+    padding-right: 0dp;
+    decorator: none;
+}
+
+.Preset-Name-Active {
+    decorator: image(LCD-Preset-Name.png scale-none);
+}
+
+/* for Snow */
+
+.Snow .Preset-Name {
+    left: 62dp;
+    top: 14dp;
+    height: 34dp;
+    width: 198dp;
+    padding: 0;
+    decorator: none;
+}
+
+.Snow .Preset-Name > combotext {
+    height: 34dp;
+    width: 198dp;
+    line-height: 34dp;
+    border: 0;
+    text-align: center;
+}
+
+.Snow .Preset-Name-Active {
+    border-radius: 2dp;
+    decorator: linear-gradient(180deg, #B0B6C0 0%, #B6BCC7 7.1%, #CAD1DD 15.4%, #D4DBE8 23.71%, #DAE2EE 33.62%, #E1E9F6 43.54%, #E1E9F6 52.92%, #E1E9F6 62.83%, #E1E9F6 72.21%, #E1E9F6 82.12%, #E1E9F6 90.43%, #DEE6F3 100%);
+}
+
+.Snow .Preset-Name-Active > combotext {
+    color: #001941;
+}
+
+/* Other Classes */
+
+.Custom-Display-Hide {
+    opacity: 0;
+    transition: opacity 0.000001s linear-in 1.5s;
+}
+
+.Changelog {
+    line-height: 32dp;
+    overflow: auto;
+}
+
+.Filter-Combobox-Fake {
+    width: 82dp;
+    height: 14dp;
+    frames: 8;
+    spriteprefix: filter-combobox-fake_;
+}
+
+.Filter-Combobox-Fake-2 {
+    width: 82dp;
+    height: 14dp;
+    frames: 4;
+    spriteprefix: filter-combobox-fake_;
+}
+
+#Donate {
+    transition: transform 1s elastic-out;
+    transform: scale(1.0);
+    decorator: image(Donate.png);
+}
+
+#Donate:hover {
+    transform: scale(1.04);
+}
+
+#QR {
+    transition: transform 1s elastic-out;
+    transform: scale(1.0);
+    decorator: image(QR.png);
+}
+
+#QR:hover {
+    transform: scale(1.02);
+}
+
+
+
