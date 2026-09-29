@@ -118,6 +118,7 @@ provided the same license is preserved and attribution is given.
 
 - **YouTube:** [Mike Sunrise](https://www.youtube.com/@MikeSunrise)
 - **Discord:** [The Usual Suspects DSP56300](https://discord.gg/AaGHXSWM)
+- **Discord:** [Skin](https://discord.com/channels/829099347975208970/1217169310393307136)
 
 ## 💝 Support the author
 
